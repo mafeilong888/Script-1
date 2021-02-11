@@ -39,7 +39,8 @@ jobs:
              npm install
       - name: '运行 【走路赚APP】'
         run: |
-         	        
+          cd ~/Script
+     
 
           node zoulusign.js
         env:
