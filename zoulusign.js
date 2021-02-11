@@ -132,14 +132,23 @@ const doubleheaderArr = [];
 const CardbodyArr = [];
 const drinkbodyArr = [];
 const memberbodyArr = [];
-let xiaomuyuheader = $.getdata('xiaomuyuheader');
-let xiaomuyubody = $.getdata('xiaomuyubody');
-let turntableurl = $.getdata('turntableurl');
-let turntableheader = $.getdata('turntableheader');
-let doubleheader = $.getdata('doubleheader');
-let Cardbody = $.getdata('Cardbody');
-let drinkbody = $.getdata('drinkbody');
-let memberbody = $.getdata('memberbody');
+//let xiaomuyuheader = $.getdata('xiaomuyuheader');
+let xiaomuyuheader = '{"Cookie":"PHPSESSID=8e40d397c4a60669146fc7f23314e2a1; CNZZDATA1277228569=60070233-1612933570-%7C1612933570; UM_distinctid=1778a620483389-0614508e9327cc8-3c176950-5a900-1778a620484841","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate, br","Host":"api.xiaomuyu888.com","User-Agent":"YLZ/1.2.18 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"94","Accept-Language":"zh-Hans-CN;q=1"}'
+//let xiaomuyubody = $.getdata('xiaomuyubody');
+let xiaomuyubody = 'device=ios&imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&source=ios&uid=3932239&version=1.2.18'
+//let turntableurl = $.getdata('turntableurl');
+let turntableurl = 'http://api.xiaomuyu888.com/api/turntable/turntableCoin?imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&source=ios&device=ios&version=1.2.18'
+//let turntableheader = $.getdata('turntableheader');
+let turntableheader = '{"Accept-Encoding":"gzip, deflate","Cookie":"CNZZDATA1277228569=60070233-1612933570-%7C1612933570; PHPSESSID=15fe30e5b9afb807452d559089cd2a9e; UM_distinctid=1778a620483389-0614508e9327cc8-3c176950-5a900-1778a620484841","Connection":"keep-alive","Referer":"http://api.xiaomuyu888.com/api/turntable/index?imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&version=1.2.18&device=ios&source=ios","Accept":"application/json, text/javascript, */*; q=0.01","Host":"api.xiaomuyu888.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}'
+//let doubleheader = $.getdata('doubleheader');
+let doubleheader = '{"X-Requested-With":"XMLHttpRequest","Connection":"keep-alive","Accept-Encoding":"gzip, deflate","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8","Origin":"http://api.xiaomuyu888.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Cookie":"CNZZDATA1277228569=60070233-1612933570-%7C1612933570; PHPSESSID=81af188a13e676e183ade1d7a77b13fb; UM_distinctid=1778a620483389-0614508e9327cc8-3c176950-5a900-1778a620484841","Host":"api.xiaomuyu888.com","Referer":"http://api.xiaomuyu888.com/api/turntable/index?imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&version=1.2.18&device=ios&source=ios","Accept-Language":"zh-cn","Accept":"text/javascript, application/javascript, application/ecmascript, application/x-ecmascript, */*; q=0.01","Content-Length":"41"}'
+//let Cardbody = $.getdata('Cardbody');
+let Cardbody = 'device=ios&id=4&imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&source=ios&uid=3932239&version=1.2.18'
+//let drinkbody = $.getdata('drinkbody');
+let drinkbody = '"coin=3&cupid=5&device=ios&double=0&imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&source=ios&uid=3932239&version=1.2.18'
+//let memberbody = $.getdata('memberbody');
+let memberbody = 'device=ios&imei=e03fbecec41e46f300dd8e4d24c05bcdeeb26b2d&source=ios&step=0&uid=3932239&version=1.2.18'
+
 if ($.isNode())
 {
     if (process.env.XIAOMUYUHEADER && process.env.XIAOMUYUHEADER.indexOf('#') > -1)
