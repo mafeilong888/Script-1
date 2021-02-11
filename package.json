@@ -1,22 +1,22 @@
 {
-  "name": "DD-D1",
+  "name": "Sunert",
   "version": "1.0.0",
   "description": "",
-  "main": "zoulusign.js",
+  "main": "jingxi.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DD-D1.git"
+    "url": "git+https://github.com/Sunert/Scripts.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DD-D1/issues"
+    "url": "https://github.com/Sunert/Scripts/issues"
   },
-  "homepage": "https://github.com/DD-D1#readme",
+  "homepage": "https://github.com/Sunert/Scripts#readme",
   "dependencies": {
     "crypto-js": "^4.0.0",
     "got": "^11.7.0",
