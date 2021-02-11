@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
 
         with:
-           repository: https://github.com/DD-D1/Script.git ~/Script
+           repository: DD-D1/Script
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
