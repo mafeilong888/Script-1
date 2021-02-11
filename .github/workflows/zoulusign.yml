@@ -14,18 +14,19 @@ on:
 jobs:
 
 
-   runs-on: ubuntu-latest
-   if: github.event.repository.owner.id == github.event.sender.id
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
+    run: |
+          git clone https://github.com/DD-D1/Script.git ~/Script
+          uses: actions/checkout@v2
           node-version: ${{ matrix.node-version }}
-      - name: Cache node_modules
-        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
-        env:
+        - name: Cache node_modules
+          uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+          env:
           cache-name: cache-node-modules
         with:
           path: node_modules
