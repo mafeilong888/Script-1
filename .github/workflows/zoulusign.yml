@@ -43,9 +43,9 @@ jobs:
           TURNTABLRURL: ${{ secrets. TURNTABLRURL }}
           TURNTABLRHEADER: ${{ secrets. TURNTABLRHEADER }}
           DOUBLEHEADER: ${{ secrets. DOUBLEHEADER }}
-       CARDBODY: ${{ secrets. CARDBODY }}
+          CARDBODY: ${{ secrets. CARDBODY }}
           MEMBERBODY: ${{ secrets. MEMBERBODY }}
-      DRINKBODY: ${{ secrets. DRINKBODY }}
+          DRINKBODY: ${{ secrets. DRINKBODY }}
 
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
