@@ -37,8 +37,38 @@ jobs:
         run: |
           node wlapp.js
         env:      
-          TZ: Asia/shanghai
+          GETDOMAINBODY: ${{ secrets. GETDOMAINBODY }}
+          GETDOMAINKEY: ${{ secrets. GETDOMAINKEY }}
+          USERLOGINBODY: ${{ secrets. USERLOGINBODY }}
+          USERLOGINKEY: ${{ secrets. USERLOGINKEY }}
+          ARTLISTBODY: ${{ secrets. ARTLISTBODY }}
+          ARTLISTKEY: ${{ secrets. ARTLISTKEY }}
+          ARTSTATIONURL: ${{ secrets. ARTSTATIONURL }}
+          ARTSTATIONKEY: ${{ secrets. ARTSTATIONKEY }}              
+          READACCOUNTBODY: ${{ secrets. READACCOUNTBODY }} 
+          READACCOUNTKEY: ${{ secrets. READACCOUNTKEY }}
+          INFOMEBODY: ${{ secrets. INFOMEBODY }}
+          INFOMEKEY: ${{ secrets. INFOMEKEY }}
+          VIDEOARTLISTBODY: ${{ secrets. VIDEOARTLISTBODY }}
+          VIDEOARTLISTKEY: ${{ secrets. VIDEOARTLISTKEY }}
+          VIDEOREADACCOUNTBODY: ${{ secrets. VIDEOREADACCOUNTBODY }}
+          VIDEOREADACCOUNTKEY: ${{ secrets. VIDEOREADACCOUNTKEY }}
+          ARTDETAILBODY: ${{ secrets. ARTDETAILBODY }}
+          ARTDETAILKEY: ${{ secrets. ARTDETAILKEY }}
 
+
+
+
+
+          JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          PUSH_KEY: ${{ secrets.PUSH_KEY }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+          TG_USER_ID: ${{ secrets.TG_USER_ID }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
+          DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
+          DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
 
 
    
