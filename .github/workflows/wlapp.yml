@@ -37,24 +37,8 @@ jobs:
         run: |
           node wlapp.js
         env:      
-          GETDOMAINBODY: ${{ secrets. GETDOMAINBODY }}
-          GETDOMAINKEY: ${{ secrets. GETDOMAINKEY }}
-          USERLOGINBODY: ${{ secrets. USERLOGINBODY }}
-          USERLOGINKEY: ${{ secrets. USERLOGINKEY }}
-          ARTLISTBODY: ${{ secrets. ARTLISTBODY }}
-          ARTLISTKEY: ${{ secrets. ARTLISTKEY }}
-          ARTSTATIONURL: ${{ secrets. ARTSTATIONURL }}
-          ARTSTATIONKEY: ${{ secrets. ARTSTATIONKEY }}              
-          READACCOUNTBODY: ${{ secrets. READACCOUNTBODY }} 
-          READACCOUNTKEY: ${{ secrets. READACCOUNTKEY }}
-          INFOMEBODY: ${{ secrets. INFOMEBODY }}
-          INFOMEKEY: ${{ secrets. INFOMEKEY }}
-          VIDEOARTLISTBODY: ${{ secrets. VIDEOARTLISTBODY }}
-          VIDEOARTLISTKEY: ${{ secrets. VIDEOARTLISTKEY }}
-          VIDEOREADACCOUNTBODY: ${{ secrets. VIDEOREADACCOUNTBODY }}
-          VIDEOREADACCOUNTKEY: ${{ secrets. VIDEOREADACCOUNTKEY }}
-          ARTDETAILBODY: ${{ secrets. ARTDETAILBODY }}
-          ARTDETAILKEY: ${{ secrets. ARTDETAILKEY }}
+          TZ: Asia/shanghai
+
 
 
    
