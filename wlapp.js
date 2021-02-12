@@ -54,167 +54,167 @@ let today2 = formatDateTime(todaytimes);
 
 //////////////////////////////////////////////////////////////////
 const getdomainbodyArr = [];
-let getdomainbodyVal = "";
+let getdomainbodyVal = "jsondata=%7B%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100202%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%7";
 
 const getdomainkeyArr = [];
-let getdomainkeyVal = "";
+let getdomainkeyVal = "{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"383","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const userloginbodyArr = [];
-let userloginbodyVal = "";
+let userloginbodyVal = "jsondata=%7B%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22logout%22%20%3A%20%220%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100218%22%2C%20%20%22upopenid%22%20%3A%20%22%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%2C%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22uniqueid%22%20%3A%20%22D248382E-5ADB-4BD5-9A95-CB645921BBA4%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22umengid%22%20%3A%20%22%22%2C%20%20%22clientIdentifier%22%20%3A%20%22com.zhongchuanjukan.wlkd%22%2C%20%20%22memid%22%20%3A%20%22%22%2C%20%20%22smid%22%20%3A%20%22%22%7D";
 
 const userloginkeyArr = [];
-let userloginkeyVal = "";
+let userloginkeyVal = "{"Cookie":"JSESSIONID=9368BA03D26FE9ED6042FEC37DFC4786","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"708","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const artlistbodyArr = [];
-let artlistbodyVal = "";
+let artlistbodyVal = "jsondata=%7B%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22connectionType%22%20%3A%20%22100%22%2C%20%20%22optaction%22%20%3A%20%22up%22%2C%20%20%22operatorType%22%20%3A%20%221%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22articlevideo%22%20%3A%20%220%22%2C%20%20%22time%22%20%3A%20%221613100220%22%2C%20%20%22cateid%22%20%3A%20%223%22%2C%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22idfa%22%20%3A%20%22D248382E-5ADB-4BD5-9A95-CB645921BBA4%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%2C%20%20%22page%22%20%3A%201%7D";
 
 const artlistkeyArr = [];
-let artlistkeyVal = "";
+let artlistkeyVal = "{"Cookie":"JSESSIONID=9368BA03D26FE9ED6042FEC37DFC4786","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"693","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const artstationurlArr = [];
-let artstationurlVal = "";
+let artstationurlVal = "http://wlapp.ccdy.cn/jkd/weixin20/station/stationarticle.action?articleid=806914832&openID=c12c9cf6e50549d0b03e713376d50a9c&ce=iOS&request_id=1613100220293902&scene_type=art_recommend_iOS&articlevideo=0&version=1.0.2&account_type=1&channel=iOS&shade=1&a=W8cQdUjexgl-GJFTdfYIfw==&font_size=1&scene_type=&request_id=1613100220293902";
 
 const artstationkeyArr = [];
-let artstationkeyVal = "";
+let artstationkeyVal = "{"Cookie":"xz_jkd_appkey=c12c9cf6e50549d0b03e713376d50a9c!iOS!1.0.2","Accept-Encoding":"gzip, deflate","Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","Connection":"keep-alive","Host":"wlapp.ccdy.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Upgrade-Insecure-Requests":"1","Accept-Language":"zh-cn"}";
 
 const readaccountbodyArr = [];
-let readaccountbodyVal = "";
+let readaccountbodyVal = "jsondata=%7B%20%20%22read_weal%22%20%3A%200%2C%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22securitykey%22%20%3A%20%22%22%2C%20%20%22paytype%22%20%3A%201%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100370%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%2C%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22artid%22%20%3A%20%22806914832%22%2C%20%20%22accountType%22%20%3A%20%220%22%2C%20%20%22readmodel%22%20%3A%20%221%22%7D";
 
 const readaccountkeyArr = [];
-let readaccountkeyVal = "";
+let readaccountkeyVal = "{"Cookie":"JSESSIONID=9368BA03D26FE9ED6042FEC37DFC4786","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"616","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const infomebodyArr = [];
-let infomebodyVal = "";
+let infomebodyVal = "jsondata=%7B%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100107%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%7D";
 
 const infomekeyArr = [];
-let infomekeyVal = "";
+let infomekeyVal = "{"Cookie":"JSESSIONID=629391BB6B853076ED78FCE059BD0220","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"383","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const videoartlistbodyArr = [];
-let videoartlistbodyVal = "";
+let videoartlistbodyVal = "jsondata=%7B%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22connectionType%22%20%3A%20%22100%22%2C%20%20%22optaction%22%20%3A%20%22up%22%2C%20%20%22operatorType%22%20%3A%20%221%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22articlevideo%22%20%3A%20%221%22%2C%20%20%22time%22%20%3A%20%221613100430%22%2C%20%20%22cateid%22%20%3A%20%2253%22%2C%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22idfa%22%20%3A%20%22D248382E-5ADB-4BD5-9A95-CB645921BBA4%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%2C%20%20%22page%22%20%3A%201%7D";
 
 const videoartlistkeyArr = [];
-let videoartlistkeyVal = "";
+let videoartlistkeyVal = "{"Cookie":"JSESSIONID=9368BA03D26FE9ED6042FEC37DFC4786","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"694","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const videoreadaccountbodyArr = [];
-let videoreadaccountbodyVal = "";
+let videoreadaccountbodyVal = "jsondata=%7B%20%20%22read_weal%22%20%3A%200%2C%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22securitykey%22%20%3A%20%22%22%2C%20%20%22paytype%22%20%3A%202%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100464%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%2C%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22artid%22%20%3A%20%22806854114%22%2C%20%20%22accountType%22%20%3A%20%220%22%2C%20%20%22readmodel%22%20%3A%20%221%22%7D";
 
 const videoreadaccountkeyArr = [];
-let videoreadaccountkeyVal = "";
+let videoreadaccountkeyVal = "{"Cookie":"JSESSIONID=9368BA03D26FE9ED6042FEC37DFC4786","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"616","Accept-Language":"zh-Hans-CN;q=1"}";
 
 const artdetailbodyArr = [];
-let artdetailbodyVal = "";
+let artdetailbodyVal = "jsondata=%7B%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22request_id%22%20%3A%20%221613100430462269%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100432%22%2C%20%20%22relate%22%20%3A%20%221%22%2C%20%20%22scene_type%22%20%3A%20%22%22%2C%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22artid%22%20%3A%20%22806854114%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%7D";
 
 const artdetailkeyArr = [];
-let artdetailkeyVal = "";
+let artdetailkeyVal = {"Cookie":"JSESSIONID=9368BA03D26FE9ED6042FEC37DFC4786","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"560","Accept-Language":"zh-Hans-CN;q=1"}"";
 
 if ($.isNode()) {
-//    Object.keys(getdomainbodyVal).forEach((item) => {
-//     if (getdomainbodyVal[item]) {
-//       getdomainbodyArr.push(getdomainbodyVal[item])
-//     }
-//   });
+   Object.keys(getdomainbodyVal).forEach((item) => {
+    if (getdomainbodyVal[item]) {
+      getdomainbodyArr.push(getdomainbodyVal[item])
+    }
+  });
 
-//   Object.keys(getdomainkeyVal).forEach((item) => {
-//     if (getdomainkeyVal[item]) {
-//       getdomainkeyArr.push(getdomainkeyVal[item])
-//     }
-//   });
+  Object.keys(getdomainkeyVal).forEach((item) => {
+    if (getdomainkeyVal[item]) {
+      getdomainkeyArr.push(getdomainkeyVal[item])
+    }
+  });
 
-//   Object.keys(userloginbodyVal).forEach((item) => {
-//     if (userloginbodyVal[item]) {
-//       userloginbodyArr.push(userloginbodyVal[item])
-//     }
-//   });
+  Object.keys(userloginbodyVal).forEach((item) => {
+    if (userloginbodyVal[item]) {
+      userloginbodyArr.push(userloginbodyVal[item])
+    }
+  });
 
-//   Object.keys(userloginkeyVal).forEach((item) => {
-//     if (userloginkeyVal[item]) {
-//       userloginkeyArr.push(userloginkeyVal[item])
-//     }
-//   });
+  Object.keys(userloginkeyVal).forEach((item) => {
+    if (userloginkeyVal[item]) {
+      userloginkeyArr.push(userloginkeyVal[item])
+    }
+  });
 
-//   Object.keys(artlistbodyVal).forEach((item) => {
-//     if (artlistbodyVal[item]) {
-//       artlistbodyArr.push(artlistbodyVal[item])
-//     }
-//   });
+  Object.keys(artlistbodyVal).forEach((item) => {
+    if (artlistbodyVal[item]) {
+      artlistbodyArr.push(artlistbodyVal[item])
+    }
+  });
 
-//   Object.keys(artlistkeyVal).forEach((item) => {
-//     if (artlistkeyVal[item]) {
-//       artlistkeyArr.push(artlistkeyVal[item])
-//     }
-//   });
+  Object.keys(artlistkeyVal).forEach((item) => {
+    if (artlistkeyVal[item]) {
+      artlistkeyArr.push(artlistkeyVal[item])
+    }
+  });
 
-//   Object.keys(artstationurlVal).forEach((item) => {
-//     if (artstationurlVal[item]) {
-//       artstationurlArr.push(artstationurlVal[item])
-//     }
-//   });
+  Object.keys(artstationurlVal).forEach((item) => {
+    if (artstationurlVal[item]) {
+      artstationurlArr.push(artstationurlVal[item])
+    }
+  });
 
-//   Object.keys(artstationkeyVal).forEach((item) => {
-//     if (artstationkeyVal[item]) {
-//       artstationkeyArr.push(artstationkeyVal[item])
-//     }
-//   });
+  Object.keys(artstationkeyVal).forEach((item) => {
+    if (artstationkeyVal[item]) {
+      artstationkeyArr.push(artstationkeyVal[item])
+    }
+  });
 
-//   Object.keys(readaccountbodyVal).forEach((item) => {
-//     if (readaccountbodyVal[item]) {
-//       readaccountbodyArr.push(readaccountbodyVal[item])
-//     }
-//   });
+  Object.keys(readaccountbodyVal).forEach((item) => {
+    if (readaccountbodyVal[item]) {
+      readaccountbodyArr.push(readaccountbodyVal[item])
+    }
+  });
 
-//   Object.keys(readaccountkeyVal).forEach((item) => {
-//     if (readaccountkeyVal[item]) {
-//       readaccountkeyArr.push(readaccountkeyVal[item])
-//     }
-//   });
+  Object.keys(readaccountkeyVal).forEach((item) => {
+    if (readaccountkeyVal[item]) {
+      readaccountkeyArr.push(readaccountkeyVal[item])
+    }
+  });
 
-//   Object.keys(infomebodyVal).forEach((item) => {
-//     if (infomebodyVal[item]) {
-//       infomebodyArr.push(infomebodyVal[item])
-//     }
-//   });
+  Object.keys(infomebodyVal).forEach((item) => {
+    if (infomebodyVal[item]) {
+      infomebodyArr.push(infomebodyVal[item])
+    }
+  });
 
-//   Object.keys(infomekeyVal).forEach((item) => {
-//     if (infomekeyVal[item]) {
-//       infomekeyArr.push(infomekeyVal[item])
-//     }
-//   });
+  Object.keys(infomekeyVal).forEach((item) => {
+    if (infomekeyVal[item]) {
+      infomekeyArr.push(infomekeyVal[item])
+    }
+  });
 
-//   Object.keys(videoartlistbodyVal).forEach((item) => {
-//     if (videoartlistbodyVal[item]) {
-//       videoartlistbodyArr.push(videoartlistbodyVal[item])
-//     }
-//   });
+  Object.keys(videoartlistbodyVal).forEach((item) => {
+    if (videoartlistbodyVal[item]) {
+      videoartlistbodyArr.push(videoartlistbodyVal[item])
+    }
+  });
 
-//   Object.keys(videoartlistkeyVal).forEach((item) => {
-//     if (videoartlistkeyVal[item]) {
-//       videoartlistkeyArr.push(videoartlistkeyVal[item])
-//     }
-//   });
+  Object.keys(videoartlistkeyVal).forEach((item) => {
+    if (videoartlistkeyVal[item]) {
+      videoartlistkeyArr.push(videoartlistkeyVal[item])
+    }
+  });
 
-//   Object.keys(videoreadaccountbodyVal).forEach((item) => {
-//     if (videoreadaccountbodyVal[item]) {
-//       videoreadaccountbodyArr.push(videoreadaccountbodyVal[item])
-//     }
-//   });
+  Object.keys(videoreadaccountbodyVal).forEach((item) => {
+    if (videoreadaccountbodyVal[item]) {
+      videoreadaccountbodyArr.push(videoreadaccountbodyVal[item])
+    }
+  });
 
-//   Object.keys(videoreadaccountkeyVal).forEach((item) => {
-//     if (videoreadaccountkeyVal[item]) {
-//       videoreadaccountkeyArr.push(videoreadaccountkeyVal[item])
-//     }
-//   });
+  Object.keys(videoreadaccountkeyVal).forEach((item) => {
+    if (videoreadaccountkeyVal[item]) {
+      videoreadaccountkeyArr.push(videoreadaccountkeyVal[item])
+    }
+  });
 
-//   Object.keys(artdetailbodyVal).forEach((item) => {
-//     if (artdetailbodyVal[item]) {
-//       artdetailbodyArr.push(artdetailbodyVal[item])
-//     }
-//   });
+  Object.keys(artdetailbodyVal).forEach((item) => {
+    if (artdetailbodyVal[item]) {
+      artdetailbodyArr.push(artdetailbodyVal[item])
+    }
+  });
 
-//   Object.keys(artdetailkeyVal).forEach((item) => {
-//     if (artdetailkeyVal[item]) {
-//       artdetailkeyArr.push(artdetailkeyVal[item])
-//     }
-//  });
+  Object.keys(artdetailkeyVal).forEach((item) => {
+    if (artdetailkeyVal[item]) {
+      artdetailkeyArr.push(artdetailkeyVal[item])
+    }
+ });
 
 //   getdomainbodyArr.push('jsondata=%7B%20%20%22openid%22%20%3A%20%22c12c9cf6e50549d0b03e713376d50a9c%22%2C%20%20%22os%22%20%3A%20%22iOS%22%2C%20%20%22channel%22%20%3A%20%22iOS%22%2C%20%20%22appversioncode%22%20%3A%20%22102%22%2C%20%20%22time%22%20%3A%20%221613100202%22%2C%20%20%22apptoken%22%20%3A%20%22xzwltoken070704%22%2C%20%20%22appid%22%20%3A%20%22xzwl%22%2C%20%20%22appversion%22%20%3A%20%221.0.2%22%7D')
 //   getdomainkeyArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"app.zhongchuanjukan.com","User-Agent":"wen lu kan dian/1.0.2 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"383","Accept-Language":"zh-Hans-CN;q=1"}')
