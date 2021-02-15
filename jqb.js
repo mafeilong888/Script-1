@@ -47,8 +47,12 @@ let jqbbody1 = 'sign=49500b63ecb2eb343faffa1ce78e5f7a&adconfigid=8&channelID=2&t
 let jqbbody1 = 'sign=8e40192200e65cf119195f11edb87d6c&adconfigid=9&channelID=2&timestamp=1613361015494&type=3&uid=8505&ver=103'
 //let jqbbody5 = $.getdata('jqbbody5')
 let jqbbody1 = 'sign=df01c4e8b045451457f9f21c090f7362&adconfigid=10&channelID=2&timestamp=1613360824066&type=3&uid=8505&ver=103'
-let jqbrwbody = $.getdata('jqbrwbody')
-let jqbzpbody = $.getdata('jqbzpbody')
+//let jqbrwbody = $.getdata('jqbrwbody')
+let jqbrwbody = 'uid=8505&channelID=2&type=1&ver=103'
+
+//let jqbzpbody = $.getdata('jqbzpbody')
+let jqbzpbody = 'sign=68efdad3e45b1cefd5659442abac1dc8&channelID=2&timestamp=1613358233507&type=4&uid=8505&ver=103'
+
 !(async () => {
   if (typeof $request !== "undefined") {
 	await jqbck()
