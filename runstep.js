@@ -40,18 +40,19 @@ let runstepkeyVal = "";
 
 
 if ($.isNode()) {
-Object.keys(runsteptokenVal).forEach((item) => {
-    if (runsteptokenVal[item]) {
-      runsteptokenArr.push(runsteptokenVal[item])
-    }
-  });
+// Object.keys(runsteptokenVal).forEach((item) => {
+//     if (runsteptokenVal[item]) {
+//       runsteptokenArr.push(runsteptokenVal[item])
+//     }
+//   });
 
-  Object.keys(runstepkeyVal).forEach((item) => {
-    if (runstepkeyVal[item]) {
-      runstepkeyArr.push(runstepkeyVal[item])
-    }
-  });
-
+//   Object.keys(runstepkeyVal).forEach((item) => {
+//     if (runstepkeyVal[item]) {
+//       runstepkeyArr.push(runstepkeyVal[item])
+//     }
+ // });
+runsteptokenArr.push(wx12b60cc9e37c9240&version)
+  runstepkeyArr.push({"Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Referer":"https://servicewechat.com/wx12b60cc9e37c9240/22/page-frame.html","Content-Type":"application/x-www-form-urlencoded","Host":"runstep.kujievip.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022c) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn"})
 } else {
   runsteptokenArr.push($.getdata('runsteptoken'));
   runstepkeyArr.push($.getdata('runstepkey'));
