@@ -63,7 +63,7 @@ await wnbtj();
 //蜗牛吧数据
 function wnbck() {
    if ($request.url.indexOf("receiveSystem") > -1){
-  $.setdata($request.url,'wnburl')
+  $.setdata($request.url,'https://api.snail2020.com/api/hb/hb/receiveSystem')
     //$.log(wnburl)
   wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem'
     $.setdata(JSON.stringify($request.headers),'wnbhd')
