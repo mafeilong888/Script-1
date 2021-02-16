@@ -26,8 +26,7 @@ jobs:
       - name: '运行 【金钱豹】'
         run: |
           node jqb.js
-        env:
-       	              
+        env:    	              
           jqburl: ${{ secrets.jqburl }}
           jqbhd: ${{ secrets.jqbhd }}
           jqbggbody: ${{ secrets.jqbggbody }}
