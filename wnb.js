@@ -25,11 +25,15 @@ https://raw.githubusercontent.com/age174/-/main/73DE034A-E0FA-4858-B10C-AE50CE82
 hostname = api.snail2020.com
 */
 const $ = new Env('蜗牛吧');
-let wnburl = $.getdata('wnburl')
-let wnburl = $.getdata('wnburl')
+//let wnburl = $.getdata('wnburl')
+let wnburl = 'wnburl'
 
-let wnbhd = $.getdata('wnbhd')
-let wnbbody = $.getdata('wnbbody')
+//let wnbhd = $.getdata('wnbhb')
+let wnbhd = 'wnbhd'
+
+//let wnbbody = $.getdata('wnbbody')
+let wnbbody = 'wnbbody'
+
 !(async () => {
   if (typeof $request !== "undefined") {
       await wnbck()
