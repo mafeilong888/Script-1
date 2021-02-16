@@ -65,10 +65,12 @@ function wnbck() {
    if ($request.url.indexOf("receiveSystem") > -1){
   $.setdata($request.url,'wnburl')
     //$.log(wnburl)
+    let wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem'
     $.setdata(JSON.stringify($request.headers),'wnbhd')
 $.log(wnbhd)
 $.setdata($request.body,'wnbbody')
 $.log(wnbbody)
+     
    $.msg($.name,"","蜗牛吧数据获取成功！")
   }
 }
@@ -160,7 +162,7 @@ if(result.code == 400 || result.code == 411){
 function wnbqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('https://api.snail2020.com/api/hb/hb/receiveSystem') === "undefined") {
+      if (typeof $.getdata('wnburl') === "undefined") {
         $.msg($.name,"",'请先获取蜗牛吧数据!😓',)
         $.done()
       }
