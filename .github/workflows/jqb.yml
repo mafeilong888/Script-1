@@ -27,7 +27,11 @@ jobs:
         run: |
           node jqb.js
         env:
-          
+          jqbbody1: ${{ secrets.jqbbody1 }}:  
+          jqbbody2: ${{ secrets.jqbbody2 }}:  
+          jqbbody3: ${{ secrets.jqbbody3 }}:  
+          jqbbody4: ${{ secrets.jqbbody4 }}:  
+          jqbbody5: ${{ secrets.jqbbody5 }} 
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
