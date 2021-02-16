@@ -27,7 +27,8 @@ jobs:
         run: |
           node runstep.js
         env:
-          
+          runsteptoken: ${{ secrets.runsteptoken }}
+          runstepkey: ${{ secrets.runstepkey }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
