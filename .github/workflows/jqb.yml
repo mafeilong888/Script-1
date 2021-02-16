@@ -27,12 +27,11 @@ jobs:
         run: |
           node jqb.js
         env:
-          ke
        	  jqburl: ${{ secrets.jqburl }}
-	        jqbhd: ${{ secrets.jqbhd }}
-	        jqbggbody: ${{ secrets.jqbggbody }}
-	        jqbqdbody: ${{ secrets.jqbqdbody }}
-	        jqbbody1: ${{ secrets.jqbbody1 }}
+	  jqbhd: ${{ secrets.jqbhd }}
+	  jqbggbody: ${{ secrets.jqbggbody }}
+	  jqbqdbody: ${{ secrets.jqbqdbody }}
+	  jqbbody1: ${{ secrets.jqbbody1 }}
           jqbbody2: ${{ secrets.jqbbody2 }}
           jqbbody3: ${{ secrets.jqbbody3 }}
           jqbbody4: ${{ secrets.jqbbody4 }}
