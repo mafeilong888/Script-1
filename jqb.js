@@ -30,7 +30,7 @@ hostname = jqb.iphonezhuan.com
 */
 
 
-//let jqburl = $.getdata('jqburl')
+let jqburl = $.getdata('jqburl')
 let jqburl = '"http://jqb.iphonezhuan.com/submitsign"'
 //let jqbhd = $.getdata('jqbhd')
 let jqbhd = '{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"jqb.iphonezhuan.com","User-Agent":"%E6%99%BA%E8%83%BD%E4%BC%98%E9%80%89/1.03 CFNetwork/1125.2 Darwin/19.4.0","Content-Length":"28","Accept-Language":"zh-cn"}'
@@ -50,7 +50,7 @@ let jqbbody4 = 'sign=8e40192200e65cf119195f11edb87d6c&adconfigid=9&channelID=2&t
 let jqbbody5 = 'sign=df01c4e8b045451457f9f21c090f7362&adconfigid=10&channelID=2&timestamp=1613360824066&type=3&uid=8505&ver=103'
 //let jqbrwbody = $.getdata('jqbrwbody')
 let jqbrwbody = 'uid=8505&channelID=2&type=1&ver=103'
-//let jqbzpbody = $.getdata('jqbzpbody')
+let jqbzpbody = $.getdata('jqbzpbody')
 let jqbzpbody = 'sign=68efdad3e45b1cefd5659442abac1dc8&channelID=2&timestamp=1613358233507&type=4&uid=8505&ver=103'
 
 !(async () => {
