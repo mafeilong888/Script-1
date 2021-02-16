@@ -30,7 +30,7 @@ hostname = jqb.iphonezhuan.com
 */
 
 //let jqburl = $.getdata('jqburl')
-let jqburl = '"http://jqb.iphonezhuan.com/submitsign"'
+let jqburl = 'http://jqb.iphonezhuan.com/submitsign'
 //let jqbhd = $.getdata('jqbhd')
 let jqbhd = '{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"jqb.iphonezhuan.com","User-Agent":"%E6%99%BA%E8%83%BD%E4%BC%98%E9%80%89/1.03 CFNetwork/1125.2 Darwin/19.4.0","Content-Length":"28","Accept-Language":"zh-cn"}'
 //let jqbggbody = $.getdata('jqbggbody')
