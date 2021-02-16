@@ -64,7 +64,7 @@ await wnbtj();
 function wnbck() {
    if ($request.url.indexOf("receiveSystem") > -1){
   $.setdata($request.url,'https://api.snail2020.com/api/hb/hb/receiveSystem')
-    //$.log(wnburl)
+    $.log(wnburl)
   wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem'
     $.setdata(JSON.stringify($request.headers),'wnbhd')
 $.log(wnbhd)
