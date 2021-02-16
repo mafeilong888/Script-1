@@ -28,7 +28,7 @@
 [MITM]
 hostname = jqb.iphonezhuan.com
 */
-const $ = new Env('金钱豹');
+
 
 //let jqburl = $.getdata('jqburl')
 let jqburl = '"http://jqb.iphonezhuan.com/submitsign"'
