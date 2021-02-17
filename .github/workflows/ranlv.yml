@@ -27,7 +27,9 @@ jobs:
         run: |
           node ranlv.js 
         env:
-          
+          rlurl: ${{ secrets.rlurl }}
+          rlheader: ${{ secrets.rlheader }}
+       
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
