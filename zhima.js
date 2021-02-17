@@ -85,32 +85,32 @@ if ($.isNode() && process.env.ZM_zhimabody) {
       COOKIES_SPLIT
     )} =============\n`
     );
-    if (
-        process.env.ZM_zhimabody &&
-        process.env.ZM_zhimabody.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middlezhimabody = process.env.ZM_zhimabody.split(COOKIES_SPLIT);
-    } else {
-        middlezhimabody = process.env.ZM_zhimabody.split();
-    }
+//     if (
+//         process.env.ZM_zhimabody &&
+//         process.env.ZM_zhimabody.indexOf(COOKIES_SPLIT) > -1
+//     ) {
+//         middlezhimabody = process.env.ZM_zhimabody.split(COOKIES_SPLIT);
+//     } else {
+//         middlezhimabody = process.env.ZM_zhimabody.split();
+//     }
     
-}
-if (COOKIE.zhimabodyArr) {
-    ZM_COOKIES = {
-        "zhimabodyVal": COOKIE.zhimabodyVal.split('\n'),
+// }
+// if (COOKIE.zhimabodyArr) {
+//     ZM_COOKIES = {
+//         "zhimabodyVal": COOKIE.zhimabodyVal.split('\n'),
     
 
 
-    }
-    Length = ZM_COOKIES.zhimabodyArr.length;
-}
-if (!COOKIE.zhimabodyArr) {
-    if ($.isNode()) {
-        Object.keys(middlezhimabody).forEach((item) => {
-            if (middlezhimabody[item]) {
-                zhimabodyArr.push(middlezhimabody[item]);
-            }
-        });
+//     }
+//     Length = ZM_COOKIES.zhimabodyArr.length;
+// }
+// if (!COOKIE.zhimabodyArr) {
+//     if ($.isNode()) {
+//         Object.keys(middlezhimabody).forEach((item) => {
+//             if (middlezhimabody[item]) {
+//                 zhimabodyArr.push(middlezhimabody[item]);
+//             }
+//         });
          zhimabodyArr.push('appversion=10&desarr=B9UrMK6XqhbGjEcFP3eNKnGZOgPLMKoE0LqUPC7rhuvRBwh5rmsJ85GcyX87%2BNssL1EvonhUmpN07J1H6OW9MpP5Vvvl4Yq5CQaPmwzobFj0ddLIreGshvXGPjmzxk7Aj9aLIU4rp4CW5MiXgQdVu4TS3ZxzCM12ZIYXxFK71xWfgPbI3Pr1RhtszJ30ZV/fWcPacfk0ZOgPXuXmK9edHIRS6Wg/S8A3d7%2BQpII/snWBIsTsYKM/cyyCTfcwUjsE9uYU5MQycuBQtCdMXE9K7aY4lfbkojuXE6Td0Fb3doGRrk4i3ysobsJAGHmlqSpHpRU1G6x%2Bb/xe5jnp9ZA%2B15mAqy4W4RFRt3Gpjx3CY9Ctssi%2Buz9Jn0mljnD9Wwjm%2BBlXBsQzvE2aO0p3Yo7iSEsDDiLfKyhuwkAtqrc/ppaCNZ3flub3bPZb1A6D9TCcdCkbeK7VJgibQpLIreGshvXGE9lcJFXx2EgkMI8OReFcZVgYBqizXSw69MsoeuZ71FhHQILR89WJ%2BWVbusrENTZLvNlDnWu6iRY')
     } else {
         zhimabodyArr.push($.getdata("zhimabody"));
