@@ -83,8 +83,8 @@ if ($.isNode()) {
 //    rlbody = process.env.RLBODY.split()
 //   };
 	
-    rlurlArr.push(access_token=f2e1d57418bb3d6a0439b494f3468a75&client=1&member_id=196415&user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJSYW5sdiBKV1QiLCJpYXQiOjE2MTM1MjIyODksImV4cCI6MzIyNzA0NDU3OCwiYXVkIjoiUmFubHYiLCJzdWIiOiJSYW5sdiIsImRhdGEiOnsibWVtYmVyX2lkIjoxOTY0MTUsImF2YXRhciI6Imh0dHA6XC9cL3Jhbmx2Lmx2ZmFjbi5jb21cL3N0YXRpY1wvbW9kdWxlXC9hZG1pblwvaW1nXC9kZWZhdWx0X2hlYWQuanBnIiwibmlja25hbWUiOiJcdTc1MjhcdTYyMzczMDcyNDY1OSIsIm1vYmlsZSI6IjEzNTg2Mzg3NjY5In19.R04nY88uSZ4Vk21zc6FHouQBolnuIYqXtCn5Z1Io7bM&video_id=27462)
-    rlheaderArr.push({"Cookie":"acw_tc=24f949ab16135219398591192e5953a23b38455cb996f54a16e854cc89","Accept":"*/*","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"ranlv.lvfacn.com","User-Agent":"ran lu shi pin/1.0.49 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"0","Accept-Language":"zh-Hans-CN;q=1"})
+    rlurlArr.push('access_token=f2e1d57418bb3d6a0439b494f3468a75&client=1&member_id=196415&user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJSYW5sdiBKV1QiLCJpYXQiOjE2MTM1MjIyODksImV4cCI6MzIyNzA0NDU3OCwiYXVkIjoiUmFubHYiLCJzdWIiOiJSYW5sdiIsImRhdGEiOnsibWVtYmVyX2lkIjoxOTY0MTUsImF2YXRhciI6Imh0dHA6XC9cL3Jhbmx2Lmx2ZmFjbi5jb21cL3N0YXRpY1wvbW9kdWxlXC9hZG1pblwvaW1nXC9kZWZhdWx0X2hlYWQuanBnIiwibmlja25hbWUiOiJcdTc1MjhcdTYyMzczMDcyNDY1OSIsIm1vYmlsZSI6IjEzNTg2Mzg3NjY5In19.R04nY88uSZ4Vk21zc6FHouQBolnuIYqXtCn5Z1Io7bM&video_id=27462')
+    rlheaderArr.push('{"Cookie":"acw_tc=24f949ab16135219398591192e5953a23b38455cb996f54a16e854cc89","Accept":"*/*","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"ranlv.lvfacn.com","User-Agent":"ran lu shi pin/1.0.49 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"0","Accept-Language":"zh-Hans-CN;q=1"}')
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
