@@ -27,12 +27,12 @@ const notify = $.isNode() ?require('./sendNotify') : '';
 let status, videoid,myid,supportvideoid;
 status = (status = ($.getval("rlstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const rlurlArr = [], rlheaderArr = [],rlbodyArr = []
-//let rlurl = $.getdata('rlurl')
-//let rlheader = $.getdata('rlheader')
-//let rlbody = $.getdata('rlbody')
-let rlurl = 'access_token=f2e1d57418bb3d6a0439b494f3468a75&client=1&member_id=196415&user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJSYW5sdiBKV1QiLCJpYXQiOjE2MTM1MjIyODksImV4cCI6MzIyNzA0NDU3OCwiYXVkIjoiUmFubHYiLCJzdWIiOiJSYW5sdiIsImRhdGEiOnsibWVtYmVyX2lkIjoxOTY0MTUsImF2YXRhciI6Imh0dHA6XC9cL3Jhbmx2Lmx2ZmFjbi5jb21cL3N0YXRpY1wvbW9kdWxlXC9hZG1pblwvaW1nXC9kZWZhdWx0X2hlYWQuanBnIiwibmlja25hbWUiOiJcdTc1MjhcdTYyMzczMDcyNDY1OSIsIm1vYmlsZSI6IjEzNTg2Mzg3NjY5In19.R04nY88uSZ4Vk21zc6FHouQBolnuIYqXtCn5Z1Io7bM&video_id=43664'
-let rlheader = '{"Cookie":"acw_tc=24f949ab16135219398591192e5953a23b38455cb996f54a16e854cc89","Accept":"*/*","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"ranlv.lvfacn.com","User-Agent":"ran lu shi pin/1.0.49 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"0","Accept-Language":"zh-Hans-CN;q=1"}'
-let rlbody = 'rlbody'
+let rlurl = $.getdata('rlurl')
+let rlheader = $.getdata('rlheader')
+let rlbody = $.getdata('rlbody')
+//let rlurl = 'access_token=f2e1d57418bb3d6a0439b494f3468a75&client=1&member_id=196415&user_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJSYW5sdiBKV1QiLCJpYXQiOjE2MTM1MjIyODksImV4cCI6MzIyNzA0NDU3OCwiYXVkIjoiUmFubHYiLCJzdWIiOiJSYW5sdiIsImRhdGEiOnsibWVtYmVyX2lkIjoxOTY0MTUsImF2YXRhciI6Imh0dHA6XC9cL3Jhbmx2Lmx2ZmFjbi5jb21cL3N0YXRpY1wvbW9kdWxlXC9hZG1pblwvaW1nXC9kZWZhdWx0X2hlYWQuanBnIiwibmlja25hbWUiOiJcdTc1MjhcdTYyMzczMDcyNDY1OSIsIm1vYmlsZSI6IjEzNTg2Mzg3NjY5In19.R04nY88uSZ4Vk21zc6FHouQBolnuIYqXtCn5Z1Io7bM&video_id=43664'
+//let rlheader = '{"Cookie":"acw_tc=24f949ab16135219398591192e5953a23b38455cb996f54a16e854cc89","Accept":"*/*","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Host":"ranlv.lvfacn.com","User-Agent":"ran lu shi pin/1.0.49 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Length":"0","Accept-Language":"zh-Hans-CN;q=1"}'
+//let rlbody = 'rlbody'
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
