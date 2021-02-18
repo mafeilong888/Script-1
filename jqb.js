@@ -59,6 +59,9 @@ if ($.isNode()) {
 	jqbbody1 = process.env.jqbbody1
 	jqbbody2 = process.env.jqbbody2
 	jqbbody3 = process.env.jqbbody3
+	jqbbody3 = process.env.jqbbody3
+	jqbbody4 = process.env.jqbbody4
+	jqbbody5 = process.env.jqbbody5
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
