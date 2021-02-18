@@ -3,7 +3,7 @@ name: 蜗牛吧
 on:
   workflow_dispatch:
   schedule:
-     - cron: '5 0-15 * * *'
+     - cron: '40 15 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -27,7 +27,9 @@ jobs:
         run: |
           node wnb.js 
         env:
-        
+          wnburl: ${{ secrets.wnburl }}
+          wnbhb: ${{ secrets.wnbhb }}
+          wnbbody: ${{ secrets.wnbbody }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
