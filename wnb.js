@@ -39,39 +39,23 @@ if ($.isNode()) {
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   
   
-
-  }
+ }
 })()
-
   .catch((e) => $.logErr(e))
-
   .finally(() => $.done())
-
 //蜗牛吧数据
-
 function wnbck() {
-
    if ($request.url.indexOf("receiveSystem") > -1){
-
   $.setdata($request.url,'wnburl')
-
     //$.log(wnburl)
-
     $.setdata(JSON.stringify($request.headers),'wnbhd')
-
 $.log(wnbhd)
-
 $.setdata($request.body,'wnbbody')
-
 $.log(wnbbody)
-
    $.msg($.name,"","蜗牛吧数据获取成功！")
-
   }
-
 }
 
-}
 !(async () => {
   if (typeof $request !== "undefined") {
       await wnbck()
