@@ -303,7 +303,7 @@ function jqbgg(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbggbody,}
       $.post(url, async (err, resp, data) => {
         try {
