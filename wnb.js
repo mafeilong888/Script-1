@@ -25,14 +25,23 @@ https://raw.githubusercontent.com/age174/-/main/73DE034A-E0FA-4858-B10C-AE50CE82
 hostname = api.snail2020.com
 */
 const $ = new Env('蜗牛吧');
-//let wnburl = $.getdata('wnburl')
-let wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem';
+let wnburl = $.getdata('wnburl')
+//let wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem';
 
-//let wnbhd = $.getdata('wnbhb')
-let wnbhd = '{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"api.snail2020.com","User-Agent":"iPhone12,1(iOS/13.4.1) Uninview(Uninview/1.0.0) Weex/0.26.0 828x1792","Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4NzI2Mzk3NTksInN1YiI6ImxvZ2luX3Rva2VuIiwibmJmIjoxNjEzNDM5NzU5LCJhdWQiOiJ1c2VyIiwiaWF0IjoxNjEzNDM5NzU5LCJqdGkiOiI2MDJiMjMwZjUzZDlhIiwiaXNzIjoibWoiLCJzdGF0dXMiOjEsImRhdGEiOnsiaWQiOjg2OTY1fX0.D_3iHoy5zwPkvPHJUjfk_mAI2yAbrmSAFThoWpzwEhw","Content-Length":"103","Accept-Language":"zh-cn"}';
+let wnbhd = $.getdata('wnbhb')
+//let wnbhd = '{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"api.snail2020.com","User-Agent":"iPhone12,1(iOS/13.4.1) Uninview(Uninview/1.0.0) Weex/0.26.0 828x1792","Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4NzI2Mzk3NTksInN1YiI6ImxvZ2luX3Rva2VuIiwibmJmIjoxNjEzNDM5NzU5LCJhdWQiOiJ1c2VyIiwiaWF0IjoxNjEzNDM5NzU5LCJqdGkiOiI2MDJiMjMwZjUzZDlhIiwiaXNzIjoibWoiLCJzdGF0dXMiOjEsImRhdGEiOnsiaWQiOjg2OTY1fX0.D_3iHoy5zwPkvPHJUjfk_mAI2yAbrmSAFThoWpzwEhw","Content-Length":"103","Accept-Language":"zh-cn"}';
 
-//let wnbbody = $.getdata('wnbbody')
-let wnbbody = 'district=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%98%89%E5%85%B4%E5%B8%82%E6%B5%B7%E5%AE%81%E5%B8%82&type=default';
+let wnbbody = $.getdata('wnbbody')
+//let wnbbody = 'district=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%98%89%E5%85%B4%E5%B8%82%E6%B5%B7%E5%AE%81%E5%B8%82&type=default';
+
+if ($.isNode()) {
+	wnburl = process.env.wnburl
+  wnbhd = process.env.wnbhd
+  wnbbody = process.env.wnbbody
+	
+	
+  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+}
 
 
 
@@ -81,7 +90,7 @@ function wnbhb(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd)
         body :  wnbbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -106,7 +115,7 @@ function wnbtj(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/info/bindInviteUser',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd)
         body :  `inviteMobile=15894440800&countryCode=86
 `,}
       $.post(url, async (err, resp, data) => {
@@ -133,7 +142,7 @@ function wnbxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/assets/getAssets',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd)
         body :  ``,}
       $.get(url, async (err, resp, data) => {
         try {
@@ -167,7 +176,7 @@ function wnbqd(timeout = 0) {
       }
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
-        headers : JSON.parse($.getdata('wnbhd')),
+        headers : JSON.parse(wnbhd)
         body : 'os=iOS'
 }
       $.post(url, async (err, resp, data) => {
