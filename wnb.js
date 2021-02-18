@@ -171,11 +171,11 @@ if(result.code == 400 || result.code == 411){
 //蜗牛吧广告金币
 function wnbqd(timeout = 0) {
   return new Promise((resolve) => {
-//     setTimeout( ()=>{
-//       if (typeof $.getdata('wnburl') === "undefined") {
-//         $.msg($.name,"",'请先获取蜗牛吧数据!😓',)
-//         $.done()
-//       }
+	/*    setTimeout( ()=>{
+      if (typeof $.getdata('wnburl') === "undefined") {
+        $.msg($.name,"",'请先获取蜗牛吧数据!😓',)
+        $.done()
+      }*/
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveAdvGold',
         headers : JSON.parse(wnbhd),
