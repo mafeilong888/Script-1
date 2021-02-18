@@ -190,7 +190,7 @@ if(result.code == 400){
         }
       })
     },timeout)
-  })
+  
 }
 
 
