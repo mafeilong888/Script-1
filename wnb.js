@@ -30,7 +30,7 @@ let wnbhd = $.getdata('wnbhd')
 let wnbbody = $.getdata('wnbbody')
 
 if ($.isNode()) {
-  wnburl = process.env.wnburl
+  
   wnbhd = process.env.wnbhd
   wnbbody = process.env.wnbbody
 	
