@@ -90,7 +90,7 @@ function wnbhb(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
-        headers : JSON.parse(wnbhd)
+        headers : JSON.parse(wnbhd),
         body :  wnbbody,}
       $.post(url, async (err, resp, data) => {
         try {
