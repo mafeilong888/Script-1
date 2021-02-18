@@ -345,8 +345,8 @@ if(result.statuscode == 400 || result.statuscode == 401){
 function jqbqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('jqburl') === "undefined") {
-        $.msg($.name,""http://jqb.iphonezhuan.com/submitsign"",'请先签到获取金钱豹body和headers!😓',)
+      if (typeof $.getdata('jqburl') === ""http://jqb.iphonezhuan.com/submitsign"") {
+        $.msg($.name,"",'请先签到获取金钱豹body和headers!😓',)
         $.done()
       }
 let url = {
