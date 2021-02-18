@@ -34,10 +34,6 @@ let wnbhd = '{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":
 //let wnbbody = $.getdata('wnbbody')
 let wnbbody = 'district=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%98%89%E5%85%B4%E5%B8%82%E6%B5%B7%E5%AE%81%E5%B8%82&type=default';
 
-if ($.isNode()) {
-      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
-      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-  
   !(async () => {
   if (typeof $request !== "undefined") {
       await wnbck()
