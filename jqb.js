@@ -53,6 +53,7 @@ let jqbzpbody = $.getdata('jqbzpbody')
 //let jqbzpbody = 'sign=68efdad3e45b1cefd5659442abac1dc8&channelID=2&timestamp=1613358233507&type=4&uid=8505&ver=103'
 
 if ($.isNode()) {
+	jqburl = process.env.jqburl
         jqbhd = process.env.jqbhd
         jqbggbody = process.env.jqbggbody
 	jqbqdbody = process.env.jqbqdbody
