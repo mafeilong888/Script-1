@@ -136,8 +136,8 @@ function wnbxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/assets/getAssets',
-        headers : JSON.parse(wnbhd),
-        body :  ``,}
+        headers : JSON.parse(wnbhd)
+}
       $.get(url, async (err, resp, data) => {
         try {
            
