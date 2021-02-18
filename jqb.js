@@ -187,7 +187,7 @@ function jqbsp2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbbody2,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -212,7 +212,7 @@ function jqbsp3(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbbody3,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -237,7 +237,7 @@ function jqbsp4(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbbody4,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -262,7 +262,7 @@ function jqbsp5(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbbody5,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -287,7 +287,7 @@ function jqbzp(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbzpbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -312,7 +312,7 @@ function jqbgg(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbggbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -337,7 +337,7 @@ function jqbrw(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/finishdailytask',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbrwbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -367,7 +367,7 @@ function jqbqd(timeout = 0) {
       }
 let url = {
         url : 'http://jqb.iphonezhuan.com/submitsign',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body : jqbqdbody,}
       $.post(url, async (err, resp, data) => {
         try {
