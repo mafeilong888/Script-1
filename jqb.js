@@ -29,28 +29,28 @@
 hostname = jqb.iphonezhuan.com
 */
 
-//let jqburl = $.getdata('jqburl')
-let jqburl = '"http://jqb.iphonezhuan.com/submitsign"'
-//let jqbhd = $.getdata('jqbhd')
-let jqbhd = '{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"jqb.iphonezhuan.com","User-Agent":"%E6%99%BA%E8%83%BD%E4%BC%98%E9%80%89/1.03 CFNetwork/1125.2 Darwin/19.4.0","Content-Length":"28","Accept-Language":"zh-cn"}'
-//let jqbggbody = $.getdata('jqbggbody')
-let jqbggbody = 'sign=59e5106c36588596fb54341defd24fdf&channelID=2&timestamp=1613358143454&type=2&uid=8505&ver=103'
-//let jqbqdbody = $.getdata('jqbqdbody')
-let jqbqdbody = 'channelID=2&uid=8505&ver=103'
-//let jqbbody1 = $.getdata('jqbbody1')
-let jqbbody1 = 'sign=f3eef20e1cac1d03fdc1a9f7911a2fd5&adconfigid=6&channelID=2&timestamp=1613359381776&type=3&uid=8505&ver=103'
-//let jqbbody2 = $.getdata('jqbbody2')
-let jqbbody2 = 'sign=c08a4c9d8c6573a2d0be4af79591c6d6&adconfigid=7&channelID=2&timestamp=1613361592290&type=3&uid=8505&ver=103'
-//let jqbbody3 = $.getdata('jqbbody3')
-let jqbbody3 = 'sign=49500b63ecb2eb343faffa1ce78e5f7a&adconfigid=8&channelID=2&timestamp=1613360966735&type=3&uid=8505&ver=103'
-//let jqbbody4 = $.getdata('jqbbody4')
-let jqbbody4 = 'sign=8e40192200e65cf119195f11edb87d6c&adconfigid=9&channelID=2&timestamp=1613361015494&type=3&uid=8505&ver=103'
-//let jqbbody5 = $.getdata('jqbbody5')
-let jqbbody5 = 'sign=df01c4e8b045451457f9f21c090f7362&adconfigid=10&channelID=2&timestamp=1613360824066&type=3&uid=8505&ver=103'
-//let jqbrwbody = $.getdata('jqbrwbody')
-let jqbrwbody = 'uid=8505&channelID=2&type=1&ver=103'
-//let jqbzpbody = $.getdata('jqbzpbody')
-let jqbzpbody = 'sign=68efdad3e45b1cefd5659442abac1dc8&channelID=2&timestamp=1613358233507&type=4&uid=8505&ver=103'
+let jqburl = $.getdata('jqburl')
+//let jqburl = '"http://jqb.iphonezhuan.com/submitsign"'
+let jqbhd = $.getdata('jqbhd')
+//let jqbhd = '{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"jqb.iphonezhuan.com","User-Agent":"%E6%99%BA%E8%83%BD%E4%BC%98%E9%80%89/1.03 CFNetwork/1125.2 Darwin/19.4.0","Content-Length":"28","Accept-Language":"zh-cn"}'/let jqbggbody = $.getdata('jqbggbody')
+let jqbggbody = $.getdata('jqbggbody')
+//let jqbggbody = 'sign=59e5106c36588596fb54341defd24fdf&channelID=2&timestamp=1613358143454&type=2&uid=8505&ver=103'
+let jqbqdbody = $.getdata('jqbqdbody')
+//let jqbqdbody = 'channelID=2&uid=8505&ver=103'
+let jqbbody1 = $.getdata('jqbbody1')
+//let jqbbody1 = 'sign=f3eef20e1cac1d03fdc1a9f7911a2fd5&adconfigid=6&channelID=2&timestamp=1613359381776&type=3&uid=8505&ver=103'
+let jqbbody2 = $.getdata('jqbbody2')
+//let jqbbody2 = 'sign=c08a4c9d8c6573a2d0be4af79591c6d6&adconfigid=7&channelID=2&timestamp=1613361592290&type=3&uid=8505&ver=103'
+let jqbbody3 = $.getdata('jqbbody3')
+//let jqbbody3 = 'sign=49500b63ecb2eb343faffa1ce78e5f7a&adconfigid=8&channelID=2&timestamp=1613360966735&type=3&uid=8505&ver=103'
+let jqbbody4 = $.getdata('jqbbody4')
+//let jqbbody4 = 'sign=8e40192200e65cf119195f11edb87d6c&adconfigid=9&channelID=2&timestamp=1613361015494&type=3&uid=8505&ver=103'
+let jqbbody5 = $.getdata('jqbbody5')
+//let jqbbody5 = 'sign=df01c4e8b045451457f9f21c090f7362&adconfigid=10&channelID=2&timestamp=1613360824066&type=3&uid=8505&ver=103'
+let jqbrwbody = $.getdata('jqbrwbody')
+//let jqbrwbody = 'uid=8505&channelID=2&type=1&ver=103'
+let jqbzpbody = $.getdata('jqbzpbody')
+//let jqbzpbody = 'sign=68efdad3e45b1cefd5659442abac1dc8&channelID=2&timestamp=1613358233507&type=4&uid=8505&ver=103'
 
 !(async () => {
   if (typeof $request !== "undefined") {
