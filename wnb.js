@@ -115,7 +115,7 @@ function wnbtj(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/info/bindInviteUser',
-        headers : JSON.parse(wnbhd)
+        headers : JSON.parse(wnbhd),
         body :  `inviteMobile=15894440800&countryCode=86
 `,}
       $.post(url, async (err, resp, data) => {
@@ -142,7 +142,7 @@ function wnbxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.snail2020.com/api/user/assets/getAssets',
-        headers : JSON.parse(wnbhd)
+        headers : JSON.parse(wnbhd),
         body :  ``,}
       $.get(url, async (err, resp, data) => {
         try {
@@ -176,7 +176,7 @@ function wnbqd(timeout = 0) {
       }
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
-        headers : JSON.parse(wnbhd)
+        headers : JSON.parse(wnbhd),
         body : 'os=iOS'
 }
       $.post(url, async (err, resp, data) => {
