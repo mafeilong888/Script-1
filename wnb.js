@@ -26,13 +26,13 @@ hostname = api.snail2020.com
 */
 const $ = new Env('蜗牛吧');
 //let wnburl = $.getdata('wnburl')
-let wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem';
+const wnburl = 'https://api.snail2020.com/api/hb/hb/receiveSystem';
 
 //let wnbhd = $.getdata('wnbhb')
-let wnbhd = '{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"api.snail2020.com","User-Agent":"iPhone12,1(iOS/13.4.1) Uninview(Uninview/1.0.0) Weex/0.26.0 828x1792","Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4NzI2Mzk3NTksInN1YiI6ImxvZ2luX3Rva2VuIiwibmJmIjoxNjEzNDM5NzU5LCJhdWQiOiJ1c2VyIiwiaWF0IjoxNjEzNDM5NzU5LCJqdGkiOiI2MDJiMjMwZjUzZDlhIiwiaXNzIjoibWoiLCJzdGF0dXMiOjEsImRhdGEiOnsiaWQiOjg2OTY1fX0.D_3iHoy5zwPkvPHJUjfk_mAI2yAbrmSAFThoWpzwEhw","Content-Length":"103","Accept-Language":"zh-cn"}';
+const wnbhd = '{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Host":"api.snail2020.com","User-Agent":"iPhone12,1(iOS/13.4.1) Uninview(Uninview/1.0.0) Weex/0.26.0 828x1792","Authorization":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE4NzI2Mzk3NTksInN1YiI6ImxvZ2luX3Rva2VuIiwibmJmIjoxNjEzNDM5NzU5LCJhdWQiOiJ1c2VyIiwiaWF0IjoxNjEzNDM5NzU5LCJqdGkiOiI2MDJiMjMwZjUzZDlhIiwiaXNzIjoibWoiLCJzdGF0dXMiOjEsImRhdGEiOnsiaWQiOjg2OTY1fX0.D_3iHoy5zwPkvPHJUjfk_mAI2yAbrmSAFThoWpzwEhw","Content-Length":"103","Accept-Language":"zh-cn"}';
 
 //let wnbbody = $.getdata('wnbbody')
-let wnbbody = 'district=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%98%89%E5%85%B4%E5%B8%82%E6%B5%B7%E5%AE%81%E5%B8%82&type=default';
+const wnbbody = 'district=%E6%B5%99%E6%B1%9F%E7%9C%81%E5%98%89%E5%85%B4%E5%B8%82%E6%B5%B7%E5%AE%81%E5%B8%82&type=default';
 
 !(async () => {
   if (typeof $request !== "undefined") {
