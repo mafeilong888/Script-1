@@ -170,7 +170,7 @@ function wnbqd(timeout = 0) {
       }
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveAdvGold',
-        headers : JSON.parse(wnbhd),
+        headers : JSON.parse($.getdata('wnbhd')),
         body : 'os=iOS'
 }
       $.post(url, async (err, resp, data) => {
