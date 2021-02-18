@@ -62,6 +62,8 @@ if ($.isNode()) {
 	jqbbody3 = process.env.jqbbody3
 	jqbbody4 = process.env.jqbbody4
 	jqbbody5 = process.env.jqbbody5
+	jqbrwbody = process.env.jqbrwbody
+	jqbzpbody = process.env.jqbzpbody
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
@@ -160,7 +162,7 @@ function jqbsp1(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://jqb.iphonezhuan.com/getintegrals',
-        headers : JSON.parse($.getdata('jqbhd')),
+        headers : JSON.parse(jqbhd),
         body :  jqbbody1,}
       $.post(url, async (err, resp, data) => {
         try {
