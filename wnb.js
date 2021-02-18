@@ -50,14 +50,21 @@ console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领
 console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
     await $.wait(61000);
     await wnbqd();
-
+console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
+    await $.wait(61000);
+    await wnbqd();
+console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
+    await $.wait(61000);
+    await wnbqd();
+	  
 for (let i = 0; i < 5; i++) {
       $.index = i + 1      
       console.log(`\n蜗牛吧开始执行第${i+1}次领取红包！💦\n等待3秒开始领取下一个红包`)
       await wnbhb();
       await $.wait(3000);
-}await wnbxx();
-await wnbtj();
+}
+	  await wnbxx();
+//await wnbtj();
 
 
   }
@@ -85,7 +92,8 @@ function wnbhb(timeout = 0) {
 let url = {
         url : 'https://api.snail2020.com/api/hb/hb/receiveSystem',
         headers : JSON.parse(wnbhd),
-        body :  wnbbody,}
+        body :  wnbbody
+}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -111,7 +119,7 @@ let url = {
         url : 'https://api.snail2020.com/api/user/info/bindInviteUser',
         headers : JSON.parse(wnbhd),
         body :  `inviteMobile=15894440800&countryCode=86
-`,}
+`}
       $.post(url, async (err, resp, data) => {
         try {
            
