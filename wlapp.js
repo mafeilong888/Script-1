@@ -378,7 +378,7 @@ async function showmsg2() {
 async function wlapp() {
   console.log(`\n✅ 执行【模拟用户登录】任务\n`)
   await getdomin();
-  await userlogin(jsessionid);
+  //await userlogin(jsessionid);
   console.log(`\n✅ 查询【用户账户】任务\n`)
   await infome(jsessionid)
   console.log(`\n✅ 执行【自动阅读】任务\n`)
