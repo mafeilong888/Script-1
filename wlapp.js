@@ -380,9 +380,9 @@ async function wlapp() {
   await getdomin();
   //await userlogin(jsessionid);
   console.log(`\n✅ 查询【用户账户】任务\n`)
-  await infome(jsessionid)
+ // await infome(jsessionid)
   console.log(`\n✅ 执行【自动阅读】任务\n`)
-  await artlist(jsessionid)
+  //await artlist(jsessionid)
   console.log(`🙇开始随机看一篇文章📄...\n`)
   console.log(`🆔【文章验证】:\n📄${jsessionid}\n`)
   await artstation(rdid, listid, appversion, openid, listid2)
