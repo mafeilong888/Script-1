@@ -9,8 +9,8 @@ const logs = 0;
 const notifyInterval = 1;
 //通知风格
 let tz = '';
-let tz2 = '';
 let version = $.getval('version') || "1.5.1"; //APP版本号,更新请到APP更改
+
 //////////////////////////////////////////////////////////////////
 //hour&min
 var hour = '';
@@ -40,39 +40,65 @@ let runstepkeyVal = "";
 
 
 if ($.isNode()) {
-// Object.keys(runsteptokenVal).forEach((item) => {
-//     if (runsteptokenVal[item]) {
-//       runsteptokenArr.push(runsteptokenVal[item])
-//     }
-//   });
+  
+if (process.env.RUNSTEP_TOKEN && process.env.RUNSTEP_TOKEN.split('\n').length > 0) {
+   runsteptokenVal = process.env.RUNSTEP_TOKEN.split('\n');
+  } else  {
+   runsteptokenVal = process.env.RUNSTEP_TOKEN.split()
+  };
+if (process.env.RUNSTEP_KEY && process.env.RUNSTEP_KEY.split('\n').length > 0) {
+   runstepkeyVal = process.env.RUNSTEP_KEY.split('\n');
+  } else  {
+   runstepkeyVal = process.env.RUNSTEP_KEY.split()
+  };
 
-//   Object.keys(runstepkeyVal).forEach((item) => {
-//     if (runstepkeyVal[item]) {
-//       runstepkeyArr.push(runstepkeyVal[item])
-//     }
- // });
-runsteptokenArr.push('wx12b60cc9e37c9240&version')
-  runstepkeyArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Referer":"https://servicewechat.com/wx12b60cc9e37c9240/22/page-frame.html","Content-Type":"application/x-www-form-urlencoded","Host":"runstep.kujievip.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022c) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn"}')
+  Object.keys(runsteptokenVal).forEach((item) => {
+    if (runsteptokenVal[item]) {
+      runsteptokenArr.push(runsteptokenVal[item])
+    }
+  });
+
+  Object.keys(runstepkeyVal).forEach((item) => {
+    if (runstepkeyVal[item]) {
+      runstepkeyArr.push(runstepkeyVal[item])
+    }
+  });
+
 } else {
   runsteptokenArr.push($.getdata('runsteptoken'));
   runstepkeyArr.push($.getdata('runstepkey'));
+  // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
+  let Count = ($.getval('Count') || '1') - 0;
+  for (let i = 2; i <= Count; i++) {
+    if ($.getdata(`runsteptoken${i}`)) {
+      runsteptokenArr.push($.getdata(`runsteptoken${i}`));
+      runstepkeyArr.push($.getdata(`runstepkey${i}`));
+    }
+  }
 }
 
 //////////////////////////////////////////////////////////////////
 
 !(async () => {
-  cc = (`🥦${jsname}任务执行通知🔔`);
-  if (typeof $.getdata('runsteptoken') === "undefined") {
+  cc = (`${jsname}任务执行通知🔔`);
+   if (!runsteptokenArr[0]) {
     console.log($.name, '【提示】请先前往获取cookie📲')
     return;
+       }
+/*  if (typeof $.getdata('runsteptoken') === "undefined") {
+    console.log($.name, '【提示】请先前往获取cookie📲')
+    return;
+  } */
+  console.log(`\n✅ 检查共有多少个账号。。。`)
+  await $.wait(4000)
+  console.log(`👥 本次执行共${runsteptokenArr.length}个账号`)
+  for(let i = 0; i < runsteptokenArr.length; i++){
+    runsteptokenVal = runsteptokenArr[i];
+    runstepkeyVal = runstepkeyArr[i];
+    console.log(`\n💗💕 开始${$.name}账号【${(i+1)}】 💕💗\n`)
+    await $.wait(3000)
+    await runstepapp();
   }
-  runsteptokenVal = runsteptokenArr[0];
-  runstepkeyVal = runstepkeyArr[0];
-
-  console.log(`\n💗💕 开始执行脚本任务 💕💗\n`)
-  await runstepapp();
-  await showmsg2();
-
 })()
 .catch((e) => $.logErr(e))
   .finally(() => $.done())
@@ -116,21 +142,34 @@ async function runstepapp() {
   //await advlist();
   await wheelindex()
   console.log(`\n2️⃣开始🤘摇一摇🤘任务`)
-  await shakeindex()
+  await shakeindex();
   console.log(`\n3️⃣开始🎫刮一刮🎫任务`)
-  await gglindex()
+  await gglindex();
+
+  await runstepend();
   console.log(`\n🇨🇳【开始提现任务】`)
   console.log(`👧请使用专门的提现脚本,每天提现0.3元`)
 
 }
-
+///////////////////////////【收尾】//////////////////////////////////
+async function runstepend(){
+  if(wheeltotalnum >= 7 && shaketotalnum >= 7 && ggltotalnum >= 20){
+    console.log(`\n🔂开始🔥燃尽模式🔥任务`)
+    await $.wait(8000)
+    await wheelincr();
+    await $.wait(8000)
+    await shakeincr();
+    await $.wait(8000)
+    await gglincr();
+  }
+}
 ///////////////////////////【首页】//////////////////////////////////
 //index
 async function index() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/index?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+     // body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -199,7 +238,7 @@ async function signin() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/signin?date=${signdate}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+     // body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -232,7 +271,7 @@ async function pickstep(bbid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/pickstep?id=${bbid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -262,7 +301,7 @@ async function steptomoney() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/steptomoney?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -318,7 +357,7 @@ async function getharvest() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/getharvest?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -350,7 +389,7 @@ async function advlist() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/runstep/advlist?advkeys=index&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -385,7 +424,7 @@ async function center() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/center?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+     // body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -421,7 +460,7 @@ async function wheelindex() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelindex?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -435,6 +474,7 @@ async function wheelindex() {
             if (logs == 1) $.log(data)
             //$.log(data)
             data = JSON.parse(data);
+            wheeltotalnum = data.data.user_wheelinfo.total_num
             wheelprizes = data.data.wheel_prizes
             wheelleftnum = data.data.user_wheelinfo.left_num
             wheelexsteps = data.data.user_wheelinfo.exchange_steps
@@ -462,7 +502,12 @@ async function wheelindex() {
                 $.log(`🧧已领取红包【${wheelredid}】:\n▪️健康币(${wheelredjkb}),步数(${wheelredstep}),金额(${wheelredmoney})`);
               }
             }
-            await wheelincr();
+            if(wheeltotalnum <= 8){
+              await wheelincr();
+            }else{
+              $.log(`\n👧幸运转盘已达红包上限,进行下一个任务...\n`);
+            }
+
           }
         }
       } catch (e) {
@@ -478,7 +523,7 @@ async function wheelpick() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelpick?platform=iOS&${runsteptokenVal}&version=${version}&wheel_md5=${wheelmd5}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -539,7 +584,7 @@ async function wheelincr() {
       $.log(`🆔(${wheelid}):${wheelname}`);
     }
     await wheelpick()
-  } else if (wheelleftnum == 0 && wheelexjkb == 100 && wheelexjkb <= userjkb) {
+  } else if (wheelleftnum == 0 && wheelexjkb <= 400 && wheelexjkb <= userjkb) {
     $.log(`👧使用【健康币】兑换抽奖机会...`);
     await wheelincr2(); //jkb兑换
     $.log(`\n📠打印幸运转盘奖励清单...`);
@@ -563,7 +608,7 @@ async function wheelincr1() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelincr?platform=iOS&${runsteptokenVal}&type=1&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -591,7 +636,7 @@ async function wheelincr2() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelincr?platform=iOS&${runsteptokenVal}&type=2&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -624,7 +669,7 @@ async function wheelpickpacket(wheelredid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/wheelpickpacket?index=${wheelredid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -676,7 +721,7 @@ async function shakeindex() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakeindex?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -690,6 +735,7 @@ async function shakeindex() {
             if (logs == 1) $.log(data)
             //$.log(data)
             data = JSON.parse(data);
+            shaketotalnum = data.data.user_shakeinfo.total_num
             shakemylog = data.data.mylog
             shakeleftnum = data.data.user_shakeinfo.left_num
             shakeexsteps = data.data.user_shakeinfo.exchange_steps
@@ -717,7 +763,11 @@ async function shakeindex() {
               }
             }
             await shakedlist();
-            await shakeincr();
+            if(shaketotalnum <= 8){
+              await shakeincr();
+            }else{
+              $.log(`👧摇一摇已达红包上限,进行下一个任务...\n`);
+            }
           }
         }
       } catch (e) {
@@ -735,7 +785,7 @@ async function shakeincr() {
     $.log(`👧使用【步数】兑换抽奖机会...`);
     await shakeincr1(); //step兑换
     await shakepick()
-  } else if (shakeleftnum == 0 && shakeexjkb == 100 && shakeexjkb <= userjkb) {
+  } else if (shakeleftnum == 0 && shakeexjkb <= 400 && shakeexjkb <= userjkb) {
     $.log(`👧使用【健康币】兑换抽奖机会...`);
     await shakeincr2(); //jkb兑换
     await shakepick()
@@ -753,7 +803,7 @@ async function shakeincr1() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakeincr?platform=iOS&${runsteptokenVal}&type=1&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -781,7 +831,7 @@ async function shakeincr2() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakeincr?platform=iOS&${runsteptokenVal}&type=2&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -814,7 +864,7 @@ async function shakepickpacket(shakeredid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakepickpacket?index=${shakeredid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+  //    body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -843,7 +893,7 @@ async function shakepick() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/shakepick?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -907,7 +957,7 @@ async function gglindex() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglindex?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -921,6 +971,7 @@ async function gglindex() {
             if (logs == 1) $.log(data)
             //$.log(data)
             data = JSON.parse(data);
+            ggltotalnum = data.data.user_gglinfo.total_num
             gglmylog = data.data.mylog
             gglleftnum = data.data.user_gglinfo.left_num
             gglexsteps = data.data.user_gglinfo.exchange_steps
@@ -948,7 +999,11 @@ async function gglindex() {
               }
             }
             await ggledlist();
-            await gglincr();
+            if(ggltotalnum <= 21){
+              await gglincr();
+            }else{
+              $.log(`👧摇一摇已达红包上限,进行下一个任务...\n`);
+            }
           }
         }
       } catch (e) {
@@ -966,7 +1021,7 @@ async function gglincr() {
     $.log(`👧使用【步数】兑换抽奖机会...`);
     await gglincr1(); //step兑换
     await gglpick()
-  } else if (gglleftnum == 0 && gglexjkb == 100 && gglexjkb <= userjkb) {
+  } else if (gglleftnum == 0 && gglexjkb <= 400 && gglexjkb <= userjkb) {
     $.log(`👧使用【健康币】兑换抽奖机会...`);
     await gglincr2(); //jkb兑换
     await gglpick()
@@ -984,7 +1039,7 @@ async function gglincr1() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglincr?platform=iOS&${runsteptokenVal}&type=1&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1012,7 +1067,7 @@ async function gglincr2() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglincr?platform=iOS&${runsteptokenVal}&type=2&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1045,7 +1100,7 @@ async function gglpickpacket(gglredid) {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglpickpacket?index=${gglredid}&platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+    //  body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
@@ -1074,7 +1129,7 @@ async function gglpick() {
   return new Promise((resolve) => {
     let url = {
       url: `https://runstep.kujievip.com/welfare/gglpick?platform=iOS&${runsteptokenVal}&version=${version}`,
-      body: ``,
+   //   body: ``,
       headers: JSON.parse(runstepkeyVal),
     };
     $.get(url, async (err, resp, data) => {
