@@ -27,7 +27,7 @@ jobs:
         run: |
           node wnb.js 
         env:
-          wnburl: ${{ secrets.wnburl }}
+          
           wnbhb: ${{ secrets.wnbhb }}
           wnbbody: ${{ secrets.wnbbody }}
           
