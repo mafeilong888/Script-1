@@ -484,7 +484,7 @@ async function getdomin2() {
   return new Promise((resolve) => {
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/mobiledomain/getDomain.action`,
-      body: getdomainbody,
+     // body: getdomainbody,
       headers: JSON.parse(getdomainkeyVal),
     };
     $.post(url, async (err, resp, data) => {
@@ -688,7 +688,7 @@ function artstation(rdid, listid, appversion, openid, listid2) {
   return new Promise((resolve, reject) => {
     let url = {
       url: `${arturl3}`,
-      body: ``,
+   //   body: ``,
       headers: {
         'Cookie': `${artstationheaders}`,
         'Accept-Encoding': `gzip, deflate`,
