@@ -37,24 +37,24 @@ jobs:
         run: |
           node wlapp.js
         env:      
-          GETDOMAINBODY: ${{ secrets. GETDOMAINBODY }}
-          GETDOMAINKEY: ${{ secrets. GETDOMAINKEY }}
-          USERLOGINBODY: ${{ secrets. USERLOGINBODY }}
-          USERLOGINKEY: ${{ secrets. USERLOGINKEY }}
-          ARTLISTBODY: ${{ secrets. ARTLISTBODY }}
-          ARTLISTKEY: ${{ secrets. ARTLISTKEY }}
-          ARTSTATIONURL: ${{ secrets. ARTSTATIONURL }}
-          ARTSTATIONKEY: ${{ secrets. ARTSTATIONKEY }}              
-          READACCOUNTBODY: ${{ secrets. READACCOUNTBODY }} 
-          READACCOUNTKEY: ${{ secrets. READACCOUNTKEY }}
-          INFOMEBODY: ${{ secrets. INFOMEBODY }}
-          INFOMEKEY: ${{ secrets. INFOMEKEY }}
-          VIDEOARTLISTBODY: ${{ secrets. VIDEOARTLISTBODY }}
-          VIDEOARTLISTKEY: ${{ secrets. VIDEOARTLISTKEY }}
-          VIDEOREADACCOUNTBODY: ${{ secrets. VIDEOREADACCOUNTBODY }}
-          VIDEOREADACCOUNTKEY: ${{ secrets. VIDEOREADACCOUNTKEY }}
-          ARTDETAILBODY: ${{ secrets. ARTDETAILBODY }}
-          ARTDETAILKEY: ${{ secrets. ARTDETAILKEY }}
+          getdomainbody: ${{ secrets. getdomainbody }}
+          getdomainkey: ${{ secrets. getdomainkey }}
+          userloginbody: ${{ secrets. userloginbody }}
+          userloginkey: ${{ secrets. userloginkey }}
+          artlistbody: ${{ secrets. artlistbody }}
+          artlistkey: ${{ secrets. artlistkey }}
+          artstationurl: ${{ secrets. artstationurl }}
+          artstationkey: ${{ secrets. artstationkey }}              
+          readaccountbody: ${{ secrets. readaccountbody }} 
+          readaccountkey: ${{ secrets. readaccountkey }}
+          infomebody: ${{ secrets. infomebody }}
+          infomekey: ${{ secrets. infomekey }}
+          videoartlistbody: ${{ secrets. videoartlistbody }}
+          videoartlistkey: ${{ secrets. videoartlistkey }}
+          videoreadaccountbody: ${{ secrets. videoreadaccountbody }}
+          videoreadaccountkey: ${{ secrets. videoreadaccountkey }}
+          artdetailbody: ${{ secrets. artdetailbody }}
+          artdetailkey: ${{ secrets. artdetailkey }}
 
 
 
