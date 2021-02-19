@@ -341,7 +341,7 @@ if (process.env.artdetailbody && process.env.artdetailbody.split('\n').length > 
 
   console.log(`\n💗💕 开始执行脚本任务 💕💗\n`)
   await wlapp();
-  await showmsg2();
+ // await showmsg2();
 
 
 })()
