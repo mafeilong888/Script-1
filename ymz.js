@@ -44,6 +44,21 @@ let ymzhd1 = $.getdata('ymzhd1')
 let ymzbody = $.getdata('ymzbody')
 let ymzbody1 = $.getdata('ymzbody1')
 let ymzbody2 = $.getdata('ymzbody2')
+
+if ($.isNode()) {
+	ymzurl = process.env.ymzurl
+  ymzhd = process.env.ymzhd
+  ymzurl1 = process.env.ymzurl1
+	ymzhd1 = process.env.ymzhd1
+	ymzbody = process.env.ymzbody
+	ymzbody1 = process.env.ymzbody1
+	ymzbody2 = process.env.ymzbody2
+	
+	
+  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+}
+
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await ymzck()
@@ -87,7 +102,7 @@ function ymzsp(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://ymz.iphonezhuan.com/addaction',
-        headers : JSON.parse($.getdata('ymzhd')),
+        headers : JSON.parse(ymzhd),
         body : ymzbody1,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -118,7 +133,7 @@ function ymzqd(timeout = 0) {
       }
 let url = {
         url : 'http://ymz.iphonezhuan.com/addaction',
-        headers : JSON.parse($.getdata('ymzhd')),
+        headers : JSON.parse(ymzhd),
         body : ymzbody,}
       $.post(url, async (err, resp, data) => {
         try {
