@@ -467,7 +467,7 @@ async function getdomin() {
           if (safeGet(data)) {
             if (logs == 1) $.log(data)
             data = JSON.parse(data);
-            jsessionid = resp.headers['Set-Cookie'].split(";")[0].split("JSESSIONID=")[1]
+           // jsessionid = resp.headers['Set-Cookie'].split(";")[0].split("JSESSIONID=")[1]
             $.log(`【加载APP页面】:${data.ret}🎉`);
           }
         }
