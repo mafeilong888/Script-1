@@ -454,7 +454,7 @@ async function getdomin() {
   return new Promise((resolve) => {
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/mobiledomain/getDomain.action`,
-      body: getdomainbody,
+   //   body: getdomainbody,
       headers: JSON.parse(getdomainkeyVal),
     };
     $.post(url, async (err, resp, data) => {
