@@ -41,15 +41,15 @@ let runstepkeyVal = "";
 
 if ($.isNode()) {
   
-if (process.env.RUNSTEP_TOKEN && process.env.RUNSTEP_TOKEN.split('\n').length > 0) {
-   runsteptokenVal = process.env.RUNSTEP_TOKEN.split('\n');
+if (process.env.runsteptoken && process.env.runsteptoken.split('\n').length > 0) {
+   runsteptokenVal = process.env.runsteptoken.split('\n');
   } else  {
-   runsteptokenVal = process.env.RUNSTEP_TOKEN.split()
+   runsteptokenVal = process.env.runsteptoken.split()
   };
-if (process.env.RUNSTEP_KEY && process.env.RUNSTEP_KEY.split('\n').length > 0) {
-   runstepkeyVal = process.env.RUNSTEP_KEY.split('\n');
+if (process.env.runstepkey && process.env.runstepkey.split('\n').length > 0) {
+   runstepkeyVal = process.env.runstepkey.split('\n');
   } else  {
-   runstepkeyVal = process.env.RUNSTEP_KEY.split()
+   runstepkeyVal = process.env.runstepkey.split()
   };
 
   Object.keys(runsteptokenVal).forEach((item) => {
