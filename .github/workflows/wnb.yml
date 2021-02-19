@@ -1,4 +1,4 @@
-name: wnb
+name: 蜗牛吧
 
 
 on:
@@ -26,7 +26,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【wnb】'
+      - name: '运行 【蜗牛吧】'
         if: env.WNB_HD
         run: |
           node wnb.js
