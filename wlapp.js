@@ -385,15 +385,15 @@ async function wlapp() {
   //await artlist(jsessionid)
   console.log(`🙇开始随机看一篇文章📄...\n`)
   //console.log(`🆔【文章验证】:\n📄${jsessionid}\n`)
-  await artstation(rdid, listid, appversion, openid, listid2)
-  await $.wait(12000)
-  await readAccount(jsessionid, rdid)
-  await videoartlist(jsessionid)
+  //await artstation(rdid, listid, appversion, openid, listid2)
+  //await $.wait(12000)
+  //await readAccount(jsessionid, rdid)
+  //await videoartlist(jsessionid)
   console.log(`🙇开始随机看一篇视频🎬...`)
-  console.log(`\n🆔【视频验证】:\n🎬${jsessionid}\n`)
-  await artdetail(jsessionid, videoid, videolistid)
-  await $.wait(12000)
-  await videoAccount(jsessionid, videoid)
+  //console.log(`\n🆔【视频验证】:\n🎬${jsessionid}\n`)
+  //await artdetail(jsessionid, videoid, videolistid)
+  //await $.wait(12000)
+  //await videoAccount(jsessionid, videoid)
 
 
 }
