@@ -313,7 +313,7 @@ if (process.env.artdetailbody && process.env.artdetailbody.split('\n').length > 
 //////////////////////////////////////////////////////////////////
 
 !(async () => {
-  await Jsname()
+ // await Jsname()
   cc = (`${jsname}任务执行通知🔔`);
   if (!getdomainbodyArr[0]) {
     console.log($.name, '【提示】请先前往获取cookie📲')
