@@ -87,7 +87,8 @@ const artdetailkeyArr = [];
 let artdetailkeyVal = "";
 
 if ($.isNode()) {
-  if (process.env.getdomainbody && process.env.getdomainbody.split('\n').length > 0) {
+  
+if (process.env.getdomainbody && process.env.getdomainbody.split('\n').length > 0) {
    getdomainbodyVal = process.env.getdomainbody.split('\n');
   } else  {
    getdomainbodyVal = process.env.getdomainbody.split()
