@@ -1,21 +1,24 @@
-name: 蜗牛吧
+name: wnb
+
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '40 15 * * *'
+     - cron: '7/30 0-14 * * *'
   watch:
     types: started
-  repository_dispatch:
-    types: wnb
-    
 jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
+    env:
+        WNB_HD: ${{ secrets.WNB_HD }}
+        WNB_BODY: ${{ secrets.WNB_BODY }}
+        TZ: Asia/shanghai
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
+        
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -23,14 +26,11 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【蜗牛吧】'
+      - name: '运行 【wnb】'
+        if: env.WNB_HD
         run: |
-          node wnb.js 
+          node task/wnb.js
         env:
-          
-          wnbhb: ${{ secrets.wnbhb }}
-          wnbbody: ${{ secrets.wnbbody }}
-          TZ: Asia/shanghai
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
