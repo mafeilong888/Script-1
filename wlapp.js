@@ -408,7 +408,7 @@ async function infome(jsessionid) {
     //$.log(`\n【useragent】:${useragent}\n`);
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/newMobileMenu/infoMe.action`,
-      body: infomebody,
+     // body: infomebody,
       headers: {
         'Cookie': `${infomeheaders}`,
         'Accept': `*/*`,
@@ -454,7 +454,7 @@ async function getdomin() {
   return new Promise((resolve) => {
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/mobiledomain/getDomain.action`,
-      body: getdomainbody,
+     // body: getdomainbody,
       headers: JSON.parse(getdomainkeyVal),
     };
     $.post(url, async (err, resp, data) => {
@@ -484,7 +484,7 @@ async function getdomin2() {
   return new Promise((resolve) => {
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/mobiledomain/getDomain.action`,
-      body: getdomainbody,
+    //  body: getdomainbody,
       headers: JSON.parse(getdomainkeyVal),
     };
     $.post(url, async (err, resp, data) => {
@@ -519,7 +519,7 @@ async function userlogin(jsessionid) {
 
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/login/userlogin.action`,
-      body: userloginbody,
+ //     body: userloginbody,
       headers: {
         'Cookie': `${userloginheaders}`,
         'Accept': `*/*`,
@@ -577,7 +577,7 @@ async function artlist(jsessionid) {
     //$.log(`\n【useragent】:${useragent}\n`);
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/newmobile/artlist.action`,
-      body: artlistbody,
+  //    body: artlistbody,
       headers: {
         'Cookie': `${artlistheaders}`,
         'Accept': `*/*`,
@@ -632,7 +632,7 @@ async function videoartlist(jsessionid) {
     let useragent = jsonheaders['User-Agent']
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/newmobile/artlist.action`,
-     body: videoartlistbody,
+ //    body: videoartlistbody,
       headers: {
         'Cookie': `${videoartlistheaders}`,
         'Accept': `*/*`,
@@ -718,7 +718,7 @@ async function artdetail(jsessionid, videoid, videolistid) {
   return new Promise((resolve) => {
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/newmobile/artDetail.action`,
-      body: artdetailbody,
+ //     body: artdetailbody,
       headers: {
         'Cookie': `${artdetailheaders}`,
         'Accept': `*/*`,
@@ -763,7 +763,7 @@ async function readAccount(jsessionid, rdid) {
     //$.log(`\n【useragent】:${useragent}\n`);
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/account/readAccount.action`,
-      body: readidbody,
+ //     body: readidbody,
       headers: {
         'Cookie': `${readaccountheaders}`,
         'Accept': `*/*`,
@@ -814,7 +814,7 @@ async function videoAccount(jsessionid, videoid) {
     let useragent = jsonheaders['User-Agent']
     let url = {
       url: `http://app.zhongchuanjukan.com/jkd/account/readAccount.action`,
-      body: videoreadidbody,
+ //     body: videoreadidbody,
       headers: {
         'Cookie': `${videoreadaccountheaders}`,
         'Accept': `*/*`,
