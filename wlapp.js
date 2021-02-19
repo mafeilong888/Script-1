@@ -384,7 +384,7 @@ async function wlapp() {
   console.log(`\n✅ 执行【自动阅读】任务\n`)
   //await artlist(jsessionid)
   console.log(`🙇开始随机看一篇文章📄...\n`)
-  console.log(`🆔【文章验证】:\n📄${jsessionid}\n`)
+  //console.log(`🆔【文章验证】:\n📄${jsessionid}\n`)
   await artstation(rdid, listid, appversion, openid, listid2)
   await $.wait(12000)
   await readAccount(jsessionid, rdid)
