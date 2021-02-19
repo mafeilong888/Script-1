@@ -378,22 +378,22 @@ async function showmsg2() {
 async function wlapp() {
   console.log(`\n✅ 执行【模拟用户登录】任务\n`)
   await getdomin();
-  //await userlogin(jsessionid);
+  await userlogin(jsessionid);
   console.log(`\n✅ 查询【用户账户】任务\n`)
- // await infome(jsessionid)
+  await infome(jsessionid)
   console.log(`\n✅ 执行【自动阅读】任务\n`)
-  //await artlist(jsessionid)
+  await artlist(jsessionid)
   console.log(`🙇开始随机看一篇文章📄...\n`)
-  //console.log(`🆔【文章验证】:\n📄${jsessionid}\n`)
-  //await artstation(rdid, listid, appversion, openid, listid2)
-  //await $.wait(12000)
-  //await readAccount(jsessionid, rdid)
-  //await videoartlist(jsessionid)
+  console.log(`🆔【文章验证】:\n📄${jsessionid}\n`)
+  await artstation(rdid, listid, appversion, openid, listid2)
+  await $.wait(12000)
+  await readAccount(jsessionid, rdid)
+  await videoartlist(jsessionid)
   console.log(`🙇开始随机看一篇视频🎬...`)
-  //console.log(`\n🆔【视频验证】:\n🎬${jsessionid}\n`)
-  //await artdetail(jsessionid, videoid, videolistid)
-  //await $.wait(12000)
-  //await videoAccount(jsessionid, videoid)
+  console.log(`\n🆔【视频验证】:\n🎬${jsessionid}\n`)
+  await artdetail(jsessionid, videoid, videolistid)
+  await $.wait(12000)
+  await videoAccount(jsessionid, videoid)
 
 
 }
