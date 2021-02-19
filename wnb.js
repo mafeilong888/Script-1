@@ -30,14 +30,13 @@ let wnbhd = $.getdata('wnbhd')
 let wnbbody = $.getdata('wnbbody')
 
 if ($.isNode()) {
-  
-  wnbhd = process.env.wnbhd
-  wnbbody = process.env.wnbbody
-	
-	
-  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
-}
 
+   wnbhd = process.env.WNB_HD
+   wnbbody = process.env.WNB_BODY
+
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ }
 !(async () => {
   if (typeof $request !== "undefined") {
       await wnbck()
