@@ -47,8 +47,8 @@ let ymzbody2 = $.getdata('ymzbody2')
 
 if ($.isNode()) {
 	ymzurl = process.env.ymzurl
-  ymzhd = process.env.ymzhd
-  ymzurl1 = process.env.ymzurl1
+        ymzhd = process.env.ymzhd
+        ymzurl1 = process.env.ymzurl1
 	ymzhd1 = process.env.ymzhd1
 	ymzbody = process.env.ymzbody
 	ymzbody1 = process.env.ymzbody1
