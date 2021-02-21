@@ -70,14 +70,40 @@ let fqkey = ''
 let fqkkxh = ($.getval('fqkkxh') || '100');  // 此处修改循环次数，默认一百
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.1元等于10，默认为提现一元，也就是100
 var zz = ''
+
 if ($.isNode()) {
-
-   fqkkurl = process.env.fqkkurl
-   fqkkhd = process.env.fqkkhd
-
-    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+  if (process.env.FQKKURL && process.env.FQKKURL.indexOf('#') > -1) {
+   fqkkurl = process.env.FQKKURL.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.FQKKURL && process.env.FQKKURL.indexOf('\n') > -1) {
+   fqkkurl = process.env.FQKKURL.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   fqkkurl = process.env.FQKKURL.split()
+  };
+if (process.env.FQKKHD && process.env.FQKKHD.indexOf('#') > -1) {
+   fqkkhd = process.env.FQKKHD.split('#');
+   console.log(`您选择的是用"#"隔开\n`)
+  }
+  else if (process.env.FQKKHD && process.env.FQKKHD.indexOf('\n') > -1) {
+   fqkkhd = process.env.FQKKHD.split('\n');
+   console.log(`您选择的是用换行隔开\n`)
+  } else {
+   fqkkhd = process.env.FQKKHD.split()
+  };
+  console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+ } else {
+    fqkkurArr.push($.getdata('fqkkur'))
+    fqkkhd Arr.push($.getdata(' fqkkhd '))
+    let fqkkcount = ($.getval('fqkkcount') || '1');
+  for (let i = 2; i <= fqkkcount; i++) {
+    fqkkurlArr.push($.getdata(`fqkkurl${i}`))
+    fqkkhdArr.push($.getdata(`fqkkhd ${i}`))
  }
+}
+
 
 !(async () => {
   if (typeof $request !== "undefined") {
