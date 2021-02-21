@@ -99,14 +99,14 @@ if ($.isNode()) {
  
   console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-//  } else {
-//     fqkkurArr.push($.getdata('fqkkur'))
-//     fqkkhdArr.push($.getdata('fqkkhd '))
-//     let fqkkcount = ($.getval('fqkkcount') || '1');
-//   for (let i = 2; i <= fqkkcount; i++) {
-//     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
-//     fqkkhdArr.push($.getdata(`fqkkhd ${i}`))
-//  }
+ } else {
+    fqkkurArr.push($.getdata('fqkkur'))
+    fqkkhdArr.push($.getdata('fqkkhd '))
+    let fqkkcount = ($.getval('fqkkcount') || '1');
+  for (let i = 2; i <= fqkkcount; i++) {
+    fqkkurlArr.push($.getdata(`fqkkurl${i}`))
+    fqkkhdArr.push($.getdata(`fqkkhd ${i}`))
+ }
 }
 
 
