@@ -217,10 +217,10 @@ let url = {
 function fqkk1(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-//       if (typeof $.getdata('fqkkhd') === "undefined") {
-//         $.msg($.name,"",'请先获取番茄看看数据!😓',)
-//         $.done()
-//       }
+      if (typeof $.getdata('fqkkhd') === "undefined") {
+        $.msg($.name,"",'请先获取番茄看看数据!😓',)
+        $.done()
+      }
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/reada/getTask",
         headers : JSON.parse(fqkkhd),
