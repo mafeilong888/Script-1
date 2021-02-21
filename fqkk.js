@@ -96,7 +96,7 @@ if (process.env.FQKKHD && process.env.FQKKHD.indexOf('#') > -1) {
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
     fqkkurArr.push($.getdata('fqkkur'))
-    fqkkhd Arr.push($.getdata(' fqkkhd '))
+    fqkkhdArr.push($.getdata('fqkkhd '))
     let fqkkcount = ($.getval('fqkkcount') || '1');
   for (let i = 2; i <= fqkkcount; i++) {
     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
