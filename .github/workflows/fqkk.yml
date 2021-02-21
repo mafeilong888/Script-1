@@ -27,7 +27,8 @@ jobs:
         run: |
           node fqkk.js
         env:
-          
+          fqkkurl: ${{ secrets.fqkkurl }}
+          fqkkhd: ${{ secrets.fqkkhd }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
