@@ -72,26 +72,30 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.1元等
 var zz = ''
 
 if ($.isNode()) {
-  if (process.env.FQKKURL && process.env.FQKKURL.indexOf('#') > -1) {
-   fqkkurl = process.env.FQKKURL.split('#');
-   console.log(`您选择的是用"#"隔开\n`)
-  }
-  else if (process.env.FQKKURL && process.env.FQKKURL.indexOf('\n') > -1) {
-   fqkkurl = process.env.FQKKURL.split('\n');
-   console.log(`您选择的是用换行隔开\n`)
-  } else {
-   fqkkurl = process.env.FQKKURL.split()
-  };
-if (process.env.FQKKHD && process.env.FQKKHD.indexOf('#') > -1) {
-   fqkkhd = process.env.FQKKHD.split('#');
-   console.log(`您选择的是用"#"隔开\n`)
-  }
-  else if (process.env.FQKKHD && process.env.FQKKHD.indexOf('\n') > -1) {
-   fqkkhd = process.env.FQKKHD.split('\n');
-   console.log(`您选择的是用换行隔开\n`)
-  } else {
-   fqkkhd = process.env.FQKKHD.split()
-  };
+//   if (process.env.FQKKURL && process.env.FQKKURL.indexOf('#') > -1) {
+//    fqkkurl = process.env.FQKKURL.split('#');
+//    console.log(`您选择的是用"#"隔开\n`)
+//   }
+//   else if (process.env.FQKKURL && process.env.FQKKURL.indexOf('\n') > -1) {
+//    fqkkurl = process.env.FQKKURL.split('\n');
+//    console.log(`您选择的是用换行隔开\n`)
+//   } else {
+//    fqkkurl = process.env.FQKKURL.split()
+//   };
+// if (process.env.FQKKHD && process.env.FQKKHD.indexOf('#') > -1) {
+//    fqkkhd = process.env.FQKKHD.split('#');
+//    console.log(`您选择的是用"#"隔开\n`)
+//   }
+//   else if (process.env.FQKKHD && process.env.FQKKHD.indexOf('\n') > -1) {
+//    fqkkhd = process.env.FQKKHD.split('\n');
+//    console.log(`您选择的是用换行隔开\n`)
+//   } else {
+//    fqkkhd = process.env.FQKKHD.split()
+//   };
+    fqkkurlArr.push('http://m.yinuoche.top/reada/getTask')
+    fqkkhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Origin":"http://m.yinuoche.top","Cookie":"autoRead=1; udtauth=02c0N1cbuuI2v1PRD14pdRkuZP%2BxHSBsau4ZC0Wu%2BXvtpV9zBX3FN2VkgvTDAlW%2FBOXISMD1oOQxWZ6sgOgRRp6naCD0%2FWHO6fg0U1BOzRXT8H%2BO4NfrbtAQ32oG9WjIvHhe0iTmewmjTIll5S46ZGcleDgyono0ActBUP%2BkiqQ; PHPSESSID=3hier5ajtql9svrqv71r3tqm58","Connection":"keep-alive","Host":"m.yinuoche.top","Content-Length":"0","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022e) NetType/WIFI Language/zh_CN","Referer":"http://m.yinuoche.top/reada/","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
+
+ 
   console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
@@ -108,8 +112,7 @@ if (process.env.FQKKHD && process.env.FQKKHD.indexOf('#') > -1) {
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck()
-    fqkkurlArr.push('http://m.yinuoche.top/reada/getTask')
-    fqkkhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Origin":"http://m.yinuoche.top","Cookie":"autoRead=1; udtauth=02c0N1cbuuI2v1PRD14pdRkuZP%2BxHSBsau4ZC0Wu%2BXvtpV9zBX3FN2VkgvTDAlW%2FBOXISMD1oOQxWZ6sgOgRRp6naCD0%2FWHO6fg0U1BOzRXT8H%2BO4NfrbtAQ32oG9WjIvHhe0iTmewmjTIll5S46ZGcleDgyono0ActBUP%2BkiqQ; PHPSESSID=3hier5ajtql9svrqv71r3tqm58","Connection":"keep-alive","Host":"m.yinuoche.top","Content-Length":"0","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022e) NetType/WIFI Language/zh_CN","Referer":"http://m.yinuoche.top/reada/","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
+  
   } else {fqkkurlArr.push($.getdata('fqkkurl'))
     fqkkhdArr.push($.getdata('fqkkhd'))
     let fqkkcount = ($.getval('fqkkcount') || '1');
