@@ -92,20 +92,21 @@ if ($.isNode()) {
 //   } else {
 //    fqkkhd = process.env.FQKKHD.split()
 //   };
-    fqkkurlArr.push('http://m.yinuoche.top/reada/getTask')
-    fqkkhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Origin":"http://m.yinuoche.top","Cookie":"autoRead=1; udtauth=02c0N1cbuuI2v1PRD14pdRkuZP%2BxHSBsau4ZC0Wu%2BXvtpV9zBX3FN2VkgvTDAlW%2FBOXISMD1oOQxWZ6sgOgRRp6naCD0%2FWHO6fg0U1BOzRXT8H%2BO4NfrbtAQ32oG9WjIvHhe0iTmewmjTIll5S46ZGcleDgyono0ActBUP%2BkiqQ; PHPSESSID=3hier5ajtql9svrqv71r3tqm58","Connection":"keep-alive","Host":"m.yinuoche.top","Content-Length":"0","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022e) NetType/WIFI Language/zh_CN","Referer":"http://m.yinuoche.top/reada/","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
-
+//     fqkkurlArr.push('http://m.yinuoche.top/reada/getTask')
+//     fqkkhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Origin":"http://m.yinuoche.top","Cookie":"autoRead=1; udtauth=02c0N1cbuuI2v1PRD14pdRkuZP%2BxHSBsau4ZC0Wu%2BXvtpV9zBX3FN2VkgvTDAlW%2FBOXISMD1oOQxWZ6sgOgRRp6naCD0%2FWHO6fg0U1BOzRXT8H%2BO4NfrbtAQ32oG9WjIvHhe0iTmewmjTIll5S46ZGcleDgyono0ActBUP%2BkiqQ; PHPSESSID=3hier5ajtql9svrqv71r3tqm58","Connection":"keep-alive","Host":"m.yinuoche.top","Content-Length":"0","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x1800022e) NetType/WIFI Language/zh_CN","Referer":"http://m.yinuoche.top/reada/","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
+   fqkkurl = process.env.fqkkurl
+   fqkkhd = process.env.fqkkhd
  
   console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
- } else {
-    fqkkurArr.push($.getdata('fqkkur'))
-    fqkkhdArr.push($.getdata('fqkkhd '))
-    let fqkkcount = ($.getval('fqkkcount') || '1');
-  for (let i = 2; i <= fqkkcount; i++) {
-    fqkkurlArr.push($.getdata(`fqkkurl${i}`))
-    fqkkhdArr.push($.getdata(`fqkkhd ${i}`))
- }
+//  } else {
+//     fqkkurArr.push($.getdata('fqkkur'))
+//     fqkkhdArr.push($.getdata('fqkkhd '))
+//     let fqkkcount = ($.getval('fqkkcount') || '1');
+//   for (let i = 2; i <= fqkkcount; i++) {
+//     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
+//     fqkkhdArr.push($.getdata(`fqkkhd ${i}`))
+//  }
 }
 
 
@@ -215,11 +216,11 @@ let url = {
 //番茄看看key
 function fqkk1(timeout = 0) {
   return new Promise((resolve) => {
-/*    setTimeout( ()=>{
+    setTimeout( ()=>{
       if (typeof $.getdata('fqkkhd') === "undefined") {
         $.msg($.name,"",'请先获取番茄看看数据!😓',)
         $.done()
-      }*/
+      }
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/reada/getTask",
         headers : JSON.parse(fqkkhd),
