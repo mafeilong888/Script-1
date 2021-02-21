@@ -114,13 +114,13 @@ if ($.isNode()) {
   if (typeof $request !== "undefined") {
     await fqkkck()
   
-  } else {fqkkurlArr.push($.getdata('fqkkurl'))
-    fqkkhdArr.push($.getdata('fqkkhd'))
-    let fqkkcount = ($.getval('fqkkcount') || '1');
-  for (let i = 2; i <= fqkkcount; i++) {
-    fqkkurlArr.push($.getdata(`fqkkurl${i}`))
-    fqkkhdArr.push($.getdata(`fqkkhd${i}`))
-  }
+//   } else {fqkkurlArr.push($.getdata('fqkkurl'))
+//     fqkkhdArr.push($.getdata('fqkkhd'))
+//     let fqkkcount = ($.getval('fqkkcount') || '1');
+//   for (let i = 2; i <= fqkkcount; i++) {
+//     fqkkurlArr.push($.getdata(`fqkkurl${i}`))
+//     fqkkhdArr.push($.getdata(`fqkkhd${i}`))
+//   }
     console.log(`------------- 共${fqkkhdArr.length}个账号-------------\n`)
       for (let i = 0; i < fqkkhdArr.length; i++) {
         if (fqkkhdArr[i]) {
