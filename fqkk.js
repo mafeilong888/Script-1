@@ -72,7 +72,7 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.1元等
 var zz = ''
 if ($.isNode()) {
 
-   wnbhd = process.env.WNB_HD
+   fqkkurl = process.env.fqkkurl
    wnbbody = process.env.WNB_BODY
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
