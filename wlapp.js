@@ -87,7 +87,25 @@ const artdetailkeyArr = [];
 let artdetailkeyVal = "";
 
 if ($.isNode()) {
+  getdomainbody = process.env.getdomainbody
+  getdomainkey = process.env.getdomainkey
+userloginbody = process.env.userloginbody
+  userloginkey = process.env.userloginkey
+artlistbody = process.env.artlistbody
+  artlistkey = process.env.artlistkey
+artstationurl = process.env.artstationurl
+  artstationkey = process.env.artstationkey
+readaccountbody = process.env.readaccountbody
+  readaccountkey = process.env.readaccountkey
+infomebody = process.env.infomebody
+  infomekey = process.env.infomekey
+videoartlistkey = process.env.videoartlistkey
+  videoartlistbody = process.env.videoartlistbody
+videoreadaccountbody = process.env.videoreadaccountbody
+  videoreadaccountkey = process.env.videoreadaccountkey
+artdetailkey = process.env.artdetailkey
   
+artdetailbody = process.env.artdetailbody
 // if (process.env.getdomainbody && process.env.getdomainbody.split('\n').length > 0) {
 //    getdomainbodyVal = process.env.getdomainbody.split('\n');
 //   } else  {
