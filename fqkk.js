@@ -66,7 +66,7 @@ status = (status = ($.getval("fqkkstatus") || "1") ) > 1 ? `${status}` : ""; // 
 const fqkkurlArr = [], fqkkhdArr = [],fqkkbodyArr = [],fqkkcount = ''
 let fqkkurl = $.getdata('fqkkurl')
 let fqkkhd = $.getdata('fqkkhd')
-let fqkey = 'MDAwMDAwMDAwMH6uu66HeqjasZa64L67gKOXfIvLlWra14ayzJicopCvk2bKhIeO07K3qa66ud2MkZqJmayKobjUiYC-vw'
+let fqkey = ''
 let fqkkxh = '20';//($.getval('fqkkxh') || '100');  // 此处修改循环次数，默认一百
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.1元等于10，默认为提现一元，也就是100
 var zz = ''
