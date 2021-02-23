@@ -32,59 +32,59 @@ let today1 = formatDateTime(new Date());
 let today2 = formatDateTime(todaytimes);
 
 //////////////////////////////////////////////////////////////////
-const getdomainbodyArr = [];
-let getdomainbodyVal = "";
+// const getdomainbodyArr = [];
+// let getdomainbodyVal = "";
 
-const getdomainkeyArr = [];
-let getdomainkeyVal = "";
+// const getdomainkeyArr = [];
+// let getdomainkeyVal = "";
 
-const userloginbodyArr = [];
-let userloginbodyVal = "";
+// const userloginbodyArr = [];
+// let userloginbodyVal = "";
 
-const userloginkeyArr = [];
-let userloginkeyVal = "";
+// const userloginkeyArr = [];
+// let userloginkeyVal = "";
 
-const artlistbodyArr = [];
-let artlistbodyVal = "";
+// const artlistbodyArr = [];
+// let artlistbodyVal = "";
 
-const artlistkeyArr = [];
-let artlistkeyVal = "";
+// const artlistkeyArr = [];
+// let artlistkeyVal = "";
 
-const artstationurlArr = [];
-let artstationurlVal = "";
+// const artstationurlArr = [];
+// let artstationurlVal = "";
 
-const artstationkeyArr = [];
-let artstationkeyVal = "";
+// const artstationkeyArr = [];
+// let artstationkeyVal = "";
 
-const readaccountbodyArr = [];
-let readaccountbodyVal = "";
+// const readaccountbodyArr = [];
+// let readaccountbodyVal = "";
 
-const readaccountkeyArr = [];
-let readaccountkeyVal = "";
+// const readaccountkeyArr = [];
+// let readaccountkeyVal = "";
 
-const infomebodyArr = [];
-let infomebodyVal = "";
+// const infomebodyArr = [];
+// let infomebodyVal = "";
 
-const infomekeyArr = [];
-let infomekeyVal = "";
+// const infomekeyArr = [];
+// let infomekeyVal = "";
 
-const videoartlistbodyArr = [];
-let videoartlistbodyVal = "";
+// const videoartlistbodyArr = [];
+// let videoartlistbodyVal = "";
 
-const videoartlistkeyArr = [];
-let videoartlistkeyVal = "";
+// const videoartlistkeyArr = [];
+// let videoartlistkeyVal = "";
 
-const videoreadaccountbodyArr = [];
-let videoreadaccountbodyVal = "";
+// const videoreadaccountbodyArr = [];
+// let videoreadaccountbodyVal = "";
 
-const videoreadaccountkeyArr = [];
-let videoreadaccountkeyVal = "";
+// const videoreadaccountkeyArr = [];
+// let videoreadaccountkeyVal = "";
 
-const artdetailbodyArr = [];
-let artdetailbodyVal = "";
+// const artdetailbodyArr = [];
+// let artdetailbodyVal = "";
 
-const artdetailkeyArr = [];
-let artdetailkeyVal = "";
+// const artdetailkeyArr = [];
+// let artdetailkeyVal = "";
 
 if ($.isNode()) {
   
