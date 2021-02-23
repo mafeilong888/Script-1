@@ -182,113 +182,113 @@ if (process.env.artdetailbody && process.env.artdetailbody.split('\n').length > 
   
   
   
-  Object.keys(getdomainbodyVal).forEach((item) => {
-    if (getdomainbodyVal[item]) {
-      getdomainbodyArr.push(getdomainbodyVal[item])
-    }
-  });
+//   Object.keys(getdomainbodyVal).forEach((item) => {
+//     if (getdomainbodyVal[item]) {
+//       getdomainbodyArr.push(getdomainbodyVal[item])
+//     }
+//   });
 
-  Object.keys(getdomainkeyVal).forEach((item) => {
-    if (getdomainkeyVal[item]) {
-      getdomainkeyArr.push(getdomainkeyVal[item])
-    }
-  });
+//   Object.keys(getdomainkeyVal).forEach((item) => {
+//     if (getdomainkeyVal[item]) {
+//       getdomainkeyArr.push(getdomainkeyVal[item])
+//     }
+//   });
 
-  Object.keys(userloginbodyVal).forEach((item) => {
-    if (userloginbodyVal[item]) {
-      userloginbodyArr.push(userloginbodyVal[item])
-    }
-  });
+//   Object.keys(userloginbodyVal).forEach((item) => {
+//     if (userloginbodyVal[item]) {
+//       userloginbodyArr.push(userloginbodyVal[item])
+//     }
+//   });
 
-  Object.keys(userloginkeyVal).forEach((item) => {
-    if (userloginkeyVal[item]) {
-      userloginkeyArr.push(userloginkeyVal[item])
-    }
-  });
+//   Object.keys(userloginkeyVal).forEach((item) => {
+//     if (userloginkeyVal[item]) {
+//       userloginkeyArr.push(userloginkeyVal[item])
+//     }
+//   });
 
-  Object.keys(artlistbodyVal).forEach((item) => {
-    if (artlistbodyVal[item]) {
-      artlistbodyArr.push(artlistbodyVal[item])
-    }
-  });
+//   Object.keys(artlistbodyVal).forEach((item) => {
+//     if (artlistbodyVal[item]) {
+//       artlistbodyArr.push(artlistbodyVal[item])
+//     }
+//   });
 
-  Object.keys(artlistkeyVal).forEach((item) => {
-    if (artlistkeyVal[item]) {
-      artlistkeyArr.push(artlistkeyVal[item])
-    }
-  });
+//   Object.keys(artlistkeyVal).forEach((item) => {
+//     if (artlistkeyVal[item]) {
+//       artlistkeyArr.push(artlistkeyVal[item])
+//     }
+//   });
 
-  Object.keys(artstationurlVal).forEach((item) => {
-    if (artstationurlVal[item]) {
-      artstationurlArr.push(artstationurlVal[item])
-    }
-  });
+//   Object.keys(artstationurlVal).forEach((item) => {
+//     if (artstationurlVal[item]) {
+//       artstationurlArr.push(artstationurlVal[item])
+//     }
+//   });
 
-  Object.keys(artstationkeyVal).forEach((item) => {
-    if (artstationkeyVal[item]) {
-      artstationkeyArr.push(artstationkeyVal[item])
-    }
-  });
+//   Object.keys(artstationkeyVal).forEach((item) => {
+//     if (artstationkeyVal[item]) {
+//       artstationkeyArr.push(artstationkeyVal[item])
+//     }
+//   });
 
-  Object.keys(readaccountbodyVal).forEach((item) => {
-    if (readaccountbodyVal[item]) {
-      readaccountbodyArr.push(readaccountbodyVal[item])
-    }
-  });
+//   Object.keys(readaccountbodyVal).forEach((item) => {
+//     if (readaccountbodyVal[item]) {
+//       readaccountbodyArr.push(readaccountbodyVal[item])
+//     }
+//   });
 
-  Object.keys(readaccountkeyVal).forEach((item) => {
-    if (readaccountkeyVal[item]) {
-      readaccountkeyArr.push(readaccountkeyVal[item])
-    }
-  });
+//   Object.keys(readaccountkeyVal).forEach((item) => {
+//     if (readaccountkeyVal[item]) {
+//       readaccountkeyArr.push(readaccountkeyVal[item])
+//     }
+//   });
 
-  Object.keys(infomebodyVal).forEach((item) => {
-    if (infomebodyVal[item]) {
-      infomebodyArr.push(infomebodyVal[item])
-    }
-  });
+//   Object.keys(infomebodyVal).forEach((item) => {
+//     if (infomebodyVal[item]) {
+//       infomebodyArr.push(infomebodyVal[item])
+//     }
+//   });
 
-  Object.keys(infomekeyVal).forEach((item) => {
-    if (infomekeyVal[item]) {
-      infomekeyArr.push(infomekeyVal[item])
-    }
-  });
+//   Object.keys(infomekeyVal).forEach((item) => {
+//     if (infomekeyVal[item]) {
+//       infomekeyArr.push(infomekeyVal[item])
+//     }
+//   });
 
-  Object.keys(videoartlistbodyVal).forEach((item) => {
-    if (videoartlistbodyVal[item]) {
-      videoartlistbodyArr.push(videoartlistbodyVal[item])
-    }
-  });
+//   Object.keys(videoartlistbodyVal).forEach((item) => {
+//     if (videoartlistbodyVal[item]) {
+//       videoartlistbodyArr.push(videoartlistbodyVal[item])
+//     }
+//   });
 
-  Object.keys(videoartlistkeyVal).forEach((item) => {
-    if (videoartlistkeyVal[item]) {
-      videoartlistkeyArr.push(videoartlistkeyVal[item])
-    }
-  });
+//   Object.keys(videoartlistkeyVal).forEach((item) => {
+//     if (videoartlistkeyVal[item]) {
+//       videoartlistkeyArr.push(videoartlistkeyVal[item])
+//     }
+//   });
 
-  Object.keys(videoreadaccountbodyVal).forEach((item) => {
-    if (videoreadaccountbodyVal[item]) {
-      videoreadaccountbodyArr.push(videoreadaccountbodyVal[item])
-    }
-  });
+//   Object.keys(videoreadaccountbodyVal).forEach((item) => {
+//     if (videoreadaccountbodyVal[item]) {
+//       videoreadaccountbodyArr.push(videoreadaccountbodyVal[item])
+//     }
+//   });
 
-  Object.keys(videoreadaccountkeyVal).forEach((item) => {
-    if (videoreadaccountkeyVal[item]) {
-      videoreadaccountkeyArr.push(videoreadaccountkeyVal[item])
-    }
-  });
+//   Object.keys(videoreadaccountkeyVal).forEach((item) => {
+//     if (videoreadaccountkeyVal[item]) {
+//       videoreadaccountkeyArr.push(videoreadaccountkeyVal[item])
+//     }
+//   });
 
-  Object.keys(artdetailbodyVal).forEach((item) => {
-    if (artdetailbodyVal[item]) {
-      artdetailbodyArr.push(artdetailbodyVal[item])
-    }
-  });
+//   Object.keys(artdetailbodyVal).forEach((item) => {
+//     if (artdetailbodyVal[item]) {
+//       artdetailbodyArr.push(artdetailbodyVal[item])
+//     }
+//   });
 
-  Object.keys(artdetailkeyVal).forEach((item) => {
-    if (artdetailkeyVal[item]) {
-      artdetailkeyArr.push(artdetailkeyVal[item])
-    }
-  });
+//   Object.keys(artdetailkeyVal).forEach((item) => {
+//     if (artdetailkeyVal[item]) {
+//       artdetailkeyArr.push(artdetailkeyVal[item])
+//     }
+//   });
 
 } else {
   getdomainbodyArr.push($.getdata('getdomainbody'));
