@@ -88,96 +88,96 @@ let artdetailkeyVal = "";
 
 if ($.isNode()) {
   
-// if (process.env.getdomainbody && process.env.getdomainbody.split('\n').length > 0) {
-//    getdomainbodyVal = process.env.getdomainbody.split('\n');
-//   } else  {
-//    getdomainbodyVal = process.env.getdomainbody.split()
-//   };
-// if (process.env.getdomainkey && process.env.getdomainkey.split('\n').length > 0) {
-//    getdomainkeyVal = process.env.getdomainkey.split('\n');
-//   } else  {
-//    getdomainkeyVal = process.env.getdomainkey.split()
-//   };
-// if (process.env.userloginbody && process.env.userloginbody.split('\n').length > 0) {
-//    userloginbodyVal = process.env.userloginbody.split('\n');
-//   } else  {
-//    userloginbodyVal = process.env.userloginbody.split()
-//   };
-// if (process.env.userloginkey && process.env.userloginkey.split('\n').length > 0) {
-//    userloginkeyVal = process.env.userloginkey.split('\n');
-//   } else  {
-//    userloginkeyVal = process.env.userloginkey.split()
-//   };
-// if (process.env.artlistbody && process.env.artlistbody.split('\n').length > 0) {
-//    artlistbodyVal = process.env.artlistbody.split('\n');
-//   } else  {
-//    artlistbodyVal = process.env.artlistbody.split()
-//   };
-// if (process.env.artlistkey && process.env.artlistkey.split('\n').length > 0) {
-//    artlistkeyVal = process.env.artlistkey.split('\n');
-//   } else  {
-//    artlistkeyVal = process.env.artlistkey.split()
-//   };
-// if (process.env.artstationurl && process.env.artstationurl.split('\n').length > 0) {
-//    artstationurlVal = process.env.artstationurl.split('\n');
-//   } else  {
-//    artstationurlVal = process.env.artstationurl.split()
-//   };
-// if (process.env.artstationkey && process.env.artstationkey.split('\n').length > 0) {
-//    artstationkeyVal = process.env.artstationkey.split('\n');
-//   } else  {
-//    artstationkeyVal = process.env.artstationkey.split()
-//   };
-// if (process.env.readaccountbody && process.env.readaccountbody.split('\n').length > 0) {
-//    readaccountbodyVal = process.env.readaccountbody.split('\n');
-//   } else  {
-//    readaccountbodyVal = process.env.readaccountbody.split()
-//   };
-// if (process.env.readaccountkey && process.env.readaccountkey.split('\n').length > 0) {
-//    readaccountkeyVal = process.env.readaccountkey.split('\n');
-//   } else  {
-//    readaccountkeyVal = process.env.readaccountkey.split()
-//   };
-// if (process.env.infomebody && process.env.infomebody.split('\n').length > 0) {
-//    infomebodyVal = process.env.infomebody.split('\n');
-//   } else  {
-//    infomebodyVal = process.env.infomebody.split()
-//   };
-// if (process.env.infomekey && process.env.infomekey.split('\n').length > 0) {
-//    infomekeyVal = process.env.infomekey.split('\n');
-//   } else  {
-//    infomekeyVal = process.env.infomekey.split()
-//   };
-// if (process.env.videoartlistkey && process.env.videoartlistkey.split('\n').length > 0) {
-//    videoartlistkeyVal = process.env.videoartlistkey.split('\n');
-//   } else  {
-//    videoartlistkeyVal = process.env.videoartlistkey.split()
-//   };
-// if (process.env.videoartlistbody && process.env.videoartlistbody.split('\n').length > 0) {
-//    videoartlistbodyVal = process.env.videoartlistbody.split('\n');
-//   } else  {
-//    videoartlistbodyVal = process.env.videoartlistbody.split()
-//   };
-// if (process.env.videoreadaccountbody && process.env.videoreadaccountbody.split('\n').length > 0) {
-//    videoreadaccountbodyVal = process.env.videoreadaccountbody.split('\n');
-//   } else  {
-//    videoreadaccountbodyVal = process.env.videoreadaccountbody.split()
-//   };
-// if (process.env.videoreadaccountkey && process.env.videoreadaccountkey.split('\n').length > 0) {
-//    videoreadaccountkeyVal = process.env.videoreadaccountkey.split('\n');
-//   } else  {
-//    videoreadaccountkeyVal = process.env.videoreadaccountkey.split()
-//   };
-// if (process.env.artdetailkey && process.env.artdetailkey.split('\n').length > 0) {
-//    artdetailkeyVal = process.env.artdetailkey.split('\n');
-//   } else  {
-//    artdetailkeyVal = process.env.artdetailkey.split()
-//   };
-// if (process.env.artdetailbody && process.env.artdetailbody.split('\n').length > 0) {
-//    artdetailbodyVal = process.env.artdetailbody.split('\n');
-//   } else  {
-//    artdetailbodyVal = process.env.artdetailbody.split()
-//   };
+if (process.env.getdomainbody && process.env.getdomainbody.split('\n').length > 0) {
+   getdomainbodyVal = process.env.getdomainbody.split('\n');
+  } else  {
+   getdomainbodyVal = process.env.getdomainbody.split()
+  };
+if (process.env.getdomainkey && process.env.getdomainkey.split('\n').length > 0) {
+   getdomainkeyVal = process.env.getdomainkey.split('\n');
+  } else  {
+   getdomainkeyVal = process.env.getdomainkey.split()
+  };
+if (process.env.userloginbody && process.env.userloginbody.split('\n').length > 0) {
+   userloginbodyVal = process.env.userloginbody.split('\n');
+  } else  {
+   userloginbodyVal = process.env.userloginbody.split()
+  };
+if (process.env.userloginkey && process.env.userloginkey.split('\n').length > 0) {
+   userloginkeyVal = process.env.userloginkey.split('\n');
+  } else  {
+   userloginkeyVal = process.env.userloginkey.split()
+  };
+if (process.env.artlistbody && process.env.artlistbody.split('\n').length > 0) {
+   artlistbodyVal = process.env.artlistbody.split('\n');
+  } else  {
+   artlistbodyVal = process.env.artlistbody.split()
+  };
+if (process.env.artlistkey && process.env.artlistkey.split('\n').length > 0) {
+   artlistkeyVal = process.env.artlistkey.split('\n');
+  } else  {
+   artlistkeyVal = process.env.artlistkey.split()
+  };
+if (process.env.artstationurl && process.env.artstationurl.split('\n').length > 0) {
+   artstationurlVal = process.env.artstationurl.split('\n');
+  } else  {
+   artstationurlVal = process.env.artstationurl.split()
+  };
+if (process.env.artstationkey && process.env.artstationkey.split('\n').length > 0) {
+   artstationkeyVal = process.env.artstationkey.split('\n');
+  } else  {
+   artstationkeyVal = process.env.artstationkey.split()
+  };
+if (process.env.readaccountbody && process.env.readaccountbody.split('\n').length > 0) {
+   readaccountbodyVal = process.env.readaccountbody.split('\n');
+  } else  {
+   readaccountbodyVal = process.env.readaccountbody.split()
+  };
+if (process.env.readaccountkey && process.env.readaccountkey.split('\n').length > 0) {
+   readaccountkeyVal = process.env.readaccountkey.split('\n');
+  } else  {
+   readaccountkeyVal = process.env.readaccountkey.split()
+  };
+if (process.env.infomebody && process.env.infomebody.split('\n').length > 0) {
+   infomebodyVal = process.env.infomebody.split('\n');
+  } else  {
+   infomebodyVal = process.env.infomebody.split()
+  };
+if (process.env.infomekey && process.env.infomekey.split('\n').length > 0) {
+   infomekeyVal = process.env.infomekey.split('\n');
+  } else  {
+   infomekeyVal = process.env.infomekey.split()
+  };
+if (process.env.videoartlistkey && process.env.videoartlistkey.split('\n').length > 0) {
+   videoartlistkeyVal = process.env.videoartlistkey.split('\n');
+  } else  {
+   videoartlistkeyVal = process.env.videoartlistkey.split()
+  };
+if (process.env.videoartlistbody && process.env.videoartlistbody.split('\n').length > 0) {
+   videoartlistbodyVal = process.env.videoartlistbody.split('\n');
+  } else  {
+   videoartlistbodyVal = process.env.videoartlistbody.split()
+  };
+if (process.env.videoreadaccountbody && process.env.videoreadaccountbody.split('\n').length > 0) {
+   videoreadaccountbodyVal = process.env.videoreadaccountbody.split('\n');
+  } else  {
+   videoreadaccountbodyVal = process.env.videoreadaccountbody.split()
+  };
+if (process.env.videoreadaccountkey && process.env.videoreadaccountkey.split('\n').length > 0) {
+   videoreadaccountkeyVal = process.env.videoreadaccountkey.split('\n');
+  } else  {
+   videoreadaccountkeyVal = process.env.videoreadaccountkey.split()
+  };
+if (process.env.artdetailkey && process.env.artdetailkey.split('\n').length > 0) {
+   artdetailkeyVal = process.env.artdetailkey.split('\n');
+  } else  {
+   artdetailkeyVal = process.env.artdetailkey.split()
+  };
+if (process.env.artdetailbody && process.env.artdetailbody.split('\n').length > 0) {
+   artdetailbodyVal = process.env.artdetailbody.split('\n');
+  } else  {
+   artdetailbodyVal = process.env.artdetailbody.split()
+  };
 
   
   
@@ -311,26 +311,26 @@ if ($.isNode()) {
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-// } else {
-//   getdomainbodyArr.push($.getdata('getdomainbody'));
-//   getdomainkeyArr.push($.getdata('getdomainkey'));
-//   userloginbodyArr.push($.getdata('userloginbody'));
-//   userloginkeyArr.push($.getdata('userloginkey'));
-//   artlistbodyArr.push($.getdata('artlistbody'));
-//   artlistkeyArr.push($.getdata('artlistkey'));
-//   artstationurlArr.push($.getdata('artstationurl'));
-//   artstationkeyArr.push($.getdata('artstationkey'));
-//   readaccountbodyArr.push($.getdata('readaccountbody'));
-//   readaccountkeyArr.push($.getdata('readaccountkey'));
-//   infomebodyArr.push($.getdata('infomebody'));
-//   infomekeyArr.push($.getdata('infomekey'));
-//   videoartlistbodyArr.push($.getdata('videoartlistbody'));
-//   videoartlistkeyArr.push($.getdata('videoartlistkey'));
-//   videoreadaccountbodyArr.push($.getdata('videoreadaccountbody'));
-//   videoreadaccountkeyArr.push($.getdata('videoreadaccountkey'));
-//   artdetailbodyArr.push($.getdata('artdetailbody'));
-//   artdetailkeyArr.push($.getdata('artdetailkey'));
-// }
+} else {
+  getdomainbodyArr.push($.getdata('getdomainbody'));
+  getdomainkeyArr.push($.getdata('getdomainkey'));
+  userloginbodyArr.push($.getdata('userloginbody'));
+  userloginkeyArr.push($.getdata('userloginkey'));
+  artlistbodyArr.push($.getdata('artlistbody'));
+  artlistkeyArr.push($.getdata('artlistkey'));
+  artstationurlArr.push($.getdata('artstationurl'));
+  artstationkeyArr.push($.getdata('artstationkey'));
+  readaccountbodyArr.push($.getdata('readaccountbody'));
+  readaccountkeyArr.push($.getdata('readaccountkey'));
+  infomebodyArr.push($.getdata('infomebody'));
+  infomekeyArr.push($.getdata('infomekey'));
+  videoartlistbodyArr.push($.getdata('videoartlistbody'));
+  videoartlistkeyArr.push($.getdata('videoartlistkey'));
+  videoreadaccountbodyArr.push($.getdata('videoreadaccountbody'));
+  videoreadaccountkeyArr.push($.getdata('videoreadaccountkey'));
+  artdetailbodyArr.push($.getdata('artdetailbody'));
+  artdetailkeyArr.push($.getdata('artdetailkey'));
+}
 
 //////////////////////////////////////////////////////////////////
 
