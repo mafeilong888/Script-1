@@ -28,7 +28,8 @@ jobs:
           node rxm.js
         env:
           rxmurl: ${{ secrets.rxmurl }}
-          rxmhd: ${{ secrets.rxmhd }}
+          rxmhd: ${{ secrets.rxmhd }}        
+          rxmbody: ${{ secrets.rxmbody }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
