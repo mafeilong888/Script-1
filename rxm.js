@@ -25,17 +25,8 @@ let rxmbody = $.getdata('rxmbody')
 
 if ($.isNode()) {
 	rxmurl = process.env.rxmurl
-        jqbhjd = process.env.jqbhd
-        jqbggbody = process.env.jqbggbody
-	jqbqdbody = process.env.jqbqdbody
-	jqbbody1 = process.env.jqbbody1
-	jqbbody2 = process.env.jqbbody2
-	jqbbody3 = process.env.jqbbody3
-	jqbbody3 = process.env.jqbbody3
-	jqbbody4 = process.env.jqbbody4
-	jqbbody5 = process.env.jqbbody5
-	jqbrwbody = process.env.jqbrwbody
-	jqbzpbody = process.env.jqbzpbody
+        rxmhd = process.env.rxmhd
+       
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
