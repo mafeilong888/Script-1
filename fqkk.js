@@ -1,62 +1,39 @@
 /*
 软件名称:番茄看看 微信扫描二维码打开
-更新时间：2021-02-21 @肥皂
+更新时间：2021-02-27 @肥皂
 脚本说明：番茄看看自动阅读
 脚本为自动完成番茄看看的阅读任务
-每日收益一元左右，可多号撸。提现秒到
-
+每日收益1.7元左右，可多号撸。提现秒到
 任务打开二维码地址 https://raw.githubusercontent.com/age174/-/main/3F545C70-389B-4155-ACB1-15B6FDA95501.jpeg
-
 可以去boxjs修改自动提现金额和循环次数
 最低提现额度为0.3元，默认提现1元
-最多循环次数为100次，默认为100次
-
+最多任务次数为100次，默认为25次运行一回
 本脚本以学习为主！
 首次运行脚本，会提示获取数据
 去番茄看看，点击阅读A任务，开始阅读，
 完成一次阅读即可获取数据。
-
 TG电报群: https://t.me/hahaha8028
-
 我的邀请码 : 3950781  感谢大佬们填写
-
-注意:脚本每天运行一次就可以了，切记别多次运行，如不小心运行去把代理开关关闭一下就行，脚本默认运行次数为100次，运行时间大概15分钟,超过一百次容易被微信阅读限制，切记。。。。。。
-别几天就把羊薅死了，账号多的大佬觉得运行一次太久的话也可以去boxjs自行修改循环次数，比如修改循环次数为20，则每天运行五次脚本，循环次数为50则每天要运行两次脚本。。默认为循环次数为100一天运行一次，反正不管怎么修改，尽量每天循环次数别超过100
-
+注意:如果重定向跳转失败或者跑脚本没有key没有提交成功，请手动去做一个阅读A任务再执行脚本。
+2.24更新 运行日志加入boxjs设置的循环次数和提现金额，key提交因为有很多302重定向，如跑脚本没有金币请查看日志的重定向是否错误
+已修改循环方式，方式循环方式为一直阅读，直到当前无任务可做自动停止
+2.27修复番茄看看因跟换域名无法获取数据的问题，自行更换重写和mitm
 boxjs地址 :  
-
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
-
-
 番茄看看
 圈X配置如下，其他软件自行测试
 [task_local]
 #番茄看看
-15 12 * * * https://raw.githubusercontent.com/age174/-/main/fqkk.js, tag=番茄看看, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true
-
-
+15 12,14,16,20 * * * https://raw.githubusercontent.com/age174/-/main/fqkk.js, tag=番茄看看, img-url=https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg, enabled=true
 [rewrite_local]
 #番茄看看
-^http://m.*.top/reada/getTask url script-request-header https://raw.githubusercontent.com/age174/-/main/fqkk.js
-
-
-
+^http://m.*./reada/getTask url script-request-header https://raw.githubusercontent.com/age174/-/main/fqkk.js
 #loon
-^http://m.*.top/reada/getTask script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js, requires-header=true, timeout=10, tag=番茄看看
-
-
-
+^http://m.*./reada/getTask script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js, requires-header=true, timeout=10, tag=番茄看看
 #surge
-
-番茄看看 = type=http-request,pattern=^http://m.*.top/reada/getTask,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js,script-update-interval=0
-
-
-
-
+番茄看看 = type=http-request,pattern=^http://m.*./reada/getTask,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js,script-update-interval=0
 [MITM]
-hostname = m.*.top
-
-
+hostname = m.*
 */
 
 
@@ -68,7 +45,6 @@ let fqkkurl = $.getdata('fqkkurl')
 let fqkkhd = $.getdata('fqkkhd')
 let fqkey = ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
-let fqjs = 1
 
 if ($.isNode()) {
 //   if (process.env.FQKKURL && process.env.FQKKURL.indexOf('#') > -1) {
@@ -109,7 +85,9 @@ if ($.isNode()) {
 }
 
 !(async () => {
-  if (typeof $request !== "undefined") {
+  if (ty​
+87
+peof $request !== "undefined") {
     await fqkkck()
    
   } else {fqkkurlArr.push($.getdata('fqkkurl'))
