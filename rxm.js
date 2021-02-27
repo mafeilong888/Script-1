@@ -24,10 +24,14 @@ let rxmhd = $.getdata('rxmhd')
 let rxmbody = $.getdata('rxmbody')
 
 if ($.isNode()) {
-	rxmurl = process.env.rxmurl
-        rxmhd = process.env.rxmhd
-        rxmbody = process.env.rxmbody
+// 	rxmurl = process.env.rxmurl
+//         rxmhd = process.env.rxmhd
+//         rxmbody = process.env.rxmbody
 	
+     rxmurlArr.push('https://cat.rxmao.net/miner/cat.php')
+     rxmhdArr.push('{"X-Requested-With":"XMLHttpRequest","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Content-Type":"application/x-www-form-urlencoded","Origin":"https://cat.rxmao.net","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000230) NetType/WIFI Language/zh_CN","Cookie":"gg2=1; Xarg_2132_lastact=1614338571%09cat.php%09; Xarg_2132_creditbase=0D100D0D0D0D0D0D0D0; Xarg_2132_creditnotice=0D-100D0D10D0D0D0D0D0D80318; Xarg_2132_auth=2c44bsHBWL0ISX%2B%2BiwKtMG9%2BpBGd1V%2BRJDql8dTJVl6iZ3xAO1FbNjpBlAGZ7YEP5ufqaxnFUM%2FHzn3Dyd592gBhEg; Xarg_2132_sid=OLa0k9; Xarg_2132_ulastactivity=f417vV5cxuC%2B3J6X%2FkD20Ss4mPXeGcRF4VS9w3iqkan5yAoX8g68; Xarg_2132_lastvisit=1614334802; Xarg_2132_saltkey=JL0vFWa0","Host":"cat.rxmao.net","Referer":"https://cat.rxmao.net/miner/miner.html","Accept-Language":"zh-cn","Accept":"*/*","Content-Length":"13"}')
+     rxmbodylArr.push('method=havest')
+
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
 
