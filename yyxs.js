@@ -56,8 +56,17 @@ let yyxscjhd = $.getdata('yyxscjhd')
 let yyxsxxurl = $.getdata('yyxsxxurl')
 if ($.isNode()) {
 
-   wnbhd = process.env.WNB_HD
-   wnbbody = process.env.WNB_BODY
+         yyxsspurl = process.env.yyxsspurl
+	 yyxssphd = process.env.yyxssphd
+	 yyxsspbody = process.env.yyxxspbody
+	 yyxsjsurl = process.env.yyxsjsurl
+	 yyxsjsbody = process.env.yyxsjsbody
+	 yyxsscurl = process.env.yyxsscurl
+	 yyxsschd = process.env.yyxsschd
+	 yyxscjurl = process.env.yyxscjurl
+	 yyxscjhd = process.env.yyxscjhd
+	 yyxsxxurl = process.env.yyxsxxurl
+
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
