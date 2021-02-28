@@ -26,8 +26,7 @@ jobs:
       - name: '运行 【阅友小说】'
         run: |
           node yyxs.js 
-        env:
-        
+        env:        
           yyxsspurl: ${{ secrets.yyxsspurl }}
           yyxssphd: ${{ secrets.yyxssphd }}
 	  yyxsspbody: ${{ secrets.yyxxspbody }}
