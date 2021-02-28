@@ -225,7 +225,7 @@ function yyxssp(timeout = 0) {
       }
 let url = {
         url : yyxsspurl,
-        headers : JSON.parse($.getdata('yyxssphd')),
+        headers : JSON.parse(yyxssphd),
         body : yyxsspbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -256,7 +256,7 @@ function yyxssc(timeout = 0) {
 
 let url = {
         url : yyxsscurl,
-      headers : JSON.parse($.getdata('yyxsschd')),
+      headers : JSON.parse(yyxsschd),
         
        
 }      
@@ -284,7 +284,7 @@ function yyxscj(timeout = 0) {
 
 let url = {
         url : yyxscjurl,
-      headers : JSON.parse($.getdata('yyxscjhd')),
+      headers : JSON.parse(yyxscjhd),
         
        
 }      
@@ -314,7 +314,7 @@ function yyxsxx(timeout = 0) {
 //console.log(yyxsscurl)
 let url = {
         url : yyxsxxurl,
-      headers : JSON.parse($.getdata('yyxssphd')),
+      headers : JSON.parse(yyxssphd),
         body : '',
        
 }      
