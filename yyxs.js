@@ -189,7 +189,7 @@ function yyxsjs(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : yyxsjsurl,
-        headers : JSON.parse($.getdata('yyxssphd')),
+        headers : JSON.parse(yyxssphd),
         body : 'coins=50'
        
 }      
