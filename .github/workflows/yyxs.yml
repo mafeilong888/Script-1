@@ -29,8 +29,8 @@ jobs:
         env:        
           yyxsspurl: ${{ secrets.yyxsspurl }}
           yyxssphd: ${{ secrets.yyxssphd }}
-	      yyxsspbody: ${{ secrets.yyxxspbody }}
-	      yyxsjsurl: ${{ secrets.yyxsjsurl }}
+	  yyxsspbody: ${{ secrets.yyxxspbody }}
+	  yyxsjsurl: ${{ secrets.yyxsjsurl }}
 	  yyxsjsbody: ${{ secrets.yyxsjsbody }}
           yyxsscurl: ${{ secrets.yyxsscurl }}
           yyxsschd: ${{ secrets.yyxsschd }}
