@@ -29,15 +29,15 @@ jobs:
         env:
         
           yyxsspurl: ${{ secrets.yyxsspurl }}
-	        yyxssphd: ${{ secrets.yyxssphd }}
-	        yyxsspbody: ${{ secrets.yyxxspbody }}
-	        yyxsjsurl: ${{ secrets.yyxsjsurl }}
-	        yyxsjsbody: ${{ secrets.yyxsjsbody }}
-	        yyxsscurl: ${{ secrets.yyxsscurl }}
-	        yyxsschd: ${{ secrets.yyxsschd }}
-	        yyxscjurl: ${{ secrets.yyxscjurl }}
-	        yyxscjhd: ${{ secrets.yyxscjhd }}
-	        yyxsxxurl: ${{ secrets.yyxsxxurl }}
+          yyxssphd: ${{ secrets.yyxssphd }}
+	  yyxsspbody: ${{ secrets.yyxxspbody }}
+	  yyxsjsurl: ${{ secrets.yyxsjsurl }}
+	  yyxsjsbody: ${{ secrets.yyxsjsbody }}
+          yyxsscurl: ${{ secrets.yyxsscurl }}
+          yyxsschd: ${{ secrets.yyxsschd }}
+	  yyxscjurl: ${{ secrets.yyxscjurl }}
+          yyxscjhd: ${{ secrets.yyxscjhd }}
+          yyxsxxurl: ${{ secrets.yyxsxxurl }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
