@@ -172,11 +172,11 @@ let url = {
 //云扫码key
 function ysm1(timeout = 0) {
   return new Promise((resolve) => {
-//     setTimeout( ()=>{
-//       if (typeof $.getdata('ysmhd') === "undefined") {
-//         $.msg($.name,"",'请先获取云扫码数据!😓',)
-//         $.done()
-//       }
+    setTimeout( ()=>{
+      if (typeof $.getdata('ysmhd') === "undefined") {
+        $.msg($.name,"",'请先获取云扫码数据!😓',)
+        $.done()
+      }
 //console.log(ysmurl.match(/m.(.*?)reada/)[1])
 //console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold")
 //$.done()
@@ -206,7 +206,7 @@ console.log('云扫码获取key回执:失败🚫 '+result.msg+' 已停止当前�
         }
       })
     },timeout)
- // })
+  })
 }
 
 
