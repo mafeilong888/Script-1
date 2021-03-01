@@ -3,11 +3,11 @@ name: 云扫码
 on:
   workflow_dispatch:
   schedule:
-     - cron: '10 0,2,4,6,8 * * *'
+     - cron: '15 4,6,8,12,14 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: fqkk
+    types: ysm
     
 jobs:
   build:
