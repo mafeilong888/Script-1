@@ -358,7 +358,7 @@ let sjs = Math.floor(Math.random()*899+100); //生成随机数
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/Article/Article_MoneyAward.ashx",
         headers : JSON.parse(dkahd),
-        body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1],}
+        body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1]}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -423,7 +423,7 @@ function dkasd(timeout = 0) {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
         headers : JSON.parse(dkahd),
-        body : 'readLastKey='+fqkey,}
+        body : 'readLastKey='+fqkey}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -449,7 +449,7 @@ function dkaqdkkz(timeout = 0) {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
         headers : JSON.parse(dkahd),
-        body : 'readLastKey='+fqkey,}
+        body : 'readLastKey='+fqkey}
       $.post(url, async (err, resp, data) => {
         try {
            
