@@ -227,7 +227,9 @@ function dkatm(timeout = 0) {
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Index.ashx",
         headers : JSON.parse(dkadthd),
-        body : dkadtbody,}
+        body : dkadtbody
+
+}
       $.post(url, async (err, resp, data) => {
         try {
     const result = JSON.parse(data)
@@ -380,11 +382,11 @@ let url = {
 //蛋咖签到
 function dkaqd(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('dkahd') === "undefined") {
-        $.msg($.name,"",'请先获取蛋咖数据!😓',)
-        $.done()
-      }
+ //   setTimeout( ()=>{
+//       if (typeof $.getdata('dkahd') === "undefined") {
+//         $.msg($.name,"",'请先获取蛋咖数据!😓',)
+//         $.done()
+//       }
 let fqjs = 1
 //console.log(dkaurl.match(/m.(.*?)reada/)[1])
 
@@ -409,7 +411,7 @@ console.log('蛋咖签到回执:失败🚫 '+result.msg)
         }
       })
     },timeout)
-  })
+ // })
 }
 
 
