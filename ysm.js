@@ -116,7 +116,8 @@ function ysm3(timeout = 0) {
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold",
         headers : JSON.parse(ysmhd),
-        body : ysm2body,}
+        body : ysm2body
+}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -171,11 +172,11 @@ let url = {
 //云扫码key
 function ysm1(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('ysmhd') === "undefined") {
-        $.msg($.name,"",'请先获取云扫码数据!😓',)
-        $.done()
-      }
+//     setTimeout( ()=>{
+//       if (typeof $.getdata('ysmhd') === "undefined") {
+//         $.msg($.name,"",'请先获取云扫码数据!😓',)
+//         $.done()
+//       }
 //console.log(ysmurl.match(/m.(.*?)reada/)[1])
 //console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold")
 //$.done()
@@ -183,7 +184,7 @@ function ysm1(timeout = 0) {
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task",
         headers : JSON.parse(ysmhd),
-        body : JSON.parse($.getdata('ysmbody')),
+        body : JSON.parse($.getdata('ysmbody'))
 }
       $.post(url, async (err, resp, data) => {
         try {
@@ -205,7 +206,7 @@ console.log('云扫码获取key回执:失败🚫 '+result.msg+' 已停止当前�
         }
       })
     },timeout)
-  })
+ // })
 }
 
 
