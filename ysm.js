@@ -40,8 +40,17 @@ let ysmhd = $.getdata('ysmhd')
 let ysmbody = $.getdata('ysmbody')
 let ysm2body = $.getdata('ysm2body')
 let ysmkey = ''
+if ($.isNode()) {
+  
 
+ ysmurlArr.push('http://erd.506niubi.top/yunonline/v1/task') 
+ysmhdArr.push('{"Accept":"application/json, text/javascript, */*; q=0.01","Origin":"http://erd.506niubi.top","Accept-Encoding":"gzip, deflate","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8","Connection":"keep-alive","Host":"erd.506niubi.top","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000231) NetType/WIFI Language/zh_CN","Referer":"http://erd.506niubi.top/yunonline/v1/redirect/eyJpdiI6IjdzeUdrenllcGNsa2lWbEprZDBGU3c9PSIsInZhbHVlIjoiclJuQTJQWk5zWjN3RWJRaG4xSW5cL3BhZU9ONE5HbGo3azE3RVhRcGQweG9uTDY2TU9mOWdhTm1yUWhEczRWMlBMVVRuWFRBUEdLWGpEQUVHRGtiYUxYQ1FjOUhOZ2dubklZRVVlT0owZ21zbVwvVGg4SzRvK1ZvT3Z4bmZqcEYwZlFXZmh2RDJZRjRtWWl1VU9PSUVNdHVVWXg3QjRBQmdHK1JNV0pTaWRnVUtkWG54M1crWFU3UjhmWDJmN2VqNDhNNjVISkNtV3J5dUdHSElWKzlqenVFNEs2cGd0ZGhBRWRWNGVQQTlQeFpuMVpoXC9rMTl6dDhhSnZcL1wvQ000enY0Zzd0ODlOQVFnUmhjQm8xajJLc0JPb0hJVkZBXC9VK05hbnBaaGN5RDVPTlU9IiwibWFjIjoiMTk0MTJlOTA5NGFkY2M0NzgwM2ZiZTU5YzY0NDVhNTBhZTY0NWRlMzk0ZjJlMDMyYzllM2RmMDc5MDNmNDdlZiJ9?openid=oksnzwat0mlmEoSKQUYfA0Efs0n4","Accept-Language":"zh-cn","Content-Length":"737","X-Requested-With":"XMLHttpRequest"}') 
+ysmbodyArr.push('"secret=eyJpdiI6Ik85Y2xqZE5qXC8xTUZ2bkFGSXFIbDZ3PT0iLCJ2YWx1ZSI6IlQ3Y0h2OHRtb1wvblFcLzhFQUlDYVhXbHhnaWJcL3ZMWllEMHBYUEZHdlVicjhGSU52dklqNEdkN1JzMms2UE9EUndRXC9OdzhRbTIwSnp1cytOSk9zNWNzZTA3bGR2WGtKUjR5SmpVSWFYQ3d5WVhBNTlzZHIreDZadllUNkhWdWNLMkdyYUoxOEd2NGFMWFVYTmhEQWc5ZW1iUHB2M2ZmeitcL3A0QWFoTDY4RStDU2lLYTE4QjNETWNua00yXC9cL0JIaFF4OVEwbVhLOFdLMWY2Z2ZYVWtjYU1wUHo4Q1NUUk1aQ1J1Q0k3TkFqbENZRnNaR0U5S0daNVRrbEdCOXlxOHNJY3FTY0dNR2VNcUFOV1Uxd2NvZEkweVNQdmxZQmVwNlhyQnhGTXJJVnRVaXRmcTh3VzRUdXhBb3d1ZzZlcWd1QmNwODFkNHNWOUMwXC85SEV1RHN2VDZoSWdYWGhDYWVHZnFkZDlrVm9RSURPc2FMcnFFTjl0Y0lWajY5XC94OHFtZTNiUngyUGxiaHpcL0FnNzdQek9vR1NRPT0iLCJtYWMiOiIxOTdkODNkNTg1MTZiNTVjYjljMTkyNmNlNGRhZDMyODgxOTAwYTRhZTNmMmYxZDdjMTQzNTJiYjk4Yjg3MjdjIn0%253D&type=read"')
 
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+  
+}
 !(async () => {
   if (typeof $request !== "undefined") {
     await ysmck()
