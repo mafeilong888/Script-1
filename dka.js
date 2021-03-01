@@ -393,7 +393,9 @@ let fqjs = 1
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_SignIn.ashx",
         headers : JSON.parse(dkahd),
-        body : dkaqdbody,}
+        body : dkaqdbody
+
+}
       $.post(url, async (err, resp, data) => {
         try {
           
@@ -474,7 +476,9 @@ function dkaxx(timeout = 0) {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/BaseData/GetUserInfo.ashx",
         headers : JSON.parse(dkahd),
-        body : dkabody,}
+        body : dkabody
+
+}
       $.post(url, async (err, resp, data) => {
         try {
            
