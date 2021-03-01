@@ -379,11 +379,11 @@ let url = {
 //蛋咖签到
 function dkaqd(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
+  /*  setTimeout( ()=>{
       if (typeof $.getdata('dkahd') === "undefined") {
         $.msg($.name,"",'请先获取蛋咖数据!😓',)
         $.done()
-      }
+      }*/
 let fqjs = 1
 //console.log(dkaurl.match(/m.(.*?)reada/)[1])
 
