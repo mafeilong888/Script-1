@@ -260,7 +260,7 @@ function dkatj(timeout = 0) {
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Answer.ashx",
         headers : JSON.parse(dkadthd),
-         body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}",
+         body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}"
 }      
       $.post(url, async (err, resp, data) => {
         try {
@@ -289,7 +289,7 @@ function dkakkz(timeout = 0) {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/MyAccount/FastAd/FastAd_SetImgAdAward.ashx",
         headers : JSON.parse(dkahd),
-        body : dkakkzbody,
+        body : dkakkzbody
 }
       $.post(url, async (err, resp, data) => {
         try {
@@ -326,8 +326,8 @@ let url2 = dkaxsurl.match(/&userId=(.*?)&bookChannel=/)[1]
 
 let url = {
         url : 'http://www.ipadview.com/rpads/score/award?bookId='+url1+'&chapterId='+jj+++'&userId='+url2+'&bookChannel=1',
-        headers : JSON.parse(dkaxshd),
-        body : '',}
+        headers : JSON.parse(dkaxshd)
+    }
       $.post(url, async (err, resp, data) => {
         try {
            
