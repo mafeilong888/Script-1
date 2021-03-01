@@ -256,7 +256,7 @@ function dkatj(timeout = 0) {
 //$.done()
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Answer.ashx",
-        headers : JSON.parse(kadthd),
+        headers : JSON.parse(dkadthd),
          body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}",
 }      
       $.post(url, async (err, resp, data) => {
