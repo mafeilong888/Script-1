@@ -72,10 +72,10 @@ if ($.isNode()) {
 // 	dkadtbody = process.env.dkadtbody
 // 	dkaqdbody = process.env.dkaqdbody
 // 	dkaxwbody = process.env.dkaxwbody
-	  yyxsspurlArr.push($.getdata('yyxsspurl'))
-     yyxssphdArr.push($.getdata('yyxssphd'))
-	yyxsspbodyArr.push($.getdata('yyxsspbody'))
-	yyxsjsurlArr.push($.getdata('yyxsjsurl'))
+	  dkahdArr.push({"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=9bdba0f0b3bfc8640de8f8aca828f2769a228a73c55698f2adb5fdbf6f09d529","Content-Length":"122"})
+     dkabodyArr.push(keycode=d24fd1f0370643004226be47649f8dab&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614565989131&userid=30397020)
+	dkaxsurlArr.push(http://www.ipadview.com/rpads/score/award?bookId=726402&chapterId=102167537&userId=89772856&productId=8250&imei=479603C0B68A4EF6&projectId=67&st=1614514971924&cs=2b202805037894173a5c7551cf85e961&bookName=%E5%84%92%E9%81%93%E5%8C%BB%E5%9C%A3&bookType=0&bookChannel=1)
+	dkaxshdArr.push({"screen-inches":"4.7","info-subversion":"1","info-model":"iPhone","info-userid":"89772856","info-network":"1","Host":"www.ipadview.com","Accept-Encoding":"gzip, deflate","info-idfv":"34153DD7-F0E6-4DB0-A7E6-692D14CBB1EA","info-idfa":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","info-dt":"phone_ad_sdk","info-vcode":"e6d8e75a94b9458f4dff780f5ed7e1de","Connection":"keep-alive","info-product":"8250","info-lon":"0","Accept-Language":"zh-cn","info-imei":"479603C0B68A4EF6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","screen-width":"828","info-platform":"ios","info-version":"400","screen-height":"1792","info-lat":"0","info-sv":"7600","info-time":"1614514971931","Accept":"*/*","info-os":"iOS13.4.1","info-source":"sdk","info-channel":"appStore","info-city":"","Content-Length":"0","info-adver":"23"})
 	yyxsjsbodyArr.push($.getdata('yyxsjsbody'))
      yyxsschdArr.push($.getdata('yyxsschd'))
      yyxsscurlArr.push($.getdata('yyxsscurl'))
