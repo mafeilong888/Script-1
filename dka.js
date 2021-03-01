@@ -72,14 +72,14 @@ if ($.isNode()) {
 // 	dkadtbody = process.env.dkadtbody
 // 	dkaqdbody = process.env.dkaqdbody
 // 	dkaxwbody = process.env.dkaxwbody
-	  dkahdArr.push({"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=9bdba0f0b3bfc8640de8f8aca828f2769a228a73c55698f2adb5fdbf6f09d529","Content-Length":"122"})
-     dkabodyArr.push(keycode=d24fd1f0370643004226be47649f8dab&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614565989131&userid=30397020)
-	dkaxsurlArr.push(http://www.ipadview.com/rpads/score/award?bookId=726402&chapterId=102167537&userId=89772856&productId=8250&imei=479603C0B68A4EF6&projectId=67&st=1614514971924&cs=2b202805037894173a5c7551cf85e961&bookName=%E5%84%92%E9%81%93%E5%8C%BB%E5%9C%A3&bookType=0&bookChannel=1)
-	dkaxshdArr.push({"screen-inches":"4.7","info-subversion":"1","info-model":"iPhone","info-userid":"89772856","info-network":"1","Host":"www.ipadview.com","Accept-Encoding":"gzip, deflate","info-idfv":"34153DD7-F0E6-4DB0-A7E6-692D14CBB1EA","info-idfa":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","info-dt":"phone_ad_sdk","info-vcode":"e6d8e75a94b9458f4dff780f5ed7e1de","Connection":"keep-alive","info-product":"8250","info-lon":"0","Accept-Language":"zh-cn","info-imei":"479603C0B68A4EF6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","screen-width":"828","info-platform":"ios","info-version":"400","screen-height":"1792","info-lat":"0","info-sv":"7600","info-time":"1614514971931","Accept":"*/*","info-os":"iOS13.4.1","info-source":"sdk","info-channel":"appStore","info-city":"","Content-Length":"0","info-adver":"23"})
-	dkakkzhdArr.push{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=949dd88d3d3f3670e23a55f38cfb408b6589f9a57a9e3ba9cccb2d472973e09b","Content-Length":"122"}
-     yyxsschdArr.push($.getdata('yyxsschd'))
-     yyxsscurlArr.push($.getdata('yyxsscurl'))
-     yyxscjhdArr.push($.getdata('yyxscjhd'))
+	  dkahdArr.push('{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=9bdba0f0b3bfc8640de8f8aca828f2769a228a73c55698f2adb5fdbf6f09d529","Content-Length":"122"}')
+     dkabodyArr.push('keycode=d24fd1f0370643004226be47649f8dab&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614565989131&userid=30397020')
+	dkaxsurlArr.push('http://www.ipadview.com/rpads/score/award?bookId=726402&chapterId=102167537&userId=89772856&productId=8250&imei=479603C0B68A4EF6&projectId=67&st=1614514971924&cs=2b202805037894173a5c7551cf85e961&bookName=%E5%84%92%E9%81%93%E5%8C%BB%E5%9C%A3&bookType=0&bookChannel=1')
+	dkaxshdArr.push('{"screen-inches":"4.7","info-subversion":"1","info-model":"iPhone","info-userid":"89772856","info-network":"1","Host":"www.ipadview.com","Accept-Encoding":"gzip, deflate","info-idfv":"34153DD7-F0E6-4DB0-A7E6-692D14CBB1EA","info-idfa":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","info-dt":"phone_ad_sdk","info-vcode":"e6d8e75a94b9458f4dff780f5ed7e1de","Connection":"keep-alive","info-product":"8250","info-lon":"0","Accept-Language":"zh-cn","info-imei":"479603C0B68A4EF6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","screen-width":"828","info-platform":"ios","info-version":"400","screen-height":"1792","info-lat":"0","info-sv":"7600","info-time":"1614514971931","Accept":"*/*","info-os":"iOS13.4.1","info-source":"sdk","info-channel":"appStore","info-city":"","Content-Length":"0","info-adver":"23"}')
+	dkakkzhdArr.push('{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=949dd88d3d3f3670e23a55f38cfb408b6589f9a57a9e3ba9cccb2d472973e09b","Content-Length":"122"'}
+     dkakkzbodyArr.push('keycode=4e6c9092a120059c31025e63585a19a7&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558889739&userid=30397020')
+     dkadthdArr.push('{"Origin":"http://manorapp.pceggs.com","Accept":"application/json, text/plain, */*","Connection":"keep-alive","Content-Type":"application/json;charset=utf-8","Accept-Encoding":"gzip, deflate","Host":"manorapp.pceggs.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Content-Length":"199","Accept-Language":"zh-cn"}')
+     dkadtbodyArr.push('{"userid":"30397020","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","ptype":"1","unix":"1614558829","keycode":"078D6F8F93F8F1C876A5C14B67A99110","token":"u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur"}"},{"key":"dkaqdbody","val":"keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020"}')
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
@@ -225,7 +225,7 @@ function dkatm(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Index.ashx",
-        headers : JSON.parse($.getdata('dkadthd')),
+        headers : JSON.parse(dkadthd),
         body : dkadtbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -256,7 +256,7 @@ function dkatj(timeout = 0) {
 //$.done()
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Answer.ashx",
-        headers : JSON.parse($.getdata('dkadthd')),
+        headers : JSON.parse(kadthd),
          body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}",
 }      
       $.post(url, async (err, resp, data) => {
@@ -285,7 +285,7 @@ function dkakkz(timeout = 0) {
 //$.done()
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/MyAccount/FastAd/FastAd_SetImgAdAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkakkzbody,
 }
       $.post(url, async (err, resp, data) => {
@@ -323,7 +323,7 @@ let url2 = dkaxsurl.match(/&userId=(.*?)&bookChannel=/)[1]
 
 let url = {
         url : 'http://www.ipadview.com/rpads/score/award?bookId='+url1+'&chapterId='+jj+++'&userId='+url2+'&bookChannel=1',
-        headers : JSON.parse($.getdata('dkaxshd')),
+        headers : JSON.parse(dkaxshd),
         body : '',}
       $.post(url, async (err, resp, data) => {
         try {
@@ -354,7 +354,7 @@ function dkaxw(timeout = 0) {
 let sjs = Math.floor(Math.random()*899+100); //生成随机数
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/Article/Article_MoneyAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1],}
       $.post(url, async (err, resp, data) => {
         try {
@@ -389,7 +389,7 @@ let fqjs = 1
 
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_SignIn.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkaqdbody,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -417,7 +417,7 @@ function dkasd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -443,7 +443,7 @@ function dkaqdkkz(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -470,7 +470,7 @@ function dkaxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/BaseData/GetUserInfo.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkabody,}
       $.post(url, async (err, resp, data) => {
         try {
