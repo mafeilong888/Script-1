@@ -56,4 +56,4 @@ jobs:
       - name: '运行 【阅友小说】'
         #if: env.RLHEADER
         run: |
-          node Task/yyxs.js
+          node yyxs.js
