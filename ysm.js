@@ -184,7 +184,7 @@ function ysm1(timeout = 0) {
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task",
         headers : JSON.parse(ysmhd),
-        body : JSON.parse($.getdata('ysmbody'))
+        body : JSON.parse(ysmbody)
 }
       $.post(url, async (err, resp, data) => {
         try {
