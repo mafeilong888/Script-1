@@ -59,6 +59,24 @@ let dkaqdbody = $.getdata('dkaqdbody')//蛋咖签到
 //let dkaqdkbody = $.getdata('dkaqdkbody')//签到看看赚
 let dkaxwbody = $.getdata('dkaxwbody')//蛋咖新闻
 let tm = ''
+
+	if ($.isNode()) {
+	dkahd = process.env.dkahd
+  dkabody = process.env.dkabody
+  dkaxsurl = process.env.dkaxsurl
+	dkaxshd = process.env.dkaxshd
+	dkakkzhd = process.env.dkakkzhd
+	dkakkzbody = process.env.dkakkzbody
+	dkadthd = process.env.dkadthd
+	dkadtbody = process.env.dkadtbody
+	dkaqdbody = process.env.dkaqdbody
+	dkaxwbody = process.env.dkaxwbody
+	
+	
+  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+}
+
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await dkack();
