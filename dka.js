@@ -80,7 +80,8 @@ if ($.isNode()) {
      dkakkzbodyArr.push('keycode=4e6c9092a120059c31025e63585a19a7&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558889739&userid=30397020')
      dkadthdArr.push('{"Origin":"http://manorapp.pceggs.com","Accept":"application/json, text/plain, */*","Connection":"keep-alive","Content-Type":"application/json;charset=utf-8","Accept-Encoding":"gzip, deflate","Host":"manorapp.pceggs.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Content-Length":"199","Accept-Language":"zh-cn"}')
      dkadtbodyArr.push('{"userid":"30397020","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","ptype":"1","unix":"1614558829","keycode":"078D6F8F93F8F1C876A5C14B67A99110","token":"u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur"}"},{"key":"dkaqdbody","val":"keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020"}')
-	
+	dkaqdbodyArr.push('keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020')
+    dkaxwbodyArr.push('keycode=7b5979f9337484b97b356b4581cbaf6b&partArticleId=20210301081629899158&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558865481&userid=30397020')
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
 
