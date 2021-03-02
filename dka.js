@@ -85,7 +85,6 @@ if ($.isNode()) {
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
 
-
 !(async () => {
   if (typeof $request !== "undefined") {
     await dkack();
@@ -141,8 +140,8 @@ if ($.isNode()) {
           await dkatm();
           await $.wait(1000);
           await dkaxw();
-          await $.wait(1000);
-          await dkaxs();
+          //await $.wait(1000);
+//await dkaxs();//蛋咖小说，已禁用，需要开启的自己删了注释
           await $.wait(1000);
           await dkakkz();
           await dkaxx();
@@ -226,17 +225,15 @@ function dkatm(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Index.ashx",
-        headers : JSON.parse(dkadthd),
-        body : dkadtbody
-
-}
+        headers : JSON.parse($.getdata('dkadthd')),
+        body : dkadtbody,}
       $.post(url, async (err, resp, data) => {
         try {
     const result = JSON.parse(data)
         if(result.status == 0){
         console.log('\n蛋咖获取题目回执:成功🌝 当前题目为:\n'+result.data.title+'\n\n成功找到题目答案，正在前往答题')
         tm = result.data.realnum
-        await $.wait(1500);
+       await $.wait(1500);
        await dkatj();
 } else {
        console.log('\n蛋咖获取题目回执:失败🚫 '+result.msg)
@@ -259,8 +256,8 @@ function dkatj(timeout = 0) {
 //$.done()
 let url = {
         url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Answer.ashx",
-        headers : JSON.parse(dkadthd),
-         body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}"
+        headers : JSON.parse($.getdata('dkadthd')),
+         body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}",
 }      
       $.post(url, async (err, resp, data) => {
         try {
@@ -268,9 +265,9 @@ let url = {
        const result = JSON.parse(data)
       if(result.status == 0){
         console.log('\n蛋咖答题回执:成功🌝 '+result.msg)
-        tm = result.data.realnum
+        
        await $.wait(1500);
-        await dkatm();
+       await dkatm();
 } else {
        console.log('\n蛋咖答题回执:失败🚫 '+result.msg)
 }
@@ -288,8 +285,8 @@ function dkakkz(timeout = 0) {
 //$.done()
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/MyAccount/FastAd/FastAd_SetImgAdAward.ashx",
-        headers : JSON.parse(dkahd),
-        body : dkakkzbody
+        headers : JSON.parse($.getdata('dkahd')),
+        body : dkakkzbody,
 }
       $.post(url, async (err, resp, data) => {
         try {
@@ -326,8 +323,8 @@ let url2 = dkaxsurl.match(/&userId=(.*?)&bookChannel=/)[1]
 
 let url = {
         url : 'http://www.ipadview.com/rpads/score/award?bookId='+url1+'&chapterId='+jj+++'&userId='+url2+'&bookChannel=1',
-        headers : JSON.parse(dkaxshd)
-    }
+        headers : JSON.parse($.getdata('dkaxshd')),
+        body : '',}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -357,8 +354,8 @@ function dkaxw(timeout = 0) {
 let sjs = Math.floor(Math.random()*899+100); //生成随机数
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/Article/Article_MoneyAward.ashx",
-        headers : JSON.parse(dkahd),
-        body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1]}
+        headers : JSON.parse($.getdata('dkahd')),
+        body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1],}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -382,20 +379,18 @@ let url = {
 //蛋咖签到
 function dkaqd(timeout = 0) {
   return new Promise((resolve) => {
- //   setTimeout( ()=>{
-//       if (typeof $.getdata('dkahd') === "undefined") {
-//         $.msg($.name,"",'请先获取蛋咖数据!😓',)
-//         $.done()
-//       }
+    setTimeout( ()=>{
+      if (typeof $.getdata('dkahd') === "undefined") {
+        $.msg($.name,"",'请先获取蛋咖数据!😓',)
+        $.done()
+      }
 let fqjs = 1
 //console.log(dkaurl.match(/m.(.*?)reada/)[1])
 
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_SignIn.ashx",
-        headers : JSON.parse(dkahd),
-        body : dkaqdbody
-
-}
+        headers : JSON.parse($.getdata('dkahd')),
+        body : dkaqdbody,}
       $.post(url, async (err, resp, data) => {
         try {
           
@@ -413,7 +408,7 @@ console.log('蛋咖签到回执:失败🚫 '+result.msg)
         }
       })
     },timeout)
- // })
+  })
 }
 
 
@@ -422,8 +417,8 @@ function dkasd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse(dkahd),
-        body : 'readLastKey='+fqkey}
+        headers : JSON.parse($.getdata('dkahd')),
+        body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -448,8 +443,8 @@ function dkaqdkkz(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse(dkahd),
-        body : 'readLastKey='+fqkey}
+        headers : JSON.parse($.getdata('dkahd')),
+        body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -475,10 +470,8 @@ function dkaxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/BaseData/GetUserInfo.ashx",
-        headers : JSON.parse(dkahd),
-        body : dkabody
-
-}
+        headers : JSON.parse($.getdata('dkahd')),
+        body : dkabody,}
       $.post(url, async (err, resp, data) => {
         try {
            
