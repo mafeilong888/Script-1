@@ -1,6 +1,6 @@
 /*
 软件名称:云扫码 微信扫描二维码打开
-更新时间：2021-02-28 @肥皂
+更新时间：2021-03-1 @肥皂
 脚本说明：云扫码自动阅读
 脚本为自动完成云扫码的阅读任务
 每日收益1元左右，可多号撸。提现秒到
@@ -12,6 +12,9 @@
 首次运行脚本，会提示获取数据
 去云扫码，点击开始阅读，阅读几秒返回结算成功获取数据
 TG电报群: https://t.me/hahaha802
+3.1更新增加是否有阅读任务的判断
+加入自动兑换和自动提现，当前金币大于等于3000会自动提现，请自行去获取提现数据，方法，进入云扫码，成功提现一次获取数据成功
+解决多账号问题，可以多账号撸了
 boxjs地址 :  
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 云扫码
@@ -34,11 +37,12 @@ hostname = .*.top
 const $ = new Env('云扫码自动阅读');
 let status;
 status = (status = ($.getval("ysmstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const ysmurlArr = [], ysmhdArr = [],ysmbodyArr = [],ysm2bodyArr = [],ysmcount = ''
+const ysmurlArr = [], ysmhdArr = [],ysmbodyArr = [],ysm2bodyArr = [],ysmtxArr = [],ysmcount = ''
 let ysmurl = $.getdata('ysmurl')
 let ysmhd = $.getdata('ysmhd')
 let ysmbody = $.getdata('ysmbody')
 let ysm2body = $.getdata('ysm2body')
+let ysmtx = $.getdata('ysmtx')
 let ysmkey = ''
 if ($.isNode()) {
   
@@ -51,6 +55,7 @@ ysmbodyArr.push('"secret=eyJpdiI6Ik85Y2xqZE5qXC8xTUZ2bkFGSXFIbDZ3PT0iLCJ2YWx1ZSI
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   
 }
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await ysmck()
@@ -59,12 +64,14 @@ ysmbodyArr.push('"secret=eyJpdiI6Ik85Y2xqZE5qXC8xTUZ2bkFGSXFIbDZ3PT0iLCJ2YWx1ZSI
     ysmhdArr.push($.getdata('ysmhd'))
     ysmbodyArr.push($.getdata('ysmbody'))
     ysm2bodyArr.push($.getdata('ysm2body'))
+    ysmtxArr.push($.getdata('ysmtx'))
     let ysmcount = ($.getval('ysmcount') || '1');
   for (let i = 2; i <= ysmcount; i++) {
     ysmurlArr.push($.getdata(`ysmurl${i}`))
     ysmhdArr.push($.getdata(`ysmhd${i}`))
     ysmbodyArr.push($.getdata(`ysmbody${i}`))
     ysm2bodyArr.push($.getdata(`ysm2body${i}`))
+    ysmtxArr.push($.getdata(`ysmtx${i}`))
   }
     console.log(`------------- 共${ysmhdArr.length}个账号-------------\n`)
       for (let i = 0; i < ysmhdArr.length; i++) {
@@ -74,6 +81,7 @@ ysmbodyArr.push('"secret=eyJpdiI6Ik85Y2xqZE5qXC8xTUZ2bkFGSXFIbDZ3PT0iLCJ2YWx1ZSI
           ysmhd = ysmhdArr[i];
           ysmbody = ysmbodyArr[i];
           ysm2body = ysm2bodyArr[i];
+          ysmtx = ysmtxArr[i];
           $.index = i + 1;
           console.log(`\n开始【云扫码${$.index}】`)
     await ysm1();
@@ -107,6 +115,12 @@ if ($request.url.indexOf("add_gold") > -1) {
     $.log(ysm2body)
 $.msg($.name,"",'云扫码'+`${status}` +'提交任务数据获取成功！')
    }
+  if ($request.url.indexOf("withdraw") > -1) {
+ const ysmtx = $request.body
+  if(ysmtx)     $.setdata(ysmtx,`ysmtx${status}`)
+    $.log(ysmtx)
+$.msg($.name,"",'云扫码'+`${status}` +'微信提现数据获取成功！')
+   }
 }
 
 
@@ -116,15 +130,19 @@ function ysm3(timeout = 0) {
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold",
         headers : JSON.parse(ysmhd),
-        body : ysm2body
-}
+        body : ysm2body,}
       $.post(url, async (err, resp, data) => {
         try {
            
     const result = JSON.parse(data)
         if(result.errcode == 0){
         console.log('\n云扫码领取阅读奖励回执:成功🌝 '+result.data.gold+'\n今日阅读次数: '+result.data.day_read+' 今日阅读奖励: '+result.data.day_gold+' 当前余额'+result.data.last_gold+'\n')
+        if(result.data.last_gold >= 3000){
+    console.log('\n检测到当前金额可提现，前去执行提现')                
+await ysmdh();
+}       await $.wait(2000);
         await ysm1();
+        
 } else {
        console.log('\n云扫码领取阅读奖励回执:失败🚫 '+result.msg)
 }
@@ -150,13 +168,13 @@ let url = {
         try {
          //console.log('\n开始重定向跳转，跳转返回结果：'+data)
         if (err) {
-          console.log(`${$.name} 请求失败，请检查网路重试`)
+          console.log(`\n${$.name} 请求失败，请检查网路重试`)
         } else {
            
     //const result = JSON.parse(data)
        console.log('\n云扫码key提交成功,即将开始领取阅读奖励') 
        
-        await $.wait(10000);
+        await $.wait(8000);
         await ysm3(); 
        
         }} catch (e) {
@@ -181,21 +199,34 @@ function ysm1(timeout = 0) {
 //console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold")
 //$.done()
 //erd14.jkfjcop.top/
+//console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task")
+//console.log(ysmhd)
+//console.log(ysmbody)
+
+
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task",
         headers : JSON.parse(ysmhd),
-        body : JSON.parse(ysmbody)
+        body : 'secret='+ysmbody.match(/secret=(.*?)&/)[1]+'&type=read',
 }
       $.post(url, async (err, resp, data) => {
         try {
-          
+      if(data == '{"errcode":0,"msg":"success"}'){
+       console.log('\n🧼来自肥皂的提示:当前没有任务啊,手动进云扫码看看是不是一直显示更新中,别问肥皂什么原因啦～')
+}
+          //console.log(data)
     const result = JSON.parse(data)
         if(result.errcode == 0){
+         //console.log(data)
         console.log('\n云扫码获取key回执:成功🌝 开始 循环观看💦')
+      if(result.data.link === undefined){
+       console.log('\n🧼来自肥皂的提示:没有匹配到key'+result.data.msg)
+} else {
         ysmkey = result.data.link
-        //console.log(ysmkey)
         await ysm2();
         await $.wait(1000);
+}
+        
 } else {
 console.log('云扫码获取key回执:失败🚫 '+result.msg+' 已停止当前账号运行!')
 }
@@ -210,7 +241,63 @@ console.log('云扫码获取key回执:失败🚫 '+result.msg+' 已停止当前�
 }
 
 
+//云扫码兑换
+function ysmdh(timeout = 0) {
+  return new Promise((resolve) => {
 
+let url = {
+        url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/user_gold",
+        headers : JSON.parse(ysmhd),
+        body : 'openid='+ysmtx.match(/openid=(.*?)ua/)[1]+'gold=3000',
+}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.errcode == 0){
+        console.log('\n云扫码提现兑换:成功🌝 兑换金额'+result.data.money+'元，前去微信提现')
+        await $.wait(1000);
+        await ysmwx();
+} else {
+       console.log('\n云扫码提现兑换:失败🚫 '+result.msg)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+
+//云扫码提现
+function ysmwx(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/withdraw",
+        headers : JSON.parse(ysmhd),
+        body : ysmtx,}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.errcode == 0){
+        console.log('\n云扫码微信提现回执:成功🌝 '+result.msg)
+        await ysm1();
+} else {
+       console.log('\n云扫码微信提现回执:失败🚫 '+result.msg)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 
 
 
