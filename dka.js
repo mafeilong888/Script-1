@@ -59,37 +59,183 @@ let dkaqdbody = $.getdata('dkaqdbody')//蛋咖签到
 //let dkaqdkbody = $.getdata('dkaqdkbody')//签到看看赚
 let dkaxwbody = $.getdata('dkaxwbody')//蛋咖新闻
 let tm = ''
-if ($.isNode()) {
+// if ($.isNode()) {
 	
 
-// 	dkahd = process.env.dkahd
-//   dkabody = process.env.dkabody
-//   dkaxsurl = process.env.dkaxsurl
-// 	dkaxshd = process.env.dkaxshd
-// 	dkakkzhd = process.env.dkakkzhd
-// 	dkakkzbody = process.env.dkakkzbody
-// 	dkadthd = process.env.dkadthd
-// 	dkadtbody = process.env.dkadtbody
-// 	dkaqdbody = process.env.dkaqdbody
-// 	dkaxwbody = process.env.dkaxwbody
-	  dkahdArr.push('{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=9bdba0f0b3bfc8640de8f8aca828f2769a228a73c55698f2adb5fdbf6f09d529","Content-Length":"122"}')
-     dkabodyArr.push('keycode=d24fd1f0370643004226be47649f8dab&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614565989131&userid=30397020')
-	dkaxsurlArr.push('http://www.ipadview.com/rpads/score/award?bookId=726402&chapterId=102167537&userId=89772856&productId=8250&imei=479603C0B68A4EF6&projectId=67&st=1614514971924&cs=2b202805037894173a5c7551cf85e961&bookName=%E5%84%92%E9%81%93%E5%8C%BB%E5%9C%A3&bookType=0&bookChannel=1')
-	dkaxshdArr.push('{"screen-inches":"4.7","info-subversion":"1","info-model":"iPhone","info-userid":"89772856","info-network":"1","Host":"www.ipadview.com","Accept-Encoding":"gzip, deflate","info-idfv":"34153DD7-F0E6-4DB0-A7E6-692D14CBB1EA","info-idfa":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","info-dt":"phone_ad_sdk","info-vcode":"e6d8e75a94b9458f4dff780f5ed7e1de","Connection":"keep-alive","info-product":"8250","info-lon":"0","Accept-Language":"zh-cn","info-imei":"479603C0B68A4EF6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","screen-width":"828","info-platform":"ios","info-version":"400","screen-height":"1792","info-lat":"0","info-sv":"7600","info-time":"1614514971931","Accept":"*/*","info-os":"iOS13.4.1","info-source":"sdk","info-channel":"appStore","info-city":"","Content-Length":"0","info-adver":"23"}')
-	dkakkzhdArr.push('{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=949dd88d3d3f3670e23a55f38cfb408b6589f9a57a9e3ba9cccb2d472973e09b","Content-Length":"122"}')
-     dkakkzbodyArr.push('keycode=4e6c9092a120059c31025e63585a19a7&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558889739&userid=30397020')
-     dkadthdArr.push('{"Origin":"http://manorapp.pceggs.com","Accept":"application/json, text/plain, */*","Connection":"keep-alive","Content-Type":"application/json;charset=utf-8","Accept-Encoding":"gzip, deflate","Host":"manorapp.pceggs.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Content-Length":"199","Accept-Language":"zh-cn"}')
-     dkadtbodyArr.push('{"userid":"30397020","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","ptype":"1","unix":"1614558829","keycode":"078D6F8F93F8F1C876A5C14B67A99110","token":"u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur"}"},{"key":"dkaqdbody","val":"keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020"}')
-	dkaqdbodyArr.push('keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020')
-    dkaxwbodyArr.push('keycode=7b5979f9337484b97b356b4581cbaf6b&partArticleId=20210301081629899158&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558865481&userid=30397020')
-  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
-}
+// // 	dkahd = process.env.dkahd
+// //   dkabody = process.env.dkabody
+// //   dkaxsurl = process.env.dkaxsurl
+// // 	dkaxshd = process.env.dkaxshd
+// // 	dkakkzhd = process.env.dkakkzhd
+// // 	dkakkzbody = process.env.dkakkzbody
+// // 	dkadthd = process.env.dkadthd
+// // 	dkadtbody = process.env.dkadtbody
+// // 	dkaqdbody = process.env.dkaqdbody
+// // 	dkaxwbody = process.env.dkaxwbody
+// 	  dkahdArr.push('{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=9bdba0f0b3bfc8640de8f8aca828f2769a228a73c55698f2adb5fdbf6f09d529","Content-Length":"122"}')
+//      dkabodyArr.push('keycode=d24fd1f0370643004226be47649f8dab&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614565989131&userid=30397020')
+// 	dkaxsurlArr.push('http://www.ipadview.com/rpads/score/award?bookId=726402&chapterId=102167537&userId=89772856&productId=8250&imei=479603C0B68A4EF6&projectId=67&st=1614514971924&cs=2b202805037894173a5c7551cf85e961&bookName=%E5%84%92%E9%81%93%E5%8C%BB%E5%9C%A3&bookType=0&bookChannel=1')
+// 	dkaxshdArr.push('{"screen-inches":"4.7","info-subversion":"1","info-model":"iPhone","info-userid":"89772856","info-network":"1","Host":"www.ipadview.com","Accept-Encoding":"gzip, deflate","info-idfv":"34153DD7-F0E6-4DB0-A7E6-692D14CBB1EA","info-idfa":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","info-dt":"phone_ad_sdk","info-vcode":"e6d8e75a94b9458f4dff780f5ed7e1de","Connection":"keep-alive","info-product":"8250","info-lon":"0","Accept-Language":"zh-cn","info-imei":"479603C0B68A4EF6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","screen-width":"828","info-platform":"ios","info-version":"400","screen-height":"1792","info-lat":"0","info-sv":"7600","info-time":"1614514971931","Accept":"*/*","info-os":"iOS13.4.1","info-source":"sdk","info-channel":"appStore","info-city":"","Content-Length":"0","info-adver":"23"}')
+// 	dkakkzhdArr.push('{"Accept-Encoding":"gzip, deflate","ruserid":"0","Host":"ifsapp.pceggs.com","simtype":"1","phonemodel":"iPhone12,1","channelid":"13","appversion":"3.0.3","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"PceggsAPP/3.0.3 (iPhone; iOS 13.4.1; Scale/2.00)","Content-Type":"application/x-www-form-urlencoded","appversionid":"66","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","mac":"02:00:00:00:00:00","Accept":"*/*","osversion":"13.4.1","simid":"","ptype":"1","broken":"1","Cookie":"aliyungf_tc=949dd88d3d3f3670e23a55f38cfb408b6589f9a57a9e3ba9cccb2d472973e09b","Content-Length":"122"}')
+//      dkakkzbodyArr.push('keycode=4e6c9092a120059c31025e63585a19a7&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558889739&userid=30397020')
+//      dkadthdArr.push('{"Origin":"http://manorapp.pceggs.com","Accept":"application/json, text/plain, */*","Connection":"keep-alive","Content-Type":"application/json;charset=utf-8","Accept-Encoding":"gzip, deflate","Host":"manorapp.pceggs.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Content-Length":"199","Accept-Language":"zh-cn"}')
+//      dkadtbodyArr.push('{"userid":"30397020","deviceid":"418D16E5-3697-4FF3-B3D9-1B8A8DB5332A","ptype":"1","unix":"1614558829","keycode":"078D6F8F93F8F1C876A5C14B67A99110","token":"u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur"}"},{"key":"dkaqdbody","val":"keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020"}')
+// 	dkaqdbodyArr.push('keycode=5ed7a1642505c58810b6e0c1ca89a458&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558824410&userid=30397020')
+//     dkaxwbodyArr.push('keycode=7b5979f9337484b97b356b4581cbaf6b&partArticleId=20210301081629899158&token=u7ddp15uissg8tl9liq76bh3j8jlpac65ozgqgur&unix=1614558865481&userid=30397020')
+//   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+// }
 
 !(async () => {
   if (typeof $request !== "undefined") {
     await dkack();
-   
+	  
+
+  	  } else {
+       if ($.isNode() && process.env.DKAHD) {
+  COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
+  console.log(
+    `============ cookies分隔符为：${JSON.stringify(
+      COOKIES_SPLIT
+    )} =============\n`
+  );
+if (
+    process.env.DKAHD &&
+    process.env.DKAHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkahd = process.env.DKAHD.split(COOKIES_SPLIT);
   } else {
+    dkahd = process.env.DKAHD.split();
+  }
+  if (
+    process.env.DKABODY &&
+    process.env.DKABODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkabody = process.env.DKABODY.split(COOKIES_SPLIT);
+  } else {
+    dkabody = process.env.DKABODY.split();
+  }
+  if (
+    process.env.DKAXSURL &&
+    process.env.DKAXSURL.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkaxsurl = process.env.DKAXSURL.split(COOKIES_SPLIT);
+  } else {
+    dkaxsurl = process.env.DKAXSURL.split();
+  }
+  if (
+    process.env.DKAXSHD &&
+    process.env.DKAXSHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkaxshd = process.env.DKAXSHD.split(COOKIES_SPLIT);
+  } else {
+    dkaxshd = process.env.DKAXSHD.split();
+  }	
+  if (
+    process.env.DKAKKZHD &&
+    process.env.DKAKKZHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkakkzhd = process.env.DKAKKZHD.split(COOKIES_SPLIT);
+  } else {
+    dkakkzhd = process.env.DKAKKZHD.split();
+  }
+  if (
+    process.env.DKAKKZBODY &&
+    process.env.DKAKKZBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkakkzbody = process.env.DKAKKZBODY.split(COOKIES_SPLIT);
+  } else {
+    dkakkzbody = process.env.DKAKKZBODY;
+  }
+  if (
+    process.env.DKADTHD &&
+    process.env.DKADTHD.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkadthd = process.env.DKADTHD.split(COOKIES_SPLIT);
+  } else {
+    dkadthd = process.env.DKADTHD.split();
+  }
+  if (
+    process.env.DKADTBODY &&
+    process.env.DKADTBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkadtbody = process.env.DKADTBODY.split(COOKIES_SPLIT);
+  } else {
+    dkadtbody = process.env.DKADTBODY.split();
+  }
+  if (
+    process.env.DKAQDBODY &&
+    process.env.DKAQDBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkaqdbody = process.env.DKAQDBODY.split(COOKIES_SPLIT);
+  } else {
+    dkaqdbody = process.env.DKAQDBODY.split();
+  }
+  if (
+    process.env.DKAXWBODY &&
+    process.env.DKAXWBODY.indexOf(COOKIES_SPLIT) > -1
+  ) {
+    dkaxwbody = process.env.DKAXWBODY.split(COOKIES_SPLIT);
+  } else {
+    dkaxwbody = process.env.DKAXWBODY.split();
+  }
+	
+  Object.keys(dkahd).forEach((item) => {
+        if (dkahd[item]) {
+          dkahdArr.push(dkahd[item])
+        }
+    });
+    Object.keys(dkabody).forEach((item) => {
+        if (dkabody[item]) {
+          dkabodyArr.push(dkabody[item])
+        }
+    });
+
+Object.keys(dkaxsurl).forEach((item) => {
+        if (dkaxsurl[item]) {
+          dkaxsurlArr.push(dkaxsurl[item])
+        }
+    });
+    Object.keys(dkaxshd).forEach((item) => {
+        if (dkaxshd[item]) {
+          dkaxshdArr.push(dkaxshd[item])
+        }
+    });
+
+Object.keys(dkakkzhd).forEach((item) => {
+        if (dkakkzhd[item]) {
+          dkakkzhdArr.push(dkakkzhd[item])
+        }
+    });
+
+Object.keys(dkakkzbody).forEach((item) => {
+        if (dkakkzbody[item]) {
+          dkakkzbodyArr.push(dkakkzbody[item])
+        }
+    });
+Object.keys(dkadthd).forEach((item) => {
+        if (dkadthd[item]) {
+          dkadthdArr.push(dkadthd[item])
+        }
+    });	
+
+Object.keys(dkadtbody).forEach((item) => {
+        if (dkadtbody[item]) {
+          dkadtbodyArr.push(dkadtbody[item])
+        }
+    });
+ 
+Object.keys(dkaqdbody).forEach((item) => {
+        if (dkaqdbody[item]) {
+          dkaqdbodyArr.push(dkaqdbody[item])
+        }
+    });	
+
+Object.keys(dkaxwbody).forEach((item) => {
+        if (dkaxwbody[item]) {
+          dkaxwbodyArr.push(dkaxwbody[item])
+        }
+    });
+} else {
     dkaxsurlArr.push($.getdata('dkaxsurl'))
     dkaxshdArr.push($.getdata('dkaxshd'))
     dkakkzhdArr.push($.getdata('dkakkzhd'))
@@ -117,6 +263,7 @@ if ($.isNode()) {
     dkabodyArr.push($.getdata(`dkabody${i}`))
     dkahdArr.push($.getdata(`dkahd${i}`))
   }
+}
     console.log(`------------- 共${dkahdArr.length}个账号-------------\n`)
       for (let i = 0; i < dkahdArr.length; i++) {
         if (dkahdArr[i]) {
@@ -132,7 +279,7 @@ if ($.isNode()) {
           //dkaqdkbody = dkaqdkbodyArr[i];
           dkaxwbody = dkaxwbodyArr[i];
           dkabody = dkabodyArr[i];
-          dkahdbody = dkahdArr[i];
+          dkahd = dkahdArr[i];	
           $.index = i + 1;
           console.log(`\n开始【蛋咖${$.index}】`)
           await dkaqd();
@@ -426,6 +573,286 @@ let url = {
         if(result.code == 0){
         console.log('\n蛋咖领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
         await dka1();
+
+  }
+ 
+}}
+
+})()
+  .catch((e) => $.logErr(e))
+  .finally(() => $.done())
+//蛋咖数据获取
+function dkack() {
+   if ($request.url.indexOf("IFS/BaseData/GetUserInfo.ashx") > -1 && $request.body.indexOf("keycode") > -1) {
+ const dkabody = $request.body
+  if(dkabody)     $.setdata(dkabody,`dkabody${status}`)
+    $.log(dkabody)
+  const dkahd = JSON.stringify($request.headers)
+        if(dkahd)    $.setdata(dkahd,`dkahd${status}`)
+$.log(dkahd)
+   $.msg($.name,"",'蛋咖'+`${status}` +'用户信息数据获取成功！')
+  }
+ if ($request.url.indexOf("Question/Que_Index") > -1) {
+ const dkadtbody = $request.body
+  if(dkadtbody)     $.setdata(dkadtbody,`dkadtbody${status}`)
+    $.log(dkadtbody)
+  const dkadthd = JSON.stringify($request.headers)
+        if(dkadthd)    $.setdata(dkadthd,`dkadthd${status}`)
+$.log(dkadthd)
+   $.msg($.name,"",'蛋咖'+`${status}` +'答题数据获取成功！')
+  }
+ if ($request.url.indexOf("FastAd_SetImgAdAward") > -1) {
+ const dkakkzbody = $request.body
+  if(dkakkzbody)     $.setdata(dkakkzbody,`dkakkzbody${status}`)
+    $.log(dkakkzbody)
+  const dkakkzhd = JSON.stringify($request.headers)
+        if(dkakkzhd)    $.setdata(dkakkzhd,`dkakkzhd${status}`)
+$.log(dkakkzhd)
+   $.msg($.name,"",'蛋咖'+`${status}` +'看看赚数据获取成功！')
+  }
+ if ($request.url.indexOf("SignIn_SignIn") > -1) {
+ const dkaqdbody = $request.body
+  if(dkaqdbody)     $.setdata(dkaqdbody,`dkaqdbody${status}`)
+    $.log(dkaqdbody)
+   $.msg($.name,"",'蛋咖'+`${status}` +'签到数据获取成功！')
+  }
+ if ($request.url.indexOf("IFS/SignIn/SignIn_GetTaskAward") > -1&&$request.body.indexOf("taskid=3") > -1) {
+ const dkasdbody = $request.body
+  if(dkasdbody)     $.setdata(dkasdbody,`dkasdbody${status}`)
+    $.log(dkasdbody)
+   $.msg($.name,"",'蛋咖'+`${status}` +'签到时段数据获取成功！')
+  }
+ if ($request.url.indexOf("IFS/SignIn/SignIn_GetTaskAward") > -1&&$request.body.indexOf("taskid=1004") > -1) {
+ const dkaqdkbody = $request.body
+  if(dkaqdkbody)     $.setdata(dkaqdkbody,`dkaqdkbody${status}`)
+    $.log(dkaqdkbody)
+   $.msg($.name,"",'蛋咖'+`${status}` +'签到看看赚数据获取成功！')
+  }
+ if ($request.url.indexOf("MoneyAward") > -1) {
+ const dkaxwbody = $request.body
+  if(dkaxwbody)     $.setdata(dkaxwbody,`dkaxwbody${status}`)
+    $.log(dkaxwbody)
+   $.msg($.name,"",'蛋咖'+`${status}` +'新闻数据数据获取成功！')
+  }
+ if ($request.url.indexOf("rpads/score/award") > -1) {
+ const dkaxsurl = $request.url
+  if(dkaxsurl)     $.setdata(dkaxsurl,`dkaxsurl${status}`)
+    $.log(dkaxsurl)
+  const dkaxshd = JSON.stringify($request.headers)
+        if(dkaxshd)    $.setdata(dkaxshd,`dkaxshd${status}`)
+$.log(dkaxshd)
+   $.msg($.name,"",'蛋咖'+`${status}` +'小说数据获取成功！')
+  }
+}
+
+
+
+//蛋咖题目
+function dkatm(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Index.ashx",
+        headers : JSON.parse(dkadthd),
+        body : dkadtbody,}
+      $.post(url, async (err, resp, data) => {
+        try {
+    const result = JSON.parse(data)
+        if(result.status == 0){
+        console.log('\n蛋咖获取题目回执:成功🌝 当前题目为:\n'+result.data.title+'\n\n成功找到题目答案，正在前往答题')
+        tm = result.data.realnum
+       await $.wait(1500);
+       await dkatj();
+} else {
+       console.log('\n蛋咖获取题目回执:失败🚫 '+result.msg)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+//蛋咖提交答案     
+function dkatj(timeout = 0) {
+  return new Promise((resolve) => {
+
+//console.log(dkadtbody.match(/{(.*?)}/)[1])
+//$.done()
+let url = {
+        url : "http://manorapp.pceggs.com/IFS/Activity/Question/Que_Answer.ashx",
+        headers : JSON.parse(dkadthd),
+         body : "{"+dkadtbody.match(/{(.*?)}/)[1]+`,"realnum": `+tm+"}",
+}      
+      $.post(url, async (err, resp, data) => {
+        try {
+       //console.log(data)
+       const result = JSON.parse(data)
+      if(result.status == 0){
+        console.log('\n蛋咖答题回执:成功🌝 '+result.msg)
+        
+       await $.wait(1500);
+       await dkatm();
+} else {
+       console.log('\n蛋咖答题回执:失败🚫 '+result.msg)
+}
+     } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+//蛋咖看看赚
+function dkakkz(timeout = 0) {
+  return new Promise((resolve) => {
+//$.done()
+let url = {
+        url : "http://ifsapp.pceggs.com/IFS/MyAccount/FastAd/FastAd_SetImgAdAward.ashx",
+        headers : JSON.parse(dkahd),
+        body : dkakkzbody,
+}
+      $.post(url, async (err, resp, data) => {
+        try {
+    const result = JSON.parse(data)
+        if(result.status == 0){
+        console.log('\n蛋咖看看赚奖励回执:成功🌝 '+result.msg+'等待15秒继续')
+        await $.wait(15000);
+        await dkakkz();
+        
+} else {
+       console.log('\n蛋咖看看赚奖励回执:失败🚫 '+result.msg)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+//蛋咖小说
+function dkaxs(timeout = 0) {
+  return new Promise((resolve) => {
+let jj = ''
+jj = parseInt(dkaxsurl.match(/chapterId=(.*?)&userId=/)[1])
+jj++
+
+let url1 = dkaxsurl.match(/bookId=(.*?)&chapterId=/)[1]
+//console.log(url1)
+let url2 = dkaxsurl.match(/&userId=(.*?)&bookChannel=/)[1]
+//console.log('http://www.ipadview.com/rpads/score/award?bookId='+url1+'&chapterId='+jj+++'&userId='+url2+'&bookChannel=1',)
+
+let url = {
+        url : 'http://www.ipadview.com/rpads/score/award?bookId='+url1+'&chapterId='+jj+++'&userId='+url2+'&bookChannel=1',
+        headers : JSON.parse(dkaxshd),
+        body : '',}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.code == 0){
+        console.log('\n蛋咖小说奖励回执:成功🌝 '+result.data.third_msg+'等待15秒继续')
+        await $.wait(15000);
+        await dkaxs();
+} else {
+       console.log('\n蛋咖小说奖励回执:失败🚫 '+result.message)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+//蛋咖新闻
+function dkaxw(timeout = 0) {
+  return new Promise((resolve) => {
+//console.log(dkaxwbody.match(/partArticleId=\d{1,17}/))
+//console.log(sjs)
+//$.done()
+let sjs = Math.floor(Math.random()*899+100); //生成随机数
+let url = {
+        url : "http://ifsapp.pceggs.com/IFS/Article/Article_MoneyAward.ashx",
+        headers : JSON.parse(dkahd),
+        body : 'keycode='+dkaxwbody.match(/keycode=(\w+)/)[1]+'&'+dkaxwbody.match(/partArticleId=\d{1,17}/)+sjs+'&token='+dkaxwbody.match(/token=(\w+)/)[1]+'&unix='+dkaxwbody.match(/unix=(\w+)/)[1]+'&userid='+dkaxwbody.match(/userid=(\w+)/)[1],}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.status == 0){
+        console.log('\n蛋咖新闻阅读奖励回执:成功🌝 '+result.msg+'等待15秒继续')
+         await $.wait(15000);
+        await dkaxw();
+} else {
+       console.log('\n蛋咖新闻阅读奖励回执:失败🚫 '+result.msg)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+//蛋咖签到
+function dkaqd(timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout( ()=>{
+      if (typeof dkahd === "undefined") {
+        $.msg($.name,"",'请先获取蛋咖数据!😓',)
+        $.done()
+      }
+let fqjs = 1
+//console.log(dkaurl.match(/m.(.*?)reada/)[1])
+
+let url = {
+        url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_SignIn.ashx",
+        headers : JSON.parse(dkahd),
+        body : dkaqdbody,}
+      $.post(url, async (err, resp, data) => {
+        try {
+          
+    const result = JSON.parse(data)
+        if(result.status == 0){
+        console.log('\n蛋咖签到回执:成功🌝 '+result.msg)
+   
+} else {
+console.log('蛋咖签到回执:失败🚫 '+result.msg)
+}
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+      })
+    },timeout)
+  })
+}
+
+
+//蛋咖签到时段
+function dkasd(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
+        headers : JSON.parse(dkahd),
+        body : 'readLastKey='+fqkey,}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.code == 0){
+        console.log('\n蛋咖领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
+        await dka1();
 } else {
        console.log('\n蛋咖领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
 }
@@ -443,7 +870,7 @@ function dkaqdkkz(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/SignIn/SignIn_GetTaskAward.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -470,7 +897,7 @@ function dkaxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http://ifsapp.pceggs.com/IFS/BaseData/GetUserInfo.ashx",
-        headers : JSON.parse($.getdata('dkahd')),
+        headers : JSON.parse(dkahd),
         body : dkabody,}
       $.post(url, async (err, resp, data) => {
         try {
