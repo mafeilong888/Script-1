@@ -43,9 +43,11 @@ let xsmmhd = $.getdata('xsmmhd')
 let xsmmmc = '',xsmmid = '',xsmm1 = ''
 
 if ($.isNode()) {
-	xsmmurl = process.env.xsmmurl
-        xsmmhd = process.env.xsmmhd
-   
+	//xsmmurl = process.env.xsmmurl
+       // xsmmhd = process.env.xsmmhd
+    xsmmurlArr.push(ht https://vip.75787.com/app/index.php?i=61&t=0&v=2.0.32&from=wxapp&c=entry&a=wxapp&do=distribute&m=bh_cat&sign=f11c69cd8a68a519f1528f8a18622119&action=index&contr=task&token=3fe0f90e368c2e4ef78ca7647645d69b&version=2.0.32 https://vip.75787.com/app/index.php?i=61&t=0&v=2.0.32&from=wxapp&c=entry&a=wxapp&do=distribute&m=bh_cat&sign=f11c69cd8a68a519f1528f8a18622119&action=index&contr=task&token=3fe0f90e368c2e4ef78ca7647645d69b&version=2.0.32 https://vip.75787.com/app/index.php?i=61&t=0&v=2.0.32&from=wxapp&c=entry&a=wxapp&do=distribute&m=bh_cat&sign=f11c69cd8a68a519f1528f8a18622119&action=index&contr=task&token=3fe0f90e368c2e4ef78ca7647645d69b&version=2.0.32 https://vip.75787.com/app/index.php?i=61&t=0&v=2.0.32&from=wxapp&c=entry&a=wxapp&do=distribute&m=bh_cat&sign=f11c69cd8a68a519f1528f8a18622119&action=index&contr=task&token=3fe0f90e368c2e4ef78ca7647645d69b&version=2.0.32tps://vip.75787.com/app/index.php?i=61&t=0&v=2.0.32&from=wxapp&c=entry&a=wxapp&do=distribute&m=bh_cat&sign=f11c69cd8a68a519f1528f8a18622119&action=index&contr=task&token=3fe0f90e368c2e4ef78ca7647645d69b&version=2.0.32') 
+xsmmhdArr.push({"Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Referer":"https://servicewechat.com/wx37b8d7e9d02bc1d1/2/page-frame.html","Content-Type":"application/x-www-form-urlencoded","Host":"vip.75787.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000232) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn"}
+ 
 	
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
