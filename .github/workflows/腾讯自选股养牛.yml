@@ -22,7 +22,7 @@ jobs:
                   npm install
             - name: "运行【腾讯自选股养牛】"
               run: |
-                  node workflow/TencentStockCow.js
+                  node TencentStockCow.js
               env:
                   userheaderVal: ${{ secrets.USERHEADERVAL }}
                   userkeyVal: ${{ secrets.USERKEYVAL }}
