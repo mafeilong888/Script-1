@@ -1,37 +1,68 @@
 /*
 软件名称:云扫码 微信扫描二维码打开
-更新时间：2021-03-1 @肥皂
+更新时间：2021-03-08 @肥皂
 脚本说明：云扫码自动阅读
 脚本为自动完成云扫码的阅读任务
 每日收益1元左右，可多号撸。提现秒到
 类似番茄看看，番茄看看黑了就跑云扫码，云扫码黑了就跑番茄看看
 哈哈哈啊哈哈哈哈
+
 任务打开二维码地址 https://raw.githubusercontent.com/age174/-/main/3B7C4F94-B961-4690-8DF7-B27998789124.png
 微信扫描打开，保存临时码，再去扫码获取数据
+
+
+
 本脚本以学习为主！
 首次运行脚本，会提示获取数据
-去云扫码，点击开始阅读，阅读几秒返回结算成功获取数据
+去云扫码，点击开始阅读，获得阅读数据
+七八秒后返回，获得提交任务数据
+跑脚本到3000金币，手动提现一次，获得自动提现数据
+总共需要三个数据。。
+
 TG电报群: https://t.me/hahaha802
+
 3.1更新增加是否有阅读任务的判断
 加入自动兑换和自动提现，当前金币大于等于3000会自动提现，请自行去获取提现数据，方法，进入云扫码，成功提现一次获取数据成功
 解决多账号问题，可以多账号撸了
+3.2更新,新增判断，如果提示当前任务已结束脚本会尝试继续执行不会终止循环，key提交提示失败也会尝试重新执行，增加了提现成功的通知
+3.8更新，修复因官方更新无法提交key和领取任务奖励的问题
+
 boxjs地址 :  
+
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
+
+
 云扫码
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #云扫码
-15 12,14,16,20,22 * * * https://raw.githubusercontent.com/age174/-/main/ysm.js, tag=云扫码, img-url=https://s3.ax1x.com/2021/02/28/6CRWb8.jpg, enabled=true
+15 12,14,16,20,22 * * * https://raw.githubusercontent.com/age174/-/main/ysm.js, tag=云扫码, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png, enabled=true
+
+
 [rewrite_local]
 #云扫码
 ^http://.*./yunonline/v1/ url script-request-body https://raw.githubusercontent.com/age174/-/main/ysm.js
+
+
+
 #loon
 ^http://.*./yunonline/v1/ script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js, requires-body=true, timeout=10, tag=云扫码
+
+
+
 #surge
+
 云扫码 = type=http-request,pattern=^http://.*./yunonline/v1/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js,script-update-interval=0
+
+
+
+
 [MITM]
 hostname = .*.top
+
+
 */
+
 
 
 const $ = new Env('云扫码自动阅读');
@@ -138,13 +169,18 @@ let url = {
         if(result.errcode == 0){
         console.log('\n云扫码领取阅读奖励回执:成功🌝 '+result.data.gold+'\n今日阅读次数: '+result.data.day_read+' 今日阅读奖励: '+result.data.day_gold+' 当前余额'+result.data.last_gold+'\n')
         if(result.data.last_gold >= 3000){
-    console.log('\n检测到当前金额可提现，前去执行提现')                
+    console.log('\n检测到当前金额可提现，前去执行提现,请去抓取提现的数据，如果没有提现数据脚本会自行终止!')                
 await ysmdh();
 }       await $.wait(2000);
         await ysm1();
         
 } else {
-       console.log('\n云扫码领取阅读奖励回执:失败🚫 '+result.msg)
+       if(result.errcode == 405){
+console.log('\n🧼来自肥皂的提示:'+result.msg+'尝试继续执行任务')
+      await ysm1();
+}
+    console.log(result.errcode)
+console.log('\n云扫码领取阅读奖励回执:失败🚫 '+result.msg)
 }
    
         } catch (e) {
@@ -168,13 +204,14 @@ let url = {
         try {
          //console.log('\n开始重定向跳转，跳转返回结果：'+data)
         if (err) {
-          console.log(`\n${$.name} 请求失败，请检查网路重试`)
+          console.log(`\n${$.name} 🧼来自肥皂的提示:key请求提交失败,尝试重新执行任务`)
+     await ysm1();
         } else {
            
     //const result = JSON.parse(data)
-       console.log('\n云扫码key提交成功,即将开始领取阅读奖励') 
+       console.log('\n云扫码key提交成功,10秒后开始领取阅读奖励') 
        
-        await $.wait(8000);
+        await $.wait(9000);
         await ysm3(); 
        
         }} catch (e) {
@@ -195,14 +232,6 @@ function ysm1(timeout = 0) {
         $.msg($.name,"",'请先获取云扫码数据!😓',)
         $.done()
       }
-//console.log(ysmurl.match(/m.(.*?)reada/)[1])
-//console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold")
-//$.done()
-//erd14.jkfjcop.top/
-//console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task")
-//console.log(ysmhd)
-//console.log(ysmbody)
-
 
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task",
@@ -222,9 +251,12 @@ let url = {
       if(result.data.link === undefined){
        console.log('\n🧼来自肥皂的提示:没有匹配到key'+result.data.msg)
 } else {
-        ysmkey = result.data.link
-        await ysm2();
+        ysmkey = result.data.link.match(/redirect_uri=(.*?)#wechat/)[1]
+        ysmkey = unescape(ysmkey)
+//$.log(unescape(ysmkey))
         await $.wait(1000);
+        await ysm2();
+        
 }
         
 } else {
@@ -285,6 +317,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.errcode == 0){
         console.log('\n云扫码微信提现回执:成功🌝 '+result.msg)
+        $.msg($.name,"",'云扫码已成功提现至微信0.3元')
         await ysm1();
 } else {
        console.log('\n云扫码微信提现回执:失败🚫 '+result.msg)
