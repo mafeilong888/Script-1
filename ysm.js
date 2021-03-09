@@ -1,6 +1,6 @@
 /*
 软件名称:云扫码 微信扫描二维码打开
-更新时间：2021-03-08 @肥皂
+更新时间：2021-03-09 @肥皂
 脚本说明：云扫码自动阅读
 脚本为自动完成云扫码的阅读任务
 每日收益1元左右，可多号撸。提现秒到
@@ -26,6 +26,7 @@ TG电报群: https://t.me/hahaha802
 解决多账号问题，可以多账号撸了
 3.2更新,新增判断，如果提示当前任务已结束脚本会尝试继续执行不会终止循环，key提交提示失败也会尝试重新执行，增加了提现成功的通知
 3.8更新，修复因官方更新无法提交key和领取任务奖励的问题
+3.9更新 修复云扫码官方更新无法自动阅读的问题
 
 boxjs地址 :  
 
@@ -64,7 +65,6 @@ hostname = .*.top
 */
 
 
-
 const $ = new Env('云扫码自动阅读');
 let status;
 status = (status = ($.getval("ysmstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
@@ -86,7 +86,6 @@ ysmbodyArr.push('"secret=eyJpdiI6Ik85Y2xqZE5qXC8xTUZ2bkFGSXFIbDZ3PT0iLCJ2YWx1ZSI
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   
 }
-
 !(async () => {
   if (typeof $request !== "undefined") {
     await ysmck()
@@ -251,9 +250,8 @@ let url = {
       if(result.data.link === undefined){
        console.log('\n🧼来自肥皂的提示:没有匹配到key'+result.data.msg)
 } else {
-        ysmkey = result.data.link.match(/redirect_uri=(.*?)#wechat/)[1]
-        ysmkey = unescape(ysmkey)
-//$.log(unescape(ysmkey))
+        ysmkey = result.data.link
+        //$.log(ysmkey)
         await $.wait(1000);
         await ysm2();
         
