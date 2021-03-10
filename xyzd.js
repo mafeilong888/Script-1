@@ -54,11 +54,14 @@ let xyzdbody = $.getdata('xyzdbody')
 let xyzdcg = '',xyzdbxid = '',xyzdtoken = '',xyzdsign = '',xyzdcgid = '',xyzdxcxid = '',xyzddb = ''
 let bx = 0   //此处为选择宝箱的碎片id，如果为0，宝箱开启获得的碎片兑换为红包碎片，如果填写1，开启宝箱的碎片兑换为升级分红宝箱的碎片
 if ($.isNode()) {
-	xyzdurl = process.env.xyzdurl
-       xyzdhd = process.env.xyzdhd
-        xyzdbody = process.env.xyzdbody
+// 	xyzdurl = process.env.xyzdurl
+//        xyzdhd = process.env.xyzdhd
+//         xyzdbody = process.env.xyzdbody
 	
-	
+	 xyzdurlArr.push('https://vip.75787.com/app/index.php?i=21&c=entry&from=wxapp&a=wxapp&do=index&t=0&v=6.4.2&m=panda_key&sign=5e543256c480ac577d30f76f9120eb74')
+     xyzdhdArr.push('{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Referer":"https://servicewechat.com/wx65448cb71a7c3957/4/page-frame.html","Content-Type":"application/x-www-form-urlencoded","Host":"vip.75787.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000233) NetType/WIFI Language/zh_CN","Content-Length":"72","Accept-Language":"zh-cn"}')
+       xyzdbodyArr.push('controller=treasure.get_task_page&token=759b7d272238ffd9f78ca14f4199d8b4')
+
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
