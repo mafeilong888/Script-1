@@ -27,9 +27,9 @@ jobs:
         run: |
           node xyzd.js
         env:    	              
-          jqburl: ${{ secrets.jqburl }}
-          jqbhd: ${{ secrets.jqbhd }}
-          jqbggbody: ${{ secrets.jqbggbody }}
+          xyzdurl: ${{ secrets.xyzdurl }}
+          xyzdhd: ${{ secrets.xyzdhd }}
+          xyzdbody: ${{ secrets.xyzdbody }}
         
           
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
