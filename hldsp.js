@@ -57,11 +57,13 @@ let hldspurl = $.getdata('hldspurl')
 let hldsphd = $.getdata('hldsphd')
 let hlsign = '',hluid = ''
 if ($.isNode()) {
-	hldspurl = process.env.hldspurl
-       hldsphd = process.env.hldsphd
+// 	hldspurl = process.env.hldspurl
+//        hldsphd = process.env.hldsphd
        
 	
-	
+	 hldspurlArr.push('https://vip.75787.com/app/index.php?i=3&t=0&v=1.1.47&from=wxapp&c=entry&a=wxapp&do=Vgetuserinfo&m=luobo_video&sign=a7ccea10c098f6d72189034265ab6aec&uid=ogDfJ5dpNXDdLutwY7ekAGQIHjV8')
+     hldsphdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Referer":"https://servicewechat.com/wx13d6a23c765501eb/20/page-frame.html","Content-Type":"application/x-www-form-urlencoded","Host":"vip.75787.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000233) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn"}')
+  
 	
   console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
