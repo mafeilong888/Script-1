@@ -215,11 +215,11 @@ let url = {
 //幸运赚点常规任务列表
 function cgrwlb(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('xyzdhd') === "undefined") {
+   /*  setTimeout( ()=>{
+        if (typeof $.getdata('xyzdhd') === "undefined") {
         $.msg($.name,"",'请先获取幸运赚点数据!😓',)
         $.done()
-      }
+      }*/
     xyzdsign = xyzdurl.match(/sign=(\w+)/)[1]
     xyzdtoken = xyzdbody.match(/token=(\w+)/)[1]
 let url = {
@@ -255,7 +255,7 @@ console.log('幸运赚点[获取常规任务列表]回执:失败🚫 当前账�
         } finally {
           resolve()
         }
-      })
+ //    })
     },timeout)
   })
 }
