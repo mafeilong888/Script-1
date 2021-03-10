@@ -53,6 +53,17 @@ let xyzdhd = $.getdata('xyzdhd')
 let xyzdbody = $.getdata('xyzdbody')
 let xyzdcg = '',xyzdbxid = '',xyzdtoken = '',xyzdsign = '',xyzdcgid = '',xyzdxcxid = '',xyzddb = ''
 let bx = 0   //此处为选择宝箱的碎片id，如果为0，宝箱开启获得的碎片兑换为红包碎片，如果填写1，开启宝箱的碎片兑换为升级分红宝箱的碎片
+if ($.isNode()) {
+	xyzdurl = process.env.xyzdurl
+       xyzdhd = process.env.xyzdhd
+        xyzdbody = process.env.xyzdbody
+	
+	
+	
+  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+}
+
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await xyzdck()
