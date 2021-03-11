@@ -107,7 +107,7 @@ if ($.isNode()) {
           $.index = i + 1;
           console.log(`\n开始【春风转${$.index}】`)
           //await cfzhhb();
-            await cfzqd();
+            await cfztj();
             
   }
 }}
@@ -257,7 +257,7 @@ cfzmc = cfzlb.match(/"title":"(.+?)","/)[1]
 
         console.log('\n春风转[阅读列表]回执:成功🌝  \n📄阅读ID:'+cfzid+'\n📑开始阅读:'+cfzmc)
        await $.wait(1000);
-        await cfzyd();
+        await cfzsb();
 } else {
 console.log('春风转[阅读列表]回执:失败🚫 '+result.message)
      
