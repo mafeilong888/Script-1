@@ -232,11 +232,11 @@ console.log('\n春风转[上报数据]回执:失败🌚'+result.message)
 //春风转列表
 function cfzqd(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('cfzhd') === "undefined") {
-        $.msg($.name,"",'请先获取春风转数据!😓',)
-        $.done()
-      }
+//     setTimeout( ()=>{
+//       if (typeof $.getdata('cfzhd') === "undefined") {
+//         $.msg($.name,"",'请先获取春风转数据!😓',)
+//         $.done()
+//       }
 page++
 let sjs = Math.floor(Math.random()*1000); //生成随机数
 let url = {
@@ -269,7 +269,7 @@ console.log('春风转[阅读列表]回执:失败🚫 '+result.message)
         }
       })
     },timeout)
-  })
+//  })
 }
 
 
