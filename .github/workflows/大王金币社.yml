@@ -1,4 +1,4 @@
-name: A-大王叫我来巡山.yml
+name: 大王金币社.yml
 
 on:
   schedule:
@@ -21,7 +21,7 @@ jobs:
       - name: 'Install requirements'
         run: pip install -r ./-/C.TXT 
         
-      - name: '大王叫我来巡山' 
+      - name: '大王金币社' 
         run: python3 ./-/DaWangLaiXunShan.py
         env:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
