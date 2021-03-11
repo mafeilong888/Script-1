@@ -173,7 +173,7 @@ def start():
      Wx_dawang()
      result+='\n'
    #print(result)
-   pushmsg('大王叫我来巡山',result)
+   pushmsg('大王金币社',result)
 
 if __name__ == '__main__':
        start()
