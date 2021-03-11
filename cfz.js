@@ -64,6 +64,26 @@ let cfzurl = $.getdata('cfzurl')
 let cfzhd = $.getdata('cfzhd')
 let cfzsbhd = $.getdata('cfzsbhd')
 let cfzlb = '',cfzid = '',cfzmc = '',page = 1
+if ($.isNode()) {
+// 	jqburl = process.env.jqburl
+//         jqbhd = process.env.jqbhd
+//         jqbggbody = process.env.jqbggbody
+// 	jqbqdbody = process.env.jqbqdbody
+// 	jqbbody1 = process.env.jqbbody1
+// 	jqbbody2 = process.env.jqbbody2
+// 	jqbbody3 = process.env.jqbbody3
+// 	jqbbody3 = process.env.jqbbody3
+// 	jqbbody4 = process.env.jqbbody4
+// 	jqbbody5 = process.env.jqbbody5
+// 	jqbrwbody = process.env.jqbrwbody
+// 	jqbzpbody = process.env.jqbzpbody
+	 cfzurllArr.push('http://cf-api.douzhuanapi.cn:10002/api/article/list?city_type=1&page=1&slide=1&tag_id=0&type=1')
+     cfzhdArr.push('{"Connection":"keep-alive","Accept-Encoding":"gzip, deflate","X-V":"1","osType":"iOS","User-Agent":"NormalDemo/1 (iPhone; iOS 14.4; Scale/2.00)","platform":"iOS","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDQ5NzZlMmNmZDdmIiwiaWF0IjoxNjE1NDI3Mjk4LCJuYmYiOjE2MTU0MjcyOTgsImV4cCI6MTYxODAxOTI5OCwidWlkIjoxMjEyMjA2LCJuYW1lIjoiS2kiLCJjcmVhdGVkX2F0IjoiMjAyMS0wMy0xMSAwOTo0ODoxOCIsImNpdHlfbmFtZSI6bnVsbCwiY2l0eV9jb2RlIjpudWxsfQ.d5Itjh3iGM_uyLn3akdOWSRDgkpVIKcziMjy8czMehw","X-IMEI":"A5A7E5EE-A94D-49E8-AE71-3EEF518D9996","versioncode":"1","Host":"cf-api.douzhuanapi.cn:10002","phoneModel":"iPhone 11","Accept-Language":"zh-Hans-CN;q=1","Accept":"*/*","X-CCMS":"SXBJamdka2R5eS5qZGdrYUk="}')
+      cfzsbhdArr.push('{"Content-Length":"47","Connection":"keep-alive","Accept-Encoding":"gzip, deflate","X-V":"1","Content-Type":"application/x-www-form-urlencoded","osType":"iOS","User-Agent":"NormalDemo/1 (iPhone; iOS 14.4; Scale/2.00)","platform":"iOS","Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDQ5NzZlMmNmZDdmIiwiaWF0IjoxNjE1NDI3Mjk4LCJuYmYiOjE2MTU0MjcyOTgsImV4cCI6MTYxODAxOTI5OCwidWlkIjoxMjEyMjA2LCJuYW1lIjoiS2kiLCJjcmVhdGVkX2F0IjoiMjAyMS0wMy0xMSAwOTo0ODoxOCIsImNpdHlfbmFtZSI6bnVsbCwiY2l0eV9jb2RlIjpudWxsfQ.d5Itjh3iGM_uyLn3akdOWSRDgkpVIKcziMjy8czMehw","X-IMEI":"A5A7E5EE-A94D-49E8-AE71-3EEF518D9996","versioncode":"1","Host":"cf-api.douzhuanapi.cn:10002","phoneModel":"iPhone 11","Accept-Language":"zh-Hans-CN;q=1","Accept":"*/*","X-CCMS":"SXBJamdkdGdwZy5ncElseWw="}')
+  
+  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+}
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await cfzck()
