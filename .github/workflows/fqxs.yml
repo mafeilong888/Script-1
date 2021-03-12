@@ -27,7 +27,8 @@ jobs:
         run: |
           node fqxs.js
         env:    	              
-            
+          fqxsurl: ${{ secrets.BARK_PUSH }}
+          fqxs: ${{ secrets.TG_BOT_TOKEN }}   
           
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
