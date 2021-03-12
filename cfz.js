@@ -9,15 +9,17 @@
 
 
 下载地址 
-https://ss.tblk.me/QsApR
 
-二维码地址 https://raw.githubusercontent.com/age174/-/main/4705AE1B-41ED-4341-9CCD-5E06F3372D30.jpeg
+https://ss.tblk.me/Cpwav
+
+二维码地址 https://raw.githubusercontent.com/age174/-/main/9DE99CAF-DF19-4F86-94A9-D9112BB77A2B.jpeg
 
 本脚本以学习为主！
 使用方法:
 打开春风转，点击文章赚钱，下拉刷新一下，获得阅读数据
-随便进入一篇文章阅读，获得金币奖励后提示获得上报数据
 
+3.12更新，修改缩小分页的随机数范围，加入部分每日任务和时段奖励，修改为每次运行十次，每日的阅读次数上限是200次，所以每天跑二十次就行了，请避开高峰期运行脚本，错开脚本的运行时间，不要cron都设置的一样
+比如可以设置为 15,45 10-21 * * *   15和45可以自己修改，自己计算二十次的运行时间来设置cron最好
 
 TG电报群: https://t.me/hahaha8028
 
@@ -30,7 +32,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #春风转
-/30 8-22 * * * https://raw.githubusercontent.com/age174/-/main/cfz.js, tag=春风转, img-url=https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg, enabled=true
+15,45 10-21 * * * https://raw.githubusercontent.com/age174/-/main/cfz.js, tag=春风转, img-url=https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg, enabled=true
 
 
 [rewrite_local]
@@ -60,7 +62,9 @@ hostname = cf-api.douzhuanapi.cn
 const $ = new Env('春风转');
 let status;
 status = (status = ($.getval("cfzstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const cfzurlArr = [], cfzhdArr = [],cfzsbhdArr = [],cfzcount = ''
+const cfzurlAs;
+64
+status = (rr = [], cfzhdArr = [],cfzsbhdArr = [],cfzcount = ''
 let cfzurl = $.getdata('cfzurl')
 let cfzhd = $.getdata('cfzhd')
 let cfzsbhd = $.getdata('cfzsbhd')
