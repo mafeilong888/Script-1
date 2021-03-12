@@ -1,34 +1,48 @@
-name: 番茄看看
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: 🍅番茄小说
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '10 0,2,4,6,8 * * *'
+    - cron: '*/10 * * * *'
   watch:
     types: started
   repository_dispatch:
-    types: fqkk
-    
+    types: dyjsb
 jobs:
   build:
+
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Use Node.js 12.x
+        with:
+          repository: ZhiYi-N/script
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: ${{ matrix.node-version }}
+      - name: Cache node_modules
+        uses: actions/cache@v2 # 使用 GitHub 官方缓存 Action。
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
         run: |
           npm install
-      - name: '运行 【番茄看看】'
+      - name: '运行 【🍅番茄小说】'
         run: |
-          node fqkk.js
+          node fqxs.js 
+          
         env:
-          fqkkurl: ${{ secrets.fqkkurl }}
-          fqkkhd: ${{ secrets.fqkkhd }}
+          fqxs: ${{ secrets.fqxs }}
+          fqxsurl: ${{ secrets.fqxsurl }}
+         
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
@@ -36,3 +50,4 @@ jobs:
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
+          IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
