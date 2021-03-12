@@ -66,6 +66,25 @@ let times = Math.round(Date.now() / 1000)
 let wkzzurl = $.getdata('wkzzurl')
 let wkzzhd = $.getdata('wkzzhd')
 let wkzzkey = '',id = '',uid='',tid='',name=''
+if ($.isNode()) {
+// 	jqburl = process.env.jqburl
+//         jqbhd = process.env.jqbhd
+//         jqbggbody = process.env.jqbggbody
+// 	jqbqdbody = process.env.jqbqdbody
+// 	jqbbody1 = process.env.jqbbody1
+// 	jqbbody2 = process.env.jqbbody2
+// 	jqbbody3 = process.env.jqbbody3
+// 	jqbbody3 = process.env.jqbbody3
+// 	jqbbody4 = process.env.jqbbody4
+// 	jqbbody5 = process.env.jqbbody5
+// 	jqbrwbody = process.env.jqbrwbody
+// 	jqbzpbody = process.env.jqbzpbody
+	
+     wkzzurlArr.push('http://wx.tiantianaiyuedu.site/read/article')
+      wkzzhdArr.push('{"X-Requested-With":"XMLHttpRequest","Connection":"keep-alive","Accept-Encoding":"gzip, deflate","Content-Type":"application/json;charset=utf-8","Origin":"http://wx.tiantianaiyuedu.site","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000234) NetType/WIFI Language/zh_CN","X-CSRF-TOKEN":"PqkFR92umykCbPRSda6kuXhUhaZ2B6eKjc1K4ygY","Cookie":"XSRF-TOKEN=eyJpdiI6ImxjRkM1OGRSUjZrcTVtREIwT3N0UlE9PSIsInZhbHVlIjoiSkNZalBuZjQ4dkl5QzBBWW1jam43blp3bHpUQ2R0RE4rK1ZyaUFYR0swbDVYY3NPWkxxMVpnQW5URklMOENiWFMyU1hnOU1RajI3a0dQd3haN0lBcVE9PSIsIm1hYyI6IjU4MjQ2MzAzMWQxZjQzN2U5MWMyOGNhZTg5ODc2NjEyZGRhN2M3MThkZTIyMjYzNmE5YjE2YTIyYTFlZWUwNmIifQ%3D%3D; laravel_session=eyJpdiI6IlRuOGhBZms4R1FQWVhQaURtd0dDUlE9PSIsInZhbHVlIjoiRDJFWXJ6bG5mYUhNYSsxcWp6XC9GbUwyZ0JmamZCbUFJbURTSWJtclhvV0tvTTJjbFo0aExvNzZXTTBuVG1EdWpjTnh0MVU4VFpPbVNSYUYyS2VrenJ3PT0iLCJtYWMiOiJhZmJmMjkzZDIzMTI2NDc1Y2JiYzkwOGQ3MGNmY2M1YzRkNmE5MGY0YzgyNWEwN2IxMTY3OWEyNzAyYWFiY2ZhIn0%3D","Host":"wx.tiantianaiyuedu.site","Accept-Language":"zh-cn","Accept":"application/json, text/plain, */*","Content-Length":"106"}')
+  
+  console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
+}
 !(async () => {
   if (typeof $request !== "undefined") {
     await wkzzck()
