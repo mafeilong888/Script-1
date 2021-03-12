@@ -61,7 +61,7 @@ hostname = cf-api.douzhuanapi.cn
 
 
 
-onst $ = new Env('春风转');
+const $ = new Env('春风转');
 let status;
 status = (status = ($.getval("cfzstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const cfzurlArr = [], cfzhdArr = [],cfzsbhdArr = []
