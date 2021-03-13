@@ -132,11 +132,11 @@ $.log(wkzzhd)
 //微客众智key
 function wkzz1(timeout = 0) {
   return new Promise((resolve) => {
-//     setTimeout( ()=>{
-//       if (typeof $.getdata('wkzzhd') === "undefined") {
-//         $.msg($.name,"",'请先获取微客众智数据!😓',)
-//         $.done()
-//       }
+    setTimeout( ()=>{
+      if (typeof $.getdata('wkzzhd') === "undefined") {
+        $.msg($.name,"",'请先获取微客众智数据!😓',)
+        $.done()
+      }
 
 let url = {
         url : "http://wx.tiantianaiyuedu.site/me",
@@ -144,15 +144,16 @@ let url = {
         
 }
       $.get(url, async (err, resp, data) => {
+if(resp.statusCode == 301){
+$.log('\n微客众智访问失败，可能是Cookie过期或网络问题')
+}
         try {
           //console.log(data)
     const result = JSON.parse(data)
         if(result.errors == false){
    id = result.data.wxuser_id
         console.log('\n微客众智获取用户信息成功\n当前用户名:'+result.data.nickname+' 用户ID:'+id+'\n开始查询任务信息')
-await wkzzlb();
-$.done()
-      
+await wkzzlb();      
         
 } else {
 console.log('微客众智获取用户信息失败 已停止当前账号运行!')
@@ -164,7 +165,7 @@ console.log('微客众智获取用户信息失败 已停止当前账号运行!')
         }
       })
     },timeout)
- // })
+  })
 }
 
 
@@ -178,18 +179,18 @@ let url = {
        
 }
       $.get(url, async (err, resp, data) => {
+
         try {
     const result = JSON.parse(data)
-        if(result.data.counts !== 0){
 
-
+        if(result.data.code== 1){
 uid=data.match(/"id":(.*?),/)[1]
 tid =data.match(/"a_id":(.*?),/)[1]
 name =data.match(/"content_url":"(.*?)",/)[1]
 
         console.log('\n微客众智获取任务ID成功\n当前任务ID: '+uid+' '+tid+'\n开始循环阅读:')
         await $.wait(1000);
-        await wkzzwz();
+        await wkzzyd();
 } else {
        console.log('\n微客众智获取任务ID失败  '+result.data.message)
 }
