@@ -6,7 +6,7 @@ name: 书旗小说ziye
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 0,2,4,6,8 * * *'
+    - cron: '7 * * * *'
   watch:
     types: started
   repository_dispatch:
