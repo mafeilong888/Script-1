@@ -132,11 +132,11 @@ $.log(wkzzhd)
 //微客众智key
 function wkzz1(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('wkzzhd') === "undefined") {
-        $.msg($.name,"",'请先获取微客众智数据!😓',)
-        $.done()
-      }
+//     setTimeout( ()=>{
+//       if (typeof $.getdata('wkzzhd') === "undefined") {
+//         $.msg($.name,"",'请先获取微客众智数据!😓',)
+//         $.done()
+//       }
 
 let url = {
         url : "http://wx.tiantianaiyuedu.site/me",
@@ -164,7 +164,7 @@ console.log('微客众智获取用户信息失败 已停止当前账号运行!')
         }
       })
     },timeout)
-  })
+ // })
 }
 
 
