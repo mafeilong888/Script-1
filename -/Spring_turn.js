@@ -90,7 +90,7 @@ if (process.env.CFZHD && process.env.CFZHD.indexOf('\n') > -1) {
   }}
 
 
-
+acsecret=["Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDQ5NzZlMmNmZDdmIiwiaWF0IjoxNjE1NDI3Mjk4LCJuYmYiOjE2MTU0MjcyOTgsImV4cCI6MTYxODAxOTI5OCwidWlkIjoxMjEyMjA2LCJuYW1lIjoiS2kiLCJjcmVhdGVkX2F0IjoiMjAyMS0wMy0xMSAwOTo0ODoxOCIsImNpdHlfbmFtZSI6bnVsbCwiY2l0eV9jb2RlIjpudWxsfQ.d5Itjh3iGM_uyLn3akdOWSRDgkpVIKcziMjy8czMehw"]
 
 
 
