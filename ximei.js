@@ -69,7 +69,7 @@ let ximeikey = '',id = '',uid='',tid='',name=''
 
 if ($.isNode()) {
     ximeiurlArr.push('https://app.hubonews.com/v3/articles/list')
-    ximeihdArr.push('{"Connection":"keep-alive","uid":"129420","Accept-Encoding":"gzip, deflate","UMDeviceToken":"3f79ce64bc5fdb99559a5427349a2cef3ae2fd15c17fb50e57e2c210f2764486","deviceToken":"504CFC72-FB5A-481E-B13D-82D193809D3F","Content-Type":"application/json","versionName":"3.8.1","User-Agent":"Langooo/3.8.1 (iPhone; iOS 14.4; Scale/2.00)","token":"deac2205-6892-42d1-b79e-4b4d946d37e5","versionCode":"76","Host":"api.langooo.com","Accept-Language":"zh-Hans-CN;q=1","Accept":"*/*","Content-Length":"34"}')
+    ximeihdArr.push('{"Accept-Encoding":"gzip, deflate, br","Host":"app.hubonews.com","X_CLIENT_CHANNEL":"App Store","X_CLIENT_APP":"com.tigerye.tigerobo","X_CLIENT_PLATFORM":"iOS","Connection":"keep-alive","DEVICE_ID":"4B066647-56BB-49F3-A39F-7E735C4C6041","BRAND_PRODUCT":"Apple-iPhone12,1","X_CLIENT_TRANSLATION_LANGUAGE":"en","Accept-Language":"zh-Hans-CN;q=1","User-Agent":"tigerobo/2.6.3 (iPhone; iOS 14.4; Scale/2.00)","Content-Type":"application/json","X_CLIENT_IDFA":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","X_CLIENT_COUNTRY":"CN","X_CLIENT_VERSION":"2.6.3","Accept":"*/*","API_AUTHORIZATION":"hGPxXYEdEfIVZLKIcEXU","X_CLIENT_BUILD":"213","X_CLIENT_LANGUAGE":"zh","Content-Length":"21"}')
    
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
