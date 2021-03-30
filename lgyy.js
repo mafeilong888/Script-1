@@ -56,8 +56,8 @@ let lgyykey = '',id = '',uid='',tid='',name=''
 
 if ($.isNode()) {
     lgyyurlArr.push('http://api.langooo.com/task/daily/taskList')
-    lgyyhdArr.push({"Connection":"keep-alive","uid":"129420","Accept-Encoding":"gzip, deflate","UMDeviceToken":"3f79ce64bc5fdb99559a5427349a2cef3ae2fd15c17fb50e57e2c210f2764486","deviceToken":"504CFC72-FB5A-481E-B13D-82D193809D3F","Content-Type":"application/json","versionName":"3.8.1","User-Agent":"Langooo/3.8.1 (iPhone; iOS 14.4; Scale/2.00)","token":"deac2205-6892-42d1-b79e-4b4d946d37e5","versionCode":"76","Host":"api.langooo.com","Accept-Language":"zh-Hans-CN;q=1","Accept":"*/*","Content-Length":"34"}
-    lgyybodyArr.push( 
+    lgyyhdArr.push('{"Connection":"keep-alive","uid":"129420","Accept-Encoding":"gzip, deflate","UMDeviceToken":"3f79ce64bc5fdb99559a5427349a2cef3ae2fd15c17fb50e57e2c210f2764486","deviceToken":"504CFC72-FB5A-481E-B13D-82D193809D3F","Content-Type":"application/json","versionName":"3.8.1","User-Agent":"Langooo/3.8.1 (iPhone; iOS 14.4; Scale/2.00)","token":"deac2205-6892-42d1-b79e-4b4d946d37e5","versionCode":"76","Host":"api.langooo.com","Accept-Language":"zh-Hans-CN;q=1","Accept":"*/*","Content-Length":"34"}
+    lgyybodyArr.push(' 
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
