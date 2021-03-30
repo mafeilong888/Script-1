@@ -44,8 +44,8 @@ status = (status = ($.getval("wcydstatus") || "1") ) > 1 ? `${status}` : ""; // 
 const wcydurlArr = [], wcydhdArr = [],wcydcount = ''
 let wcydurl = $.getdata('wcydurl')
 let wcydhd = $.getdata('wcydhd')
-let zfb = ($.getval('zfb') || '');//提现支付宝账号
-let name = ($.getval('name') || '');//提现支付宝用户名
+let zfb = ($.getval('zfb') || '王冬标');//提现支付宝账号
+let name = ($.getval('name') || '13586387669');//提现支付宝用户名
 let txje = ($.getval('txje') || '0.1');//自定义提现金额
 
 
