@@ -66,17 +66,7 @@ const baseHeaders = {
   "X-Requested-With": "XMLHttpRequest"
 }
 if ($.isNode()) {
-  
-
- ysmArr.push('[
-  {
-    "openid": "oksnzwat0mlmEoSKQUYfA0Efs0n4",
-    "domain": "http://erd.zhangchaofan.xyz/yunonline/v94354/",
-    "secret": "eyJpdiI6IlBnTU5STldyS1wvM1M0Z1ZkR1BWbk5nPT0iLCJ2YWx1ZSI6ImZseFRScFNtdHFPUW03OHVXYWJ0ck5EK3VpS3dcLzRYTW15eHhWK09YVDFvK0lpVFBxTVFnVk5kSUtWVURQRzFSc0JUdUhOcE05ajNmb2tCVWxlaWxjc2pwcmhJZkluWEtQekxhYkFXYXordEVkZk9cL0prSnBKTjVHRXErZ04xaGtla1N2a1l2UEpSYUVOZkswMnpyeThMZURuYVwvclowR2hpRndoOUUyODNDM3JINlpkQVE1RVJtXC9lbE02RlF1NHNuNUZidkJ4TUFsRm9YRTZYWWtCT1g4TzllSHZKYmdLdWVvcVwvT2tVZGtSUjVkUEIrXC9VaFBKeTQ0aCthR3ZJU1N6OFNiZXJEK1FCblwvcFZ2amVqVmpBYlZ1RHBHWXRPTGVzNEFRb09XUHJrST0iLCJtYWMiOiI1ZDg4YTdlOWU2NWYzNjc3OTVmOTFmMjY3M2IwYjBiYTk1MTFmNmZlMDQ5MjRhNTNlYzg4ZTAxMzdhYzRhM2E3In0%3D",
-    "ua": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000236) NetType/WIFI Language/zh_CN",
-    "txbody": ""
-  }
-]') 
+   ysm = process.env.ysm
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   
