@@ -50,7 +50,7 @@ let zqwnhd = $.getdata('zqwnhd')
 let zqwnbody = $.getdata('zqwnbody')
 let zqwnkey = '',id = '',uid='',tid='',name=''
 if ($.isNode()) {
-   zqwnurllArr.push('http://wn.xingguozuliao.com/login/login2/hydata.html')
+   zqwnurlArr.push('http://wn.xingguozuliao.com/login/login2/hydata.html')
    zqwnhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"wn.xingguozuliao.com","User-Agent":"0.0.19 rv:0.0.1 (iPhone; iOS 14.4; zh_CN)","Content-Length":"100","Accept-Language":"zh-cn"}')
   zqwnbodyArr.push('oaid=2C052D31-46A9-400F-95C5-D0C4020BF96A&uid=4398&yhtk=2C052D31-46A9-400F-95C5-D0C4020BF96A&apple=1')
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
