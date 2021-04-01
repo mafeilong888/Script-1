@@ -3,7 +3,7 @@ name: 睡眠赚无限刷
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5,35 1-14 * * *'
+    - cron: '5 1,5 * * *'
   watch:
     types: started
   repository_dispatch:
