@@ -1,61 +1,37 @@
 /*
 软件名称:西梅 微信扫码下载
-更新时间：2021-03-29 @肥皂
+更新时间：2021-04-03 @肥皂
 脚本说明：西梅自动任务
 脚本为自动完成西梅的阅读任务
 每日收益0.45元，可多号撸。
 稳定长期，一元提现
 多账号撸的不可退出账号，把当前西梅app删除了
 重新下载登录小号
-
-
 扫码打开 https://ae01.alicdn.com/kf/U8c71c1ac1f47422788561b0be3d4ea2ah.jpg
-微信扫码打开可领红包，然后去商店搜索下载西梅
-
-
-
+微信扫码打开可领红包
 本脚本以学习为主！
-使用方法: 打开西梅，首页推荐下拉刷新获得数据
-
-
+使用方法:打开西梅，首页推荐下拉刷新获得数据
 TG电报群: https://t.me/hahaha8028
-
-
+4.3更新西梅加入自动提现功能,不用再去微信提现了,请确保自己的账号已绑定微信
 boxjs地址 :  
-
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
-
-
 西梅
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #西梅
 20 9 * * * https://raw.githubusercontent.com/age174/-/main/ximei.js, tag=西梅, img-url=https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg, enabled=true
-
-
 [rewrite_local]
 #西梅
 https://app.hubonews.com/v3/articles/list url script-request-body https://raw.githubusercontent.com/age174/-/main/ximei.js
-
-
-
 #loon
 https://app.hubonews.com/v3/articles/list script-path=https://raw.githubusercontent.com/age174/-/main/ximei.js, requires-body=true, timeout=10, tag=西梅
-
-
-
 #surge
-
 西梅 = type=http-request,pattern=https://app.hubonews.com/v3/articles/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ximei.js,script-update-interval=0
-
-
-
-
 [MITM]
 hostname = app.hubonews.com
-
-
 */
+
+
 
 const $ = new Env('西梅');
 let status;
@@ -75,6 +51,7 @@ if ($.isNode()) {
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   }
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await ximeick()
@@ -96,6 +73,7 @@ if ($.isNode()) {
           console.log(`\n开始【西梅${$.index}】`)
           await ximei1();
           await ximeixx();
+          
 
   }
 }}
@@ -346,6 +324,10 @@ let url = {
         if(result.code == 0){
 
         console.log('\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
+if(result.data.point >=100){
+$.log('西梅-检测到当前梅子可提现,执行提现任务')
+await ximeitx();
+}
         
 } else {
        console.log('\n西梅用户信息获取失败  '+result.msg)
@@ -359,6 +341,40 @@ let url = {
     },timeout)
   })
 }
+
+//西梅任务提现
+function ximeitx(timeout = 0) {
+  return new Promise((resolve) => {
+
+let url = {
+        url : "https://app.hubonews.com/v1/credit/cashout/apply",
+        headers : JSON.parse(ximeihd),
+        body : `{"cashout_credits":100,"assets_type":0}`,
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.code == 0){
+
+        console.log('\n西梅提现成功:'+result.data.order_status)
+
+        
+} else {
+       console.log('\n西梅提现失败  '+result.msg)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
 
 //封装md5
 function md5(a) {
