@@ -54,7 +54,7 @@ let vshsp = ($.getval('vshsp') || '0');//短视频刷金币开关,短视频刷�
 if ($.isNode()) {
     vshurlArr.push('http://iosvsh.zwzanwm.cn/app/svjl')
     vshhdArr.push('{"Accept-Encoding":"gzip, deflate","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/json","Host":"iosvsh.zwzanwm.cn","User-Agent":"vsh/1.13 (iPhone; iOS 14.4; Scale/2.00)","Content-Length":"2","Accept-Language":"zh-Hans-CN;q=1","token":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5"}')
-    vshdspbodylArr.push('{"isDouble":"0","moneyId":"0","mark":"N/K9aR/FV+/n57toELtdAKwTOX0bjZIc9n8CHm+G/jtL+p43nyCQH5zr/zhPB70fRIg6KVCqyseSXUiWYc43pip4ZBYEW27kLZyqnkaoS1M=","type":"7","seconds":"15"}')
+    vshdspbodyArr.push('{"isDouble":"0","moneyId":"0","mark":"N/K9aR/FV+/n57toELtdAKwTOX0bjZIc9n8CHm+G/jtL+p43nyCQH5zr/zhPB70fRIg6KVCqyseSXUiWYc43pip4ZBYEW27kLZyqnkaoS1M=","type":"7","seconds":"15"}')
     vshspbodyArr.push('{"isDouble":"1","moneyId":"0","mark":"xFEIRb64jnV2HGfRQ3sy2Rxsi4iX8OurnT7SKdBRmpNegwI75H9+ptq2J1f+4ArulIL5zN81rutP2pbvy/rApPt26ZIdf1sSy/kLJAjkCg8=","type":"1","seconds":"53"}')
     vsh1bodyArr.push('{"isDouble":"0","moneyId":"0","mark":"2lCSU+YfUkBfpByueYkxjjiid5jV89vSnNf7aqXMpwOT7Du4sk63m4xQ2cLOz2hlTYsvhwfuvludNmf0RV/xjHu1wxtLEluRqLhvJbo1VhU=","type":"13","seconds":"52"}')
     vsh2bodyArr.push('{"isDouble":"0","moneyId":"0","mark":"fvAG2KRUYRkiFHf4tXAJxu/6ObNTVcglYJv0mPg4BzUC6+6NpGkCHnpzllKimOXbyxO310BaUKyXRBohCPM3cISVB8mu8x93tZgHcW2WJRQ=","type":"2","seconds":"26"}')
