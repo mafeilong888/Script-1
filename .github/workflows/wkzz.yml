@@ -3,7 +3,7 @@ name: 微客众智
 on:
   workflow_dispatch:
   schedule:
-     - cron: '5,35 1-14 * * *'
+     - cron: '3,33 1-13,17,21,23 * * *'
   watch:
     types: started
   repository_dispatch:
