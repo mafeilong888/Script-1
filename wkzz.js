@@ -34,7 +34,7 @@ hostname = wx.tiantianaiyuedu.site
 
 
 const $ = new Env('微客众智自动阅读');
-const wkzz = $.getjson('wkzz',[{"id":634323,"url":"http://wx.tiantianaiyuedu.site/read/article","hd":"{"X-Requested-With":"XMLHttpRequest","Connection":"keep-alive","Accept-Encoding":"gzip,deflate","Content-Type":"application/json;charset=utf-8","User-Agent":"Mozilla/5.0(iPhone;CPUiPhoneOS14_4likeMacOSX)AppleWebKit/605.1.15(KHTML,likeGecko)Mobile/15E148MicroMessenger/8.0.2(0x18000239)NetType/WIFILanguage/zh_CN","X-CSRF-TOKEN":"nEgnyb4TyjblxOr6FaNlYo4GoQiPH1z1OYvjYeTG","Cookie":"XSRF-TOKEN=eyJpdiI6IkMyV29mWjhaZzIxakVOUG9QWHBvNFE9PSIsInZhbHVlIjoicnE1TG1TQWdXTGdvcW45bVpWWHh6TjBpZEFNbHpCK0crOTJOa0pWZFJ2TnZzSDd0WmhNNnhEb3lKTHZ3TTlZQjFLdWVYc0ZVR2ZQXC80XC9JUGdERDRRdz09IiwibWFjIjoiYzM3MWQzMDgxYjJjODIyMTQ4NzczNGY1NDA4ZWM2ZGU4MjhmZmJiOTlmYzFlMmRjYTc3N2ZhNWZhMTAyMDZlMCJ9;laravel_session=eyJpdiI6IkRBR1F2Rk9QN0R1Q3R4WXBRc3lkYXc9PSIsInZhbHVlIjoieVlDOWlhb2txM0Z2b0ZSb0pmK0VBakFQb3hZc2lDaWxYSkpMckhiZDQzWEtqNlJpRFRNUUJCR1p3cEZRRzEyYStTdFJwekZZSzJIdjErY0VNTnhaV1E9PSIsIm1hYyI6Ijk5YzliZTZmZWVlYWU0M2Y3YjdmMDJjMmYzYmQxNWFkYmZjNGQ1NTljOGE2M2MxNDNiNGFmMDdmNDE2NDdiNjEifQ%3D%3D","Host":"wx.tiantianaiyuedu.site","Accept-Language":"zh-cn","Accept":"application/json,text/plain,*/*","Content-Length":"107"}"}])
+const wkzz = require('./wkzz.json');
 let times = Math.round(Date.now() / 1000)
 let wkzzurl = '', wkzzhd = '',id = '',uid='',tid='',name=''
 !(async () => {
