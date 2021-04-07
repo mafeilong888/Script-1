@@ -1,10 +1,9 @@
-  
-/*
+ /*
 软件名称:葫芦音乐 商店搜索下载
-更新时间：2021-04-02 @肥皂
+更新时间：2021-04-07 @肥皂
 脚本说明：葫芦音乐自动任务
 脚本为自动完成葫芦音乐的日常任务
-每日固定收益0.5元左右，1元提现，可多号撸。
+每日固定收益1元左右，1元提现，可多号撸。
 当天可提0.6元秒到
 自动提现默认提现一块钱，还没测试过，不知道行不行
 本脚本以学习为主！
@@ -13,6 +12,8 @@ TG电报群: https://t.me/hahaha8028
 boxjs地址 :  
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 4.2更新,破解学知识任务,创意视频任务和分享任务的收益上限,学知识可以领取两次1500金币,创意视频可以领取两次2000金币,分享任务可领取两次68金币,自动提现好像还有点问题,到时候再看看
+4.7更新,修复学知识任务,增加听歌翻倍任务。每日金币又多了1200,嘿嘿,加入自定义提现功能,请更新boxjs填入提现金额
+填入1为提现1元,2为2元,3为5元,4为50元,5为100元,默认提现一元
 葫芦音乐
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
@@ -37,7 +38,11 @@ let times = Math.round(Date.now())
 let hlyyurl = $.getdata('hlyyurl')
 let hlyyhd = $.getdata('hlyyhd')
 let hlyybody = $.getdata('hlyybody')
-let ut = '',id = '',qd='',qdfb='',gg='',sp='',fx='',zs='',tg='',wz=''
+let ut = '',id = '',qd='',qdfb='',gg='',sp='',fx='',zs='',tg='',wz='',tgfb=''
+let txsz = ['','BsjB-5WE54sKKCP0kIMORs1WbWzmM5gRg','0r7ipKknU4gqurOo71KH2kPFzkwlohZws','0r7ipKknU4g2s8ACTG4DbU1QFpcUgueU4','pQKf_KdmjH4pS_070l0fhYH0Hs6ltsads','pQKf_KdmjH4hSrW79J7WyU1WbWzmM5gRg'];
+let hltxje = ($.getval('hltxje') || '1');
+let txje = txsz[hltxje]
+
 
 if ($.isNode()) {
     hlyyurlArr.push('https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=DeyJlbmNvZGUiOjMsIm9zIjoiaW9zIiwiY29tcHJlc3MiOjEsIm9yZ2FuaXphdGlvbiI6InFER21pTFRUWFBhV2VMazNsMnRHIiwiZGF0YSI6InJwY1RKXC9CcGkrMWdjK2I5cGowempkSDNsZVwvVEtYRVJJZkFYWURcLzh2YmZGU0RrSzIyeVJURjhRNTBQOVJiVlwvcE9DUmRBWnA5K3ZZVlp6SXA4d21LTGRGaGwxNmh2OXVyVUhNWm1qQ0RYd3hsaVlGSWdxbUhManl4ekRTTjlWd3JFY1Nvd2JmU0ZkQnpSRFN3K0oxZWdoRnB3MGRsVEUrcm5HNFdMTkZWQlNFV2NjMzFhOHlaeWdYNGloQ2tmcjJLK1JSTHRqNTlyMktOTVwvWUpMeWdjTjEyem5QOTZZT3F4eG9JNWFERmZKUTNPNTl4UFRjS1BlTGJEQzNFUm1tZ0licEwza1MyRU1OZmJSSUQ5TGhsOFlkV0d5N2ZCTXZXNThtRjNENnJmZmVraGZ3SkZNSWFmWjJ4QXA1WHFkblNiU0RnSTZMXC9VU2pCZlFFK3ZodXdva2s4SWdSRWpBZXlNMVdhVW9RVFBcL21BZGlCZUNpUXQrWWtHSkFUZ0R0dUhDWUhcL2VuRjVTU0tHaXpjazFycXBcL1dSUzVZZnIxQmZhc2s5dWtRZ1FWRHNsSWhQQ2pJSGZqZThjbGVac1QyWk1YQlA2Z3E5NFwvSmx2UWw2MkgycHFzYWtieDBYVW00VnEyS3I3RmlDeXhFb3pcLytvVENjNlJRXC9UYktrVWJGSDU5enBxdlBkbHlvWnZnSTRTVk1IbXZpMElra2xKZTRmOG1XQnUrSDFZYW1jSG9CcEkrV2tRWHVnSEwxT2hjR3pZdWYrbmFrY2s1UmMyTURib3JzSWpnS0tjWUZDWHhDNWZKUHRBOXZoU1wvUnhLeFUrOHlnRHpqQ1V0OXRXOTJzZ1hac2Y3VFpnajl5WkMwZWF6VGQ0d3RXT0pGUGN5NWtCb1BldWh5Slc1c1hnUUQzY3h3OXVoSjdoalVXV2RzVDBjRlwvOHozQUpzOXRITFQySmNRdFhFT1hOTDhsRlFrdk5XUXVPZ0dcL2dwSEF5bzhBeEtob2l6ek80TlZweEdjMnUxXC9iXC96QXlZVk5kcldcL09aVUFXdHdBRXJKNWQ5WW9lb1wvcWh4S09rZlFjVG1PUlo1Zk5JRVJGMXV6R1dycStKbFwvU3NmUEtzSE1KT2J2cWNQaDViS1ltUlhrcVA5RWhJSkhYVGlIaHBYbU53dmo3cDV4Qk9NQkE0SVJIbXFcL0Q3R2xMa1J4TlVxUFYyajFHM2VaVjhOaWR5Qk5ZVFFlODNFMWNSeXdoamV0R05kS0hxVFJ4K3NxUWFtbXZuSCtyVDV4ckNZZDNuK2ZpNU12K1wvVzhiNUtqN3NkOXRSYnUyOHc2MnNsXC81U1FiTDJJek5Xc2VNd1N6dm5RYzBQNzBmUFYyS0ZLNjBoODFHTm5LN3UrcnBRM1ZabkdybG9yN2ZIQTVJYXArQ3dGbnhkMU9IKzUxRk15K3o3OTNoNXR4b2VcL24rWmJCazhnWGpUdnhcLzQzazI5ZzlhbG44YWZ2bEdXUHU5d251b2cxNFBNZzlidTFFRTNNeFwvVFJUUnlHZCtJdld5ajdnbjRlOUx4dlpXVmw5TDl1MlFXQ1BuU3ZVWEhDRW42UndSTWlrRzA5a1pBS1ArZHdQU2pybXdIUHF4OURjWlNtZmtyeU4rK3hNTlZcLzhMOG9CNHNlVEk3Nys3SHUxZXdpWHlnbEs4RUwzR2FjQ1ZVZkZIZUNDa2tVcCs1V1IwUk00aEtwd1hjNHl4dFhrVXErNVN5eVhvalRSazljV1JFRUNpbUUxUG5MdkgwWngrUFFzVW1XWmlVOFhWT3dCRWozUVwvUlNZVlwvSGo0eUNQZDZvU2FuUWhBMEVZNnI3cWVab0M3aklQMnZ3RFVRYkVjcm9NQ2lqM3BoOVlWZXVKNWJcL0loanhwaFhNcFcwM2NtYXZBTFdlSkNMQjVqSlpWR1dFcUtPVzVXcWI2SGU4VGNkYjE1Nk55SDhENFlmcnpJQ0Nza0JLQjJmMUZ0VEhSb3dseCtVWVRQWnJFZXVlSlEwbkVIQzZyYkxxMkdyb1VhRE1lOFNcL3ZUcklxV0YwUmJxVWY1VEZvQnNGdTZPWXJCQlVmK3hoaks4TmlMRE0yK3R0WnBicjV5SVJqNVFwZHJLcUZxcXJpa1wvREVFY3ZBN3NTb1Q2enBpT3R3eG4weGNsNmFUZmNOK0pVV1BNcDcrZXdoOEFzNXFvcllKd1BnYURwb2VIXC96MnI2Wm01bzRxV2s4VFJTWXI4ZFwvM2U2RVNtY1ppZ2EwTnlDVXpXXC9XK2xKc3VhT241ZEhEekpUMGFveElBa3BWUVZoTVZBUVhQbG1TUjhvZXliSUFNQ2w1TlZmcjB1djFIc0lsQUg0R2pVU3R6NWZGYlRWUnVNbTBzZVBoNnR1WkJGMUxZWVZkZTVsSVwvK3lYampwMlVkc0NXeXo2OERkTG83NGtMSVVBOVVRa1RKMHZrQzU0Q0dxUXpJRXFcL2M1ak9HTnJPNlFFY1MwRW5VbU9wd3o4cDl0UlNuUkE4RW5ETHFmRzlvNFQwcmdrWDYxRTk0dGJoNUpvbXVNQkdhNitZK3RwQXdsdWxhZk1tMkQycHQzTjZvSjU1UzNBNFVOOEhCTmtcL1lMTWhsdHdOZDRhc3BQWmtCSDJNS09JaDJWZHZ6cG85dWxnN0o5b05Eb0lWdWJtdWtOUE1UaGIzelpOM1lCNjBMdUlBZVwvMGhuaXpUdkIySlJlRysyVmlYNEZNZVJNaHlnNEFHVlZhMlpOSlwvN0o2OUdMQzJyVTl6dFRBR1Z1MkZhZXBqb3dOZzlnVm1ZOGdUcmhkK0JJSFA4cmxyR1FNYWVZM281ZUpPcVwvbkhmM21YaTVwYVBCaUJITjFwSUVqbmZVTVhyWDg0VmhJbWlxUzZKVUQ0OFlJR1k2OUZDV0xyOWphak5XQTV6Y3ptUnlXSVwvdGcrdGpGVFdOcjdXc3NjNnMwaVdFQ1wvNkpMMG9FZGpFU2dXS0QrWFNxZG5MR0tCQnlNRW5MK3l5ZWtHTnlVd25BbWFteVdlQnFCZ3pXS0FkWGk5cko2Mk01M3RaT0daelpwalwvOW4wK0xITUhDd3UzaUs4ZitUWnE1cnJZdDFHcTlSSGlyVko3NjJSaE55c3pOb2VsNTlNOVNTN09EektwVHFSUk9scW9cL243aGtOZjF3MXJYc0Roa0lQb2luaGR5R2JBeHdGWmErWkRYNENlUFg5QVByYmt0RWVOWEd3K1kwQVpueXl5NjdMZUo4S3FXeVlia0lcLzdXbEgyWHhmbDhiNkRZc09scFBxQWx2WlRwV291QWp2ajJwbmpPcDhmSzlWRzZsSks0anF4ZEtvakFsWUh3WjlsdmVoc1wvY0NwckpENnZJcGc0NXFIbyswazEzQmhsc0cweHlGaUltTTZzRkFNM01pT1M0SG5FNlk5MmZFemFZYzhHVTlycyt1T1l0STVHWXFYY3UrdXpZdGUxYktOdm8yYXhneER5WlpPTHBZemdKdG5vdU5XQ29KeTV5RHo4RTRVTEZ4STJXR05IR0U2R3ZnVGlPTk1xeTA4UWxJQUNKUmcxNWtNRFhJcENKNmJcL05cL3dsTkdqTFwvUmFzUERqaVwvYUZFQUhcL3hRaDNBbmo3NlpQOVJJMklKbnowang2eGtmeG0zd0NSQ1lJYnVyV2dNMlRDMjdPTnBSUU9RSUg2UWJkTmtNRlYwUUdmVFhHXC96MWNtdHVjZUhKMGtlbUFad05md0M1VlhCZkR6eGNYM0NwNXl2UUYwQ0pmc1krZU5uU2dMVEVjblpmUFkreENrV2VQbkRET3I4TUxJd1FJZk80SUFnN2owNU5VVnp3WDFqQkxSTTZyMWN3WFV4d1pkcFlEWHp5b3BBb1d5R0NuU3E2Nmx2WnlBMTdsM0NPQU5jTzRMa3lSbHY0MjJGeUJtNk5xVmNmVDFTYkNZY2J4TkpsOXNaT0JvNHdUUFVsUkZVcUVuQkV1YWdtYXdQTUlGdjB4WldEMUw5SkxOcVV1SlVMV0NXazcrd3BCa2dxNUphTUd0RmFzYlNvMkFac0NiTVQ1ZzVcL1VHUldyWUlOd3hTQWV1RVRBZHdhV1VEaVVPUjhwKytrYzZpa2RZNk4wK2c2STNmNmRVcDE1WHpvaTNLSzN2OVwvODlJTW1mV215K3VuY0V5MzJabWVvS29RVjFWcDlWbE01NjJTY0NEb2tVckF3eXQybUNYa1wvdDBSWU9Gd1V6cTJBMHY2NmlseGZqQnJWN3dhXC9tXC81dUlDZWF4bXFvcVRuemw3UGVUbTFIN21Ma0hIa05GWDh4KzZobzBibG9hRlRucWVBditZZldYdUx6aDVtZVwvMW9seTRGVExVNFFDY2MrYU90UituVWhwZlRKbnhyR1ZnQmgrRXE0YmM1TVwvXC9nSmNvcVwvYjRlYk9xcVQ1a3hLODlLU0VmdnkzbDdtNnQ0bWRDNjBtUThxSFZVUkpDeWRlN2hZZCttZ3RBRTVIY2NTb1k4ajRTbHlZN1BCMXgzbFwvQmYxa3Y1TmZXMHBOeTVHdTQ4RUxPK1wvSm55MGxvdldIR25lWGhQYzAxV3JDU1QzSmdYY3NlQ1pwVytGdkI4U0FcL2tFbllxTWYyQVhKVkVZZGJEb0dvZHZoU0kzdmNRbWdoN0lmb3JncEh4Y3lwTVFMQ2xlNTRZd1haV09vbXczZ1BmcHZwemtPRUFXVytSTGM1YXFpYm5KWkMxM1cya2E1dGpPbjYxWTg4Q0JEWUtzS2xXQVNKaDY4NStUR3NlTnpVU1VPeHB4ZXBXTTFXZElUSnRWV2tqbjZXUklLT2o2bFZyc1U3T0dTYXdpZnRhU295WmJXSkppU1QwUVc0cWdwUkZ3YXdnbmRiOGJnc1wvNnpHRmFNSVZPMHNGcHZKRXoxM1VLWHpzWldlbTNJQ1hiU2hzbVwveWM5UUhhWDZhKzJBOU5DenZ3aDBZU3hrUUdoUnZ6V2hUYmM1SWV4SU9TK2ZoaTNGdlE2YmxcL0kzdmxcL01yVnV2aWMxcGtMNTlMVHV1cSs4ZUhiczBjMUVUSk0wWjM0UDRZWmZEU0xobG1za2FmZWJUWWpGaW9YaXQ5enlHelVTMnM3MUJZWFhIRGdEU1Q3WFBRQjNcL1BBcTdoSFNwaVFVY1lIaWNLSjJcL1wvWFRUb3hXcVF4SHo3SEQzNzlNK2ZMVGRycnczOTlHNHRuSCs0Y1gzNUJEcDdtSWtVNVZ2R3RmWXBOSWJESGxnMTRXOW56V0JaSzhHczIwUFVFWUZJVWdyMkRuYVR3M3NXMk9aUGh4RVhcL0pxUzRwQTBnV3Y3SnFCbHVJWEpKTEszeGxhXC9sWkp6dm9aSzk0NzhkSFJGenRCTm9cLzQ4NE5idllJRERtQT0iLCJ0biI6IkdNSVY5K21hR0tqR3c1NDFsTUM3Y1JlcUw1d1VIb0xlUGRJc2ZiUDVNVk9sRkdGekpcLzFjTEJqaHlQOTQrOTM2Uk9MaCtXelZLeTRFdVAzMHJBTEI5ODRuaStEYXFmMzZIWTlLTnBDR1VDR1pZcjRpV0ZmTVhIMFowSGZCdERvN2Q0RnhpZjZTKytMbzUwZXl3dFZHZURzQ1NtWWdQcVV2Yk0xRDZmM3FQT1k9IiwiZXAiOiJQZ1FQdGF3XC9UbEVzXC8yaWUraXNVYTd5MmlNOHRTK0swTUVtYUtBR29KWE5Ebk42bTZOZjNUVlRyMWtBR3laaTZYWHRwKzlnclh4bVV3SEFKVVhVXC9OYXdjNHBLMEpVZUwxMHFjSUJlNU9DeDBPR3RCQmhkeWZPeGtKKzV2TWRJMmIrZ1hhVW56alIyNkpKb1lIQmxuTkFIbmJzTk5reGlIWDB3STdNNFhOTW89IiwiYXBwSWQiOiJkZWZhdWx0In0%3D&os=ios&tc=ZBLjDH2LCdklNQxQ0cD9rEPFzkwlohZws&ut=eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MDY1NzU3MjIxMTgzODgxMjE2Iiwic3ViIjoiM2ZWOW5KVG1RNklwV2h1QlJTZVVSQTFXYld6bU01Z1JnIiwiaWF0IjoxNjE3MjM2NTg5LCJleHAiOjE2MjUwMTI1ODl9.mlbEfbtjpxQdIOcHzrGFHIIqw4CNdrE3OJaCgYj4xBA')
@@ -84,6 +89,8 @@ if ($.isNode()) {
           await hlyyfxpj()
           await $.wait(3000);
           await hlyytg()
+          await $.wait(3000);
+          await hlyytgfb()
           await $.wait(3000);
           await hlyyzslb()
           await $.wait(3000);
@@ -141,12 +148,13 @@ let url = {
         console.log(`\n〔葫芦音乐〕获取任务列表成功🚬`)    
 qd = result.data.pagelist[0].taskCode 
 qdfb = result.data.pagelist[0].secTaskVoList[0].taskCode
-gg = result.data.pagelist[2].taskCode
-sp = result.data.pagelist[3].taskCode
-fx = result.data.pagelist[4].taskCode
-zs = result.data.pagelist[1].taskCode
-tg = result.data.pagelist[5].taskCode      
-                  
+gg = result.data.pagelist[1].taskCode
+sp = result.data.pagelist[4].taskCode
+fx = result.data.pagelist[5].taskCode
+zs = result.data.pagelist[3].taskCode
+tg = result.data.pagelist[2].taskCode
+tgfb = result.data.pagelist[2].secTaskVoList[0].taskCode      
+
 } else {
 $.log(data)
 console.log('葫芦音乐获取用户信息失败 已停止当前账号运行!')
@@ -412,7 +420,36 @@ let url = {
     },timeout)
   })
 }
+//葫芦音乐听歌翻倍
+function hlyytgfb(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${tgfb}&tl=10000&ut=${ut}`,
+        headers : JSON.parse(hlyyhd),
+}
+      $.post(url, async (err, resp, data) => {
 
+        try {
+    const result = JSON.parse(data)
+
+        if(result.errCode == 00){
+
+        console.log(`\n〔葫芦音乐〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
+
+        
+} else {
+       console.log('\n葫芦音乐错误'+data)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 //葫芦音乐学知识列表
 function hlyyzslb(timeout = 0) {
   return new Promise((resolve) => {
@@ -572,7 +609,7 @@ let url = {
 function hlyyme(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/withdrawal/checkWithDrawal?av=1.1.3&ut=${ut}&wdiCode=BsjB-5WE54sKKCP0kIMORs1WbWzmM5gRg`,
+        url : `https://play.gxhuancai.com/hlplay/withdrawal/checkWithDrawal?av=1.1.3&ut=${ut}&wdiCode=${txje}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
@@ -603,7 +640,7 @@ let url = {
 function hlyytx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/withdrawal/confirmWithDrawalWithWX?av=1.1.3&ut=${ut}&wdiCode=BsjB-5WE54sKKCP0kIMORs1WbWzmM5gRg`,
+        url : `https://play.gxhuancai.com/hlplay/withdrawal/confirmWithDrawalWithWX?av=1.1.3&ut=${ut}&wdiCode=${txje}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
