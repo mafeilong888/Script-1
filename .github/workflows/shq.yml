@@ -24,7 +24,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【番茄看看】'
+      - name: '运行 【生活圈自动评论】'
         run: |
           node shq.js 
           
