@@ -1,4 +1,4 @@
-name: keep早起打卡
+name: keep浇水
 
 on:
   workflow_dispatch:
@@ -24,9 +24,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【keep早起打卡】'
+      - name: '运行 【keep浇水】'
         run: |
-          node keep.js
+          node keepjs.js
           
         env:    
        
