@@ -34,8 +34,8 @@ let times = Math.round(Date.now() / 1000)
 let mmdzzurl = $.getdata('mmdzzurl')
 let mmdzzhd = $.getdata('mmdzzhd')
 if ($.isNode()) {
-  cfzurlArr.push('http://cf-api.douzhuanapi.cn:10002/api/article/list?city_type=1&page=1&slide=1&tag_id=0&type=1')
-     cfzhdArr.push('
+  mmdzzurlArr.push('{"ed":"rZ0t8k0yhRSakW7RrKp9Od1BAb17YiURKM+LoQ1uIC5H5vbO0oA2RiSsh3cVtUNRqyVNwiqrqsIhYLp+2iW3T86jKkojkiLDbd9tp2g8w+s="}')
+   mmdzzhdArr.push('{"Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","Content-Type":"application/json","Origin":"https://catxxx.higaoyao.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","platform":"ios","Authorization":"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJwcm9kIiwiaWF0IjoxNjE4MTkwODg5LCJleHAiOjE2MjA3Mjg4ODksIm5iZiI6MTYxODE5MDg4OSwidWlkIjoxMDU0NzUwfQ.peruN6o5wTnrAiJIwShCZNdvI0vqOq4CoASHlzOhLPg","versionCode":"33","Host":"xxlapi.higaoyao.com:553","Referer":"https://catxxx.higaoyao.com/v228/index.html","Accept-Language":"zh-cn","Accept":"*/*","Content-Length":"117"}')
  
 console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
 }
