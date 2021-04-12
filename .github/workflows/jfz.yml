@@ -1,4 +1,4 @@
-	name: 积分赚挖矿
+name: 积分赚挖矿
 
 on:
   workflow_dispatch:
