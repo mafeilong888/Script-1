@@ -46,7 +46,7 @@ let jfzurl = $.getdata('jfzurl')
 let sdk = '';
 if ($.isNode()) {
  // jfzbodyArr.push('{"ed":"rZ0t8k0yhRSakW7RrKp9Od1BAb17YiURKM+LoQ1uIC5H5vbO0oA2RiSsh3cVtUNRqyVNwiqrqsIhYLp+2iW3T86jKkojkiLDbd9tp2g8w+s="}')
-   jfzhdArr.push('{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/json","Referer":"https://servicewechat.com/wxf990f5dfd97899ad/348/page-frame.html","Host":"api.dwhub.com.cn","dw-version":"4.14.6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x1800032b) NetType/WIFI Language/zh_CN","Content-Length":"2","Accept-Language":"zh-cn","X-DWHUB-SESSION":"c18d9afd09718235f1fa277f64afe4edc83ccd38"}')
+   jfzhdArr.push('{"Accept-Encoding":"gzip,compress,br,deflate","Connection":"keep-alive","Content-Type":"application/json","Referer":"https://servicewechat.com/wxf990f5dfd97899ad/348/page-frame.html","Host":"api.dwhub.com.cn","Content-Length":"2","dw-version":"4.14.6","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x1800032b) NetType/WIFI Language/zh_CN","X-DWHUB-SESSION":"773618a5d8e063077fbe8d002515478ba29f2482"}')
    jfzurlArr.push('https://api.dwhub.com.cn/point_go/v2/mining/start')
 
 console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
