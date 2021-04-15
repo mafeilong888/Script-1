@@ -33,8 +33,10 @@ let smyjkey = '',uid=''
 if ($.isNode()) {
     smyjurlArr.push('https://h5.youzan.com/wscump/checkin/checkin.json?checkin_id=13968&app_id=wx2f3e7fdb0cd94fab&kdt_id=45125701&access_token=484dc5bce572dc20a242b59991ddb3')
     smyjhdArr.push('{"Accept-Encoding":"gzip,compress,br,deflate","Connection":"keep-alive","Referer":"https://servicewechat.com/wx2f3e7fdb0cd94fab/27/page-frame.html","Content-Type":"application/json","Host":"h5.youzan.com","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x1800032c) NetType/WIFI Language/zh_CN","Extra-Data":"{"is_weapp":1,"sid":"YZ832233646877544448YZbloLHDaZ","version":"2.74.6","client":"weapp","bizEnv":"wsc"}"}')
-     console.log(`\n============ 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})}  =============\n`)
-}
+    
+    console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+    console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+  }
 !(async () => {
   if (typeof $request !== "undefined") {
     await smyjck()
