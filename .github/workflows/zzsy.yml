@@ -1,9 +1,9 @@
-name: 66阅读
+name: 招招试药
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5,45 * * * *'
+    - cron: '45 1 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -26,7 +26,7 @@ jobs:
           npm install
       - name: '运行 【招招试药】'
         run: |
-          node 66yd.js
+          node zzsy.js
           
         env:    
         
