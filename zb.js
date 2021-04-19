@@ -100,7 +100,7 @@ function zbbx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : `https://app.zaaap.cn/points/home/openbox`,
-        headers : JSON.parse($.getdata('zbhd')),
+        headers : JSON.parse(zbhd),
         body : zbbody,
 }
       $.post(url, async (err, resp, data) => {
