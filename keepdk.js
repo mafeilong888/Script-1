@@ -1,20 +1,31 @@
 /*
+
 20210409  tom
+
 微信小程序：keep早起打卡
 能量可以兑换话费，一天将近500能量，10天可兑换5元话费。
+
 比脚本为早起打卡与偷取好友能量。
 浇水需要添加浇水js
+
 ck获取：打开小程序点击能量，点击浇水一次即可。
+
 随便邀请一个好友，然后就可以偷能量了。
+
 [MITM]
 hostname = www.xiaeke.com
+
 [task_local]
-0 6 * * * https://raw.githubusercontent.com/xl2101200/-/main/keepdk.js, tag=keep打卡偷能量, enabled=true
+0 0 0/1 * * * https://raw.githubusercontent.com/xl2101200/-/main/keepdk.js, tag=keep打卡偷能量, enabled=true
+
 [rewrite_local] 
 https://www.xiaeke.com/benmao/index.php/Home/MorningTree/gainEnergy? url script-request-header https://raw.githubusercontent.com/xl2101200/-/main/keepdk.js
+
 多账号添加boxjs订阅，可通过微信切换账号的方式来获取，具体自测
 boxjs订阅:https://raw.githubusercontent.com/xl2101200/-/main/tom.box.json 
-task订阅: https://raw.githubusercontent.com/xl2101200/-/main/Tom_tosk.josn
+
+task订阅: https://raw.githubusercontent.com/xl2101200/-/main/Tom_task.josn
+
 */
 
 const $ = new Env('keep早起打卡');
@@ -31,7 +42,7 @@ if ($.isNode()) {
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  	}
-!(async () => {
+ !(async () => {
   if (typeof $request !== "undefined") {
     await keepck()
    
@@ -91,7 +102,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.status == 13000){  
 } else {
-       console.log('\nkeep偷能量: '+result.info)
+       console.log('\nkeep偷能量: '+result.info+'\n偷到能量：'+result.data+'个')
 }
         } catch (e) {
           //$.logErr(e, resp);
