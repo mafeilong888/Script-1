@@ -21,7 +21,7 @@ let xylhd = $.getdata('xylhd')
 let xylurl = $.getdata('xylurl')
 let sdk = '';
 if ($.isNode()) {
-   xylbodyArr.push('_token=OOSmTJyh6UA6WfCkQab9qmZuxT72su2g0RquerlX')
+   //xylbodyArr.push('_token=OOSmTJyh6UA6WfCkQab9qmZuxT72su2g0RquerlX')
    xylhdArr.push('{"Accept":"*/*","Origin":"http://xinyaliyi.top","Accept-Encoding":"gzip, deflate","Cookie":"XSRF-TOKEN=eyJpdiI6IlVaQ1BTZUU5cEhLMWt0djV1N1l5Unc9PSIsInZhbHVlIjoiRzFwZENkQ0I0SnBza2FWM1VBSnh5U0ptNUFIbnpWS1dwNmd4T25LZVNvVG16TER0UGJLaGFrQTJhWHpTYnlFTmNQTEdkb3A5MVRoelp2QithWHFsa212djhuaVRNeXJlYjdjZTF6NWJqbG5UZkM4V3dFb2pWSE5EZlJ4TnBYS04iLCJtYWMiOiJmODAwNjM1ZTEwYzc4ZThlNDUyMzJiNWRiMzI3NDg1NDBiMjIxNzExYzg1Y2JiODI3NzlmMDljMDdhYzY5OGRlIn0%3D; laravel_session=eyJpdiI6IlFISkhhRjR1czk1bzZrMWVzRTZta1E9PSIsInZhbHVlIjoiMnhNaUVJMWVkejJqVkVOWTdHSWNwVkFzdWdnSTNFcU80ZXFcLzRqTUxBSURSdlZxejh1Sk8yWHk2VnhlTWFlNnhIWUdlYVJrT0dXcXltOFVYSUY3MzI5djV4WHJVSG9XYklBUXdveFNLQnRTbCs3aE1XaExPYUZIZHBlSEh4NTU3IiwibWFjIjoiNzAxZDBiYTA1ZGUwNzY5Y2UxMGIwOWRiOTAwM2E4YjlmYzA3MzNhOGY2OTI0NzE4ZTI3M2UwMDZjMGMzODAxMiJ9; uid=eyJpdiI6Imxvd1poWEM5VmVDR0UwMDlTYnloVXc9PSIsInZhbHVlIjoiV0pqaXBmRE9ZMmFROE9IV2JEWitYZnhcL09sRE5QNkdWK0hLcmxIaFFOaVBiZTZObkd0cERRNlNma1ByRWRObXEiLCJtYWMiOiJkZDZjNGQ2ZmRjN2MyODhmZThhOWU5NDAyZWMzMGUyMDBkMjZlZGYzNTUxNTQyYTZhMDM5MmQ5NGEwODhhOTlmIn0%3D","Content-Type":"application/x-www-form-urlencoded; charset=UTF-8","Host":"xinyaliyi.top","Connection":"keep-alive","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Mobile/15E148 Safari/604.1","Content-Length":"47","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
    xylurlArr.push('http://xinyaliyi.top/qiandao')
 
