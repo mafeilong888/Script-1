@@ -1,9 +1,9 @@
-name: 新亚链
+name: 讯播广告
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '5 0 * * *'
+    - cron: '5 1,10 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -23,9 +23,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【新亚链】'
+      - name: '运行 【讯播广告】'
         run: |
-          node xyl.js
+          node xbgg.js
           
         env:    
         
