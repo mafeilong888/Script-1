@@ -53,8 +53,8 @@ let zzsyhd = $.getdata('zzsyhd')
 let zzsybody = $.getdata('zzsybody')
 let key = '',id = '',uid='',name='',tid = '',num=''
 if ($.isNode()) {
-    zzsyhdArr.push('{"Accept-Encoding":"gzip","Cookie":"HttpOnly=true; PHPSESSID=djp6cjquuufplbtup3ogj01r77; Secure=true","Connection":"close","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"yaowu360.com","Content-Length":"55","User-Agent":"0.0.68 rv:0.0.16 (iPhone; iOS 14.4; zh_CN)"}')
-    zzsybodyArr.push('userId=163867&apiToken=9441750FEA487303213042AB713EBC2A')
+    zzsyhdArr.push('{"Accept-Encoding":"gzip","Cookie":"HttpOnly=true; Secure=true; HttpOnly=true; Secure=true; HttpOnly=true; PHPSESSID=r9aoa6q86dvjrm8blvo7dcria3; Secure=true","Connection":"close","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"yaowu360.com","Content-Length":"55","User-Agent":"0.0.68 rv:0.0.16 (iPhone; iOS 14.4; zh_CN)"}')
+    zzsybodyArr.push('userId=163867&apiToken=8B0928083FCB107C838F99281AC57E03')
    
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
