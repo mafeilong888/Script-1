@@ -1,9 +1,9 @@
-name: 猜歌王者
+name: 快乐猜歌无限刷
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 17 1 *'
+    - cron: '0 17 0,1,2 *'
   watch:
     types: started
   repository_dispatch:
@@ -24,9 +24,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【猜歌王者】'
+      - name: '运行 【快乐猜歌无限刷】'
         run: |
-          node cgwz.js
+          node klcg.js
           
         env:    
         
