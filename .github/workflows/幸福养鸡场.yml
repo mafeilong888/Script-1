@@ -1,9 +1,9 @@
-name: 百事乐元
+name: 幸福养鸡场
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '45 0 * * *'
+    - cron: '10,20,30 * * * *'
   watch:
     types: started
   repository_dispatch:
@@ -24,9 +24,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【百事乐元】'
+      - name: '运行 【幸福养鸡场】'
         run: |
-          node bsly.js
+          node xfyjc.js
           
         env:    
         
