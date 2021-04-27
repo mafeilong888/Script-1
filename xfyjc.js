@@ -35,7 +35,7 @@ const xfyjchdArr = [],xfyjccount = ''
 let xfyjchd = $.getdata('xfyjchd')
 let id = '',name =''
 if ($.isNode()) {
-    xfyjchdlArr.push('{"bs":"CDMA","osVersion":"iOS 14.40","pkgId":"240","Accept-Encoding":"gzip, deflate, br","gps":"default","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","Host":"bp-api.coohua.com","brand":"Apple","channel":"AppStore","Connection":"keep-alive","Cache-Control":"no-cache","accessKey":"fb2dcb233b303a340e3a6fdd9cc343b1_212396355","appVersion":"1.0.2","Accept-Language":"zh-cn","User-Agent":"happyHennery-mobile/1 CFNetwork/1220.1 Darwin/20.3.0","os":"iOS","romVersion":"iOS 14.40","oaid":"","Accept":"*/*","wechatId":""}')
+    xfyjchdArr.push('{"bs":"CDMA","osVersion":"iOS 14.40","pkgId":"240","Accept-Encoding":"gzip, deflate, br","gps":"default","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","Host":"bp-api.coohua.com","brand":"Apple","channel":"AppStore","Connection":"keep-alive","Cache-Control":"no-cache","accessKey":"fb2dcb233b303a340e3a6fdd9cc343b1_212396355","appVersion":"1.0.2","Accept-Language":"zh-cn","User-Agent":"happyHennery-mobile/1 CFNetwork/1220.1 Darwin/20.3.0","os":"iOS","romVersion":"iOS 14.40","oaid":"","Accept":"*/*","wechatId":""}')
    
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
