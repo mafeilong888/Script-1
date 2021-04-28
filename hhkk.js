@@ -30,6 +30,16 @@ let hhkkbody = $.getdata('hhkkbody')
 let hhkkhd = $.getdata('hhkkhd')
 let hhkkurl = $.getdata('hhkkurl')
 let id = '',id2 = '';
+
+if ($.isNode()) { 
+
+ hhkkbodyArr.push('token=4902e25bd96d60ad551cc0fde15abcea&userid=92632004&auth_key=_t_5i0nyj_j3mXEBqSUc4BwnAHC6pn60_1619516075_92632004&app_version=1.1.1&app_os=iOS')
+hhkkhdArr.push('{"Cookie":"PHPSESSID=9p4lv6s1lrb87fqhf1s7s3dkgh; _csrf=0b6cba369c20ae0eda09fe4c12bc01079cf84c00dc085b6f3c855fc5807f8336a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223cjglSelcBzy1cYJebyGV8XOazct5FTP%22%3B%7D","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate, br","Host":"api.mozillacoin.com","User-Agent":"iPhone12,1(iOS/14.4) Uninview(Uninview/1.0.0) Weex/0.26.0 828x1792","Content-Length":"145","Accept-Language":"zh-cn"}')
+ hhkkurlArr.push('https://api.mozillacoin.com/main/read-bag?id=1213')
+     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()} =============\n`)
+ console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()} =============\n`) 
+
+ } 
 !(async () => {
     if (typeof $request !== "undefined") {
     await hhkkck()
