@@ -1,9 +1,9 @@
-name: 快乐猜歌无限刷
+name: 快乐猜歌
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 0,1,2 * * *'
+    - cron: '17 0,1,2,3,4,5 * * *'
   watch:
     types: started
   repository_dispatch:
