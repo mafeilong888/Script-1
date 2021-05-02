@@ -53,7 +53,7 @@ let zzsyhd = $.getdata('zzsyhd')
 let zzsybody = $.getdata('zzsybody')
 let key = '',id = '',uid='',name='',tid = '',num=''
 if ($.isNode()) {
-    zzsyhdArr.push({"Accept-Encoding":"gzip","Cookie":"HttpOnly=true; Secure=true; PHPSESSID=j7r15h14mnbt7vlqbf1vjobqc2","Connection":"close","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"yaowu360.com","Content-Length":"55","User-Agent":"0.0.68 rv:0.0.16 (iPhone; iOS 14.4; zh_CN)"}')
+    zzsyhdArr.push('{"Accept-Encoding":"gzip","Cookie":"HttpOnly=true; Secure=true; PHPSESSID=j7r15h14mnbt7vlqbf1vjobqc2","Connection":"close","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"yaowu360.com","Content-Length":"55","User-Agent":"0.0.68 rv:0.0.16 (iPhone; iOS 14.4; zh_CN)"}')
     zzsybodyArr.push('userId=163867&apiToken=2AE0BCA813C73B4C3BE0CCFFC5522954')
    
 
