@@ -47,7 +47,7 @@ const qlphdArr = [],kzyhdArr = [],qlpcount = ''
 let times = Math.round(Date.now() / 1000)
 let qlphd = $.getdata('qlphd')
 let kzyhd = $.getdata('kzyhd')
-let tx = 0  //数字改为1运行脚本可自动提现。建议手动运行。需要提现的时候再改
+let tx = 1  //数字改为1运行脚本可自动提现。建议手动运行。需要提现的时候再改
 if ($.isNode()) {
    qlphdArr.push('{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/json","Host":"ibestfanli.com","User-Agent":"oneline/1.9.9 (iPhone; iOS 14.4; Scale/2.00)","Authorization":"{\"prdId\":\"710103\",\"version\":\"1.3.25.5\",\"sysVersion\":\"14.4\",\"timestamp\":\"1620026065\",\"currentChannel\":61,\"sdk_version\":\"1.3.25.5\",\"sta_device_id\":\"ae7a8a3b0d47424eb8e60d479df3c3a8\",\"deviceId\":\"ae7a8a3b0d47424eb8e60d479df3c3a8\",\"userId\":\"1389116117835763714\",\"platform\":\"ios\",\"signature\":\"67a87673af60359dcabbd766d79a4976\",\"activityChannel\":\"61\",\"versionCode\":89,\"appVersionCode\":199,\"phoneType\":\"iPhone12,1\",\"signatureI\":\"B+AQG9\\/qVBGnc5fANd9XxVt3OfcqPbA49sx9q8A3qThtmVxu8RmBlrQKxBAdW\\/tF\"}","Accept-Language":"zh-Hans-CN;q=1","Content-Length":"129"}')
    kzyhdArr.push('{"Accept-Encoding":"gzip, deflate, br","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/json","Host":"ibestfanli.com","User-Agent":"zhuangyuan/1.9.9 (iPhone; iOS 14.4; Scale/2.00)","Authorization":"{\"prdId\":\"710302\",\"version\":\"1.3.25.5\",\"sysVersion\":\"14.4\",\"timestamp\":\"1620026151\",\"currentChannel\":61,\"sdk_version\":\"1.3.25.5\",\"sta_device_id\":\"7ae3714265b8418bb6563e37bfda4e61\",\"deviceId\":\"7ae3714265b8418bb6563e37bfda4e61\",\"userId\":\"1389116480139743233\",\"platform\":\"ios\",\"signature\":\"c137d295ec0b4461972c65206d2a749b\",\"activityChannel\":\"61\",\"versionCode\":89,\"appVersionCode\":199,\"phoneType\":\"iPhone12,1\",\"signatureI\":\"B+AQG9\\/qVBGnc5fANd9XxVt3OfcqPbA49sx9q8A3qThtmVxu8RmBlrQKxBAdW\\/tF\"}","Accept-Language":"zh-Hans-CN;q=1","Content-Length":"128"}')
@@ -199,33 +199,33 @@ let url = {
 }
 
 
-// //考状元红包
-// function kzyhb(timeout = 0) {
-//   return new Promise((resolve) => {
-// let url = {
-//         url : 'https://ibestfanli.com/commerce_coin_service/api/user/coin/addCoin',
-//         headers : JSON.parse(kzyhd),
-//         body : `{"data":{"sign":"tVoBkKhGBNudyw2ovKc+ytjA06SkUMiBWBQaONF9uko3TQRncJDKYnuVmBU58nhCDOlde9gaZP\/FEh9NYVLkr2wXP5marMkU\/DCjthHDT9I="}}`,
-// }
-//       $.post(url, async (err, resp, data) => {
-//         try {
-//     const result = JSON.parse(data)
+//考状元红包
+function kzyhb(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : 'https://ibestfanli.com/commerce_coin_service/api/user/coin/addCoin',
+        headers : JSON.parse(kzyhd),
+        body : `{"data":{"sign":"tVoBkKhGBNudyw2ovKc+ytjA06SkUMiBWBQaONF9uko3TQRncJDKYnuVmBU58nhCDOlde9gaZP\/FEh9NYVLkr2wXP5marMkU\/DCjthHDT9I="}}`,
+}
+      $.post(url, async (err, resp, data) => {
+        try {
+    const result = JSON.parse(data)
 
-//         if(result.code == 0){
-//         console.log(`\n考状元红包获取成功:${result.data.optCoin} 余额:${result.data.userCoin.coin}`)
+        if(result.code == 0){
+        console.log(`\n考状元红包获取成功:${result.data.optCoin} 余额:${result.data.userCoin.coin}`)
        
-// } else {
-//        console.log('\n考状元红包获取失败'+data)
-// }
+} else {
+       console.log('\n考状元红包获取失败'+data)
+}
    
-//         } catch (e) {
-//           //$.logErr(e, resp);
-//         } finally {
-//           resolve()
-//         }
-//     },timeout)
-//   })
-// }
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 
 //娶老婆提现
 function qlptx(timeout = 0) {
