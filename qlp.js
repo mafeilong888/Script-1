@@ -199,33 +199,33 @@ let url = {
 }
 
 
-//考状元红包
-function kzyhb(timeout = 0) {
-  return new Promise((resolve) => {
-let url = {
-        url : 'https://ibestfanli.com/commerce_coin_service/api/user/coin/addCoin',
-        headers : JSON.parse(kzyhd),
-        body : `{"data":{"sign":"tVoBkKhGBNudyw2ovKc+ytjA06SkUMiBWBQaONF9uko3TQRncJDKYnuVmBU58nhCDOlde9gaZP\/FEh9NYVLkr2wXP5marMkU\/DCjthHDT9I="}}`,
-}
-      $.post(url, async (err, resp, data) => {
-        try {
-    const result = JSON.parse(data)
+// //考状元红包
+// function kzyhb(timeout = 0) {
+//   return new Promise((resolve) => {
+// let url = {
+//         url : 'https://ibestfanli.com/commerce_coin_service/api/user/coin/addCoin',
+//         headers : JSON.parse(kzyhd),
+//         body : `{"data":{"sign":"tVoBkKhGBNudyw2ovKc+ytjA06SkUMiBWBQaONF9uko3TQRncJDKYnuVmBU58nhCDOlde9gaZP\/FEh9NYVLkr2wXP5marMkU\/DCjthHDT9I="}}`,
+// }
+//       $.post(url, async (err, resp, data) => {
+//         try {
+//     const result = JSON.parse(data)
 
-        if(result.code == 0){
-        console.log(`\n考状元红包获取成功:${result.data.optCoin} 余额:${result.data.userCoin.coin}`)
+//         if(result.code == 0){
+//         console.log(`\n考状元红包获取成功:${result.data.optCoin} 余额:${result.data.userCoin.coin}`)
        
-} else {
-       console.log('\n考状元红包获取失败'+data)
-}
+// } else {
+//        console.log('\n考状元红包获取失败'+data)
+// }
    
-        } catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
-    },timeout)
-  })
-}
+//         } catch (e) {
+//           //$.logErr(e, resp);
+//         } finally {
+//           resolve()
+//         }
+//     },timeout)
+//   })
+// }
 
 //娶老婆提现
 function qlptx(timeout = 0) {
