@@ -39,11 +39,11 @@ if (isGetCookie) {
    $.done()
 } 
 
-kxdfsheaderArr.push($.getdata('kxdfsheader'))
-    let kxdfscount = ($.getval('kxdfscount') || '1');
-  for (let i = 2; i <= kxdfscount; i++) {
-    kxdfsheaderArr.push($.getdata(`kxdfsheader${i}`))
-  }
+// kxdfsheaderArr.push($.getdata('kxdfsheader'))
+//     let kxdfscount = ($.getval('kxdfscount') || '1');
+//   for (let i = 2; i <= kxdfscount; i++) {
+//     kxdfsheaderArr.push($.getdata(`kxdfsheader${i}`))
+//   }
 if ($.isNode()) {
     kxdfsheaderArr.push('{"bs":"CDMA","osVersion":"iOS14.400000","pkgId":"272","Accept-Encoding":"gzip, deflate, br","Host":"bp-api.coohua.com","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","brand":"Apple","channel":"AppStore","Connection":"keep-alive","Cache-Control":"no-cache","accessKey":"b4feabe143fa678a53c95f28bee47d94_223401794","appVersion":"1.0.3","Accept-Language":"zh-cn","User-Agent":"game-mobile/1 CFNetwork/1220.1 Darwin/20.3.0","os":"iOS","romVersion":"iOS14.400000","mac":"","oaid":"","Accept":"*/*","gps":"30.496835,120.681364"}')
   //  llydhdArr.push('{"Accept-Encoding":"gzip, deflate","Cookie":"ar=true; newuseract=1; newzb_u1957=%7B%22uid_code%22%3A%22x053cr3e90x994bz7d35rf88ct90edc0dafe05b3pebeccbcrtc%22%2C%22login_token%22%3A%2253%5D%28%5D3435545675%5D%28%5D64%5D%28%5D62%3B6753%5D%28%5D53%22%7D","Connection":"keep-alive","Referer":"http://v1uxnzj.cn/user1/tasks?check=","Accept":"application/json","Host":"v1uxnzj.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x18000329) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
