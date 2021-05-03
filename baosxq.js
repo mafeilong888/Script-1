@@ -17,38 +17,39 @@ let bsxqurl = $.getdata('bsxqurl')
 let bsxqhd = $.getdata('bsxqhd')
 
 if ($.isNode()) {
-   if (process.env.BSXQ_URL && process.env.BSXQ_URL.indexOf('#') > -1) {
-   bsxqurl = process.env.BSXQ_URL.split('#');
-   console.log(`您选择的是用"#"隔开\n`)
-  }
-  else if (process.env.BSXQ_URL && process.env.BSXQ_URL.indexOf('\n') > -1) {
-   bsxqurl = process.env.BSXQ_URL.split('\n');
-   console.log(`您选择的是用换行隔开\n`)
-  } else {
-   bsxqurl = process.env.BSXQ_URL.split()
-  };
-  if (process.env.BSXQ_HD && process.env.BSXQ_HD.indexOf('#') > -1) {
-   bsxqhd = process.env.BSXQ_HD.split('#');
-   console.log(`您选择的是用"#"隔开\n`)
-  }
-  else if (process.env.BSXQ_HD && process.env.BSXQ_HD.indexOf('\n') > -1) {
-   bsxqhd = process.env.BSXQ_HD.split('\n');
-   console.log(`您选择的是用换行隔开\n`)
-  } else {
-   bsxqhd = process.env.BSXQ_HD.split()
-  };
+//    if (process.env.BSXQ_URL && process.env.BSXQ_URL.indexOf('#') > -1) {
+//    bsxqurl = process.env.BSXQ_URL.split('#');
+//    console.log(`您选择的是用"#"隔开\n`)
+//   }
+//   else if (process.env.BSXQ_URL && process.env.BSXQ_URL.indexOf('\n') > -1) {
+//    bsxqurl = process.env.BSXQ_URL.split('\n');
+//    console.log(`您选择的是用换行隔开\n`)
+//   } else {
+//    bsxqurl = process.env.BSXQ_URL.split()
+//   };
+//   if (process.env.BSXQ_HD && process.env.BSXQ_HD.indexOf('#') > -1) {
+//    bsxqhd = process.env.BSXQ_HD.split('#');
+//    console.log(`您选择的是用"#"隔开\n`)
+//   }
+//   else if (process.env.BSXQ_HD && process.env.BSXQ_HD.indexOf('\n') > -1) {
+//    bsxqhd = process.env.BSXQ_HD.split('\n');
+//    console.log(`您选择的是用换行隔开\n`)
+//   } else {
+//    bsxqhd = process.env.BSXQ_HD.split()
+//   };
 	
-   Object.keys(bsxqurl).forEach((item) => {
-        if (bsxqurl[item]) {
-          bsxqurlArr.push(bsxqurl[item])
-        }
-    });
-    Object.keys(bsxqhd).forEach((item) => {
-        if (bsxqhd[item]) {
-          bsxqhdArr.push(bsxqhd[item])
-        }
-    });  	
-	
+//    Object.keys(bsxqurl).forEach((item) => {
+//         if (bsxqurl[item]) {
+//           bsxqurlArr.push(bsxqurl[item])
+//         }
+//     });
+//     Object.keys(bsxqhd).forEach((item) => {
+//         if (bsxqhd[item]) {
+//           bsxqhdArr.push(bsxqhd[item])
+//         }
+//     });  	
+	bsxqurlArr.push('https://interface.baoshixingqiu.com/member/user/batch-diggle?bs_nt=1&device=iPhone&devicetype=1&imei=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&token=5841d7c71cb2b4fa25b2c9361ea9ca75&timestamp=1620016088076&versionCode=208&bs_sign=a07ef05ce7401cb83a366fec20158fbe')
+     bsxqhdArr.push('{"User-Agent":"DiamondPlanet/2.0.8 (iPhone; iOS 14.4; Scale/2.00)","Host":"interface.baoshixingqiu.com","Connection":"keep-alive","Accept-Language":"zh-Hans-CN;q=1","Accept-Encoding":"gzip, deflate, br","Accept":"*/*"}')
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
