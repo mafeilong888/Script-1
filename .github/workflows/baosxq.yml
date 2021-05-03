@@ -11,14 +11,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
-    env:
-        BSXQ_URL: ${{ secrets.BSXQ_URL }}
-        BSXQ_HD: ${{ secrets.BSXQ_HD }}
-        TZ: Asia/shanghai
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-        
+        uses: actions/checkout@v2
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -27,7 +22,7 @@ jobs:
         run: |
           npm install
       - name: '运行 【宝石星球】'
-        if: env.BSXQ_HD
+        
         run: |
           node baosxq.js
         env:
