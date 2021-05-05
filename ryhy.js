@@ -6,8 +6,12 @@ var roomcount,unlockno
 let shouldplan0,shouldplant1,shouldplant2,shouldplan3,ahouldplant4
 let status;
 status = (status = ($.getval("ryhystatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-ryhyheaderArr = []
+var ryhyheaderArr = []
+var ryhyadheaderArr = []
+var ryhyadbodyArr = []
 let ryhyheader = $.getdata('ryhyheader')
+let ryhyadheader = $.getdata('ryhyadheader')
+let ryhyadbody = $.getdata('ryhyadbody')
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
@@ -33,9 +37,9 @@ var minute=''
 //     ryhyheaderArr.push($.getdata(`ryhyheader${i}`))
 //   }
 if ($.isNode()) {
-   /// llydurlArr.push('http://v1uxnzj.cn/v4/user/get_user_task?uid=x053cr3e90x994bz7d35rf88ct90edc0dafe05b3pebeccbcrtc&login_token=53%5D(%5D3435545675%5D(%5D64%5D(%5D62%3B6753%5D(%5D53&t=1617767512133')
+   ryhyadheaderArr.push('{"bs":"CDMA","osVersion":"iOS 14.40","pkgId":"271","Host":"bp-api.coohua.com","Accept-Encoding":"gzip, deflate, br","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","gps":"default","brand":"Apple","channel":"AppStore","Connection":"keep-alive","pkg":"com.yixin.ryhy","accessKey":"4694a1c8a4cec85ff2c60681a17a08e4_212396355","anomy":"0","appVersion":"1.0.3","version":"1.0.3","User-Agent":"ryhy-mobile/1.0.3 (iPhone; iOS 14.4; Scale/2.00)","os":"iOS","Accept-Language":"zh-Hans-CN;q=1","romVersion":"iOS 14.40","Content-Type":"application/x-www-form-urlencoded","Accept":"*/*","env":"production","appId":"390","Content-Length":"468","userId":"212396355"}')
    ryhyheaderArr.push('{"bs":"CDMA","osVersion":"iOS 14.40","pkgId":"271","Host":"bp-api.coohua.com","Accept-Encoding":"gzip, deflate, br","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","gps":"default","brand":"Apple","channel":"AppStore","Connection":"keep-alive","Cache-Control":"no-cache","accessKey":"4694a1c8a4cec85ff2c60681a17a08e4_212396355","appVersion":"1.0.3","Accept-Language":"zh-cn","User-Agent":"ryhy-mobile/1 CFNetwork/1220.1 Darwin/20.3.0","os":"iOS","romVersion":"iOS 14.40","Content-Type":"application/json","Accept":"*/*","oaid":"","blackBox":"","Content-Length":"37","wechatId":""}')
-   
+   ryhyadbodyArr.push('accessKey=4694a1c8a4cec85ff2c60681a17a08e4_212396355&anomy=0&appId=390&appVersion=1.0.3&brand=Apple&bs=CDMA&channel=AppStore&deviceId=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&env=production&friend=1&gps=default&os=iOS&osVersion=iOS%2014.40&pkg=com.yixin.ryhy&pkgId=271&posName=%E5%85%A8%E4%BD%93%E5%8A%A0%E9%80%9F%E5%A5%96%E5%8A%B1%E7%9C%8B%E8%A7%86%E9%A2%91&romVersion=iOS%2014.40&sign=c292197dd37fe6f61b650c3d55cfdb6e&signVideo=1&txVideo=1&userId=212396355&version=1.0.3')
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
@@ -50,6 +54,8 @@ if (!ryhyheaderArr[0]) {
     if (ryhyheaderArr[i]) {
       message = ''
       ryhyheader = ryhyheaderArr[i];
+      ryhyadheader = ryhyadheaderArr[i];
+      ryhyadbody = ryhyadbodyArr[i];
       $.index = i + 1;
       console.log(`\n开始【如意花园${$.index}】`)
       await landmsg()
@@ -57,6 +63,7 @@ if (!ryhyheaderArr[0]) {
       await room() 
       await list()
       await plant()
+      await rewardlist()
   }
  }
 })()
@@ -66,11 +73,22 @@ if (!ryhyheaderArr[0]) {
     
 function GetCookie() {
 if($request&&$request.url.indexOf("plant")>=0) {
-   
    const ryhyheader = JSON.stringify($request.headers)
     if(ryhyheader)    $.setdata(ryhyheader,`ryhyheader${status}`)
     $.log(`[${zhiyi}] 获取ryhyheader请求: 成功,ryhyheader: ${ryhyheader}`)
     $.msg(`ryhyheader${status}: 成功🎉`, ``)
+}
+if($request.url.indexOf("ad/lookVideo")>-1){
+   const ryhyadheader = JSON.stringify($request.headers)
+    if(ryhyadheader)
+$.setdata(ryhyadheader,`ryhyadheader${status}`)
+     $.log(`[${zhiyi}] 获取ryhyadheader请求: 成功,ryhyadheader: ${ryhyadheader}`)
+    $.msg(`ryhyadheader${status}: 成功🎉`, ``)
+   const ryhyadbody = $request.body
+   if(ryhyadbody)
+$.setdata(ryhyadbody,`ryhyadbody${status}`)
+      $.log(`[${zhiyi}] 获取ryhyadbody请求: 成功,ryhyadbody: ${ryhyadbody}`)
+    $.msg(`ryhyadbody${status}: 成功🎉`, ``)
 }
 }
 
@@ -147,6 +165,26 @@ async function room(){
     })
    })
   } 
+async function submit(){
+ return new Promise((resolve) => {
+    let submit_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-ryhy/game/order/reward`,
+        headers: JSON.parse(ryhyheader)
+   	}
+   $.get(submit_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log("订单交付成功\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  } 
 async function list(){
  return new Promise((resolve) => {
     let list_url = {
@@ -168,7 +206,7 @@ $.log("&&&&"+yy)
   
   var ww = result.result.list.find(item => item.finished == 0)
   let qq = ww.tag.match(/\d+/) - 1
-  //$.log(qq)
+  $.log(qq)
   var indexs = JSON.stringify(result.result.list[qq].condition.harvestNeed).match(/index":\d+/g)+""
 //$.log(indexs)
   let xx = indexs.replace(/index":/g,"")
@@ -244,7 +282,8 @@ else if(shouldplant0 <= 0 && shouldplant1 > 0) no0 = xx[2]
 else if(shouldplant0 <= 0 && shouldplant1 <= 0 && shouldplant2 > 0) no0 = xx[4]
 else if(shouldplant0 <= 0 && shouldplant1 <= 0 && shouldplant2 <= 0 && shouldplant3 > 0) no0 = xx[6]
 else{
-   $.log("任务完成")
+   $.log("任务完成，现在去提交订单\n")
+        await submit();
 
 }
         }catch(e) {
@@ -504,6 +543,80 @@ async function havest(){
     })
    })
   }  
+async function lookVideo(){
+ return new Promise((resolve) => {
+    let lookVideo_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-ryhy/ad/lookVideo`,
+        headers: JSON.parse(ryhyadheader),
+        body: ryhyadbody
+   	}
+   $.post(lookVideo_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log("观看成功\n")
+        else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }  
+async function cloud(){
+ return new Promise((resolve) => {
+    let cloud_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-ryhy/game/cloud/used`,
+        headers: JSON.parse(ryhyheader),
+        body: `null`
+   	}
+   $.post(cloud_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log("加速成功\n")
+        else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
+async function rewardlist(){
+ return new Promise((resolve) => {
+    let rewardlist_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-ryhy/game/sign/reward/list`,
+        headers: JSON.parse(ryhyheader),
+   	}
+   $.post(rewardlist_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0){
+          $.log("当前打卡进度："+result.result.cashLimit.todayVideoNum+"/"+result.result.signVideo+"\n")
+          if(result.result.cashLimit.todayVideoNum < result.result.signVideo){
+        await lookVideo()
+        await cloud()
+}else{
+        console.log("今日打卡已经完成，不再进行云加速，如有需要请手动\n")
+}
+        }else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
 //showmsg
 //boxjs设置tz=1，在12点<=20和23点>=40时间段通知，其余时间打印日志
 
