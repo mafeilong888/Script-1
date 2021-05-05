@@ -2,11 +2,15 @@ const zhiyi = '开心花园'
 const $ = Env(zhiyi)
 const notify = $.isNode() ?require('./sendNotify') : '';
 let no,No,no0,no1,no2,no3,no4,no5,no6,no7,no8;
-var roomcount
+var roomcount,id;
 let status;
 status = (status = ($.getval("kxhystatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-kxhyheaderArr = []
+var kxhyheaderArr = []
+var adheaderArr = []
+var adbodyArr = []
 let kxhyheader = $.getdata('kxhyheader')
+let adheader = $.getdata('adheader')
+let adbody = $.getdata('adbody')
 let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
 const invite=1;//新用户自动邀请，0关闭，1默认开启
 const logs =0;//0为关闭日志，1为开启
@@ -21,8 +25,8 @@ var minute=''
 // }
 if ($.isNode()) {
     kxhyheaderArr.push('{"bs":"CDMA","osVersion":"iOS%2014.40","pkgId":"229","Host":"bp-api.coohua.com","Accept-Encoding":"gzip, deflate, br","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","gps":"default","Origin":"file://","brand":"Apple","channel":"AppStore","Connection":"keep-alive","accessKey":"434cf82aff6d086b6f61adb947abec44_209487383","appVersion":"1.0.3","romVersion":"iOS%2014.40","Accept-Language":"zh-cn","os":"iOS","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Content-Type":"application/json","Accept":"*/*","oaid":"","Content-Length":"37","wechatId":"default"}')
-   
-
+    adheaderArr.push('{"bs":"CDMA","osVersion":"iOS 14.40","pkgId":"229","Host":"bp-api.coohua.com","Accept-Encoding":"gzip, deflate, br","deviceId":"6D904FEA-DCAE-494D-9CE0-B157E5B760E5","gps":"default","brand":"Apple","channel":"AppStore","Connection":"keep-alive","pkg":"com.gaoyu.kxhy","accessKey":"434cf82aff6d086b6f61adb947abec44_209487383","anomy":"0","appVersion":"1.0.3","version":"1.0.3","User-Agent":"kai xin hua yuan/1.0.3 (iPhone; iOS 14.4; Scale/2.00)","os":"iOS","Accept-Language":"zh-Hans-CN;q=1","romVersion":"iOS 14.40","Content-Type":"application/x-www-form-urlencoded","Accept":"*/*","env":"production","appId":"326","Content-Length":"395","userId":"209487383"}')
+    adbodyArr.push('accessKey=434cf82aff6d086b6f61adb947abec44_209487383&anomy=0&appId=326&appVersion=1.0.3&brand=Apple&bs=CDMA&channel=AppStore&deviceId=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&env=production&friend=1&gps=default&os=iOS&osVersion=iOS%2014.40&pkg=com.gaoyu.kxhy&pkgId=229&rate=1&romVersion=iOS%2014.40&scheduled=1&sign=4a6e44eeb6689a0b7e30f764858f55b0&signVideo=1&userId=209487383&version=1.0.3&water=1')
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   }
@@ -34,9 +38,13 @@ if (isGetCookie) {
 } 
 
 kxhyheaderArr.push($.getdata('kxhyheader'))
+adheaderArr.push($.getdata('adheader'))
+adbodyArr.push($.getdata('adbody'))
     let kxhycount = ($.getval('kxhycount') || '1');
   for (let i = 2; i <= kxhycount; i++) {
     kxhyheaderArr.push($.getdata(`kxhyheader${i}`))
+    adheaderArr.push($.getdata(`adheader${i}`))
+    adbodyArr.push($.getdata(`adbody${i}`))
   }
 !(async () => {
 if (!kxhyheaderArr[0]) {
@@ -48,12 +56,16 @@ if (!kxhyheaderArr[0]) {
     if (kxhyheaderArr[i]) {
       message = ''
       kxhyheader = kxhyheaderArr[i];
+      adheader = adheaderArr[i];
+      adbody = adbodyArr[i];
       $.index = i + 1;
       console.log(`\n开始【开心花园${$.index}】`)
       await haves()
       await room() 
       await list()
       await plant()
+      await cashlist()
+      await tasklist()
   }
  }
 })()
@@ -68,6 +80,18 @@ if($request&&$request.url.indexOf("plant")>=0) {
     if(kxhyheader)    $.setdata(kxhyheader,`kxhyheader${status}`)
     $.log(`[${zhiyi}] 获取kxhyheader请求: 成功,kxhyheader: ${kxhyheader}`)
     $.msg(`kxhyheader${status}: 成功🎉`, ``)
+}
+if($request.url.indexOf("ad/lookVideo")>-1){
+   const adheader = JSON.stringify($request.headers)
+    if(adheader)
+$.setdata(adheader,`adheader${status}`)
+     $.log(`[${zhiyi}] 获取adheader请求: 成功,adheader: ${adheader}`)
+    $.msg(`adheader${status}: 成功🎉`, ``)
+   const adbody = $request.body
+   if(adbody)
+$.setdata(adbody,`adbody${status}`)
+      $.log(`[${zhiyi}] 获取adbody请求: 成功,adbody: ${adbody}`)
+    $.msg(`adbody${status}: 成功🎉`, ``)
 }
 }
 
@@ -417,6 +441,167 @@ async function havest(){
     })
    })
   }  
+  
+async function lookvideo(){
+ return new Promise((resolve) => {
+    let lookvideo_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-kxhy/ad/lookVideo`,
+        headers: JSON.parse(adheader),
+        body: adbody
+   	}
+   $.post(lookvideo_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log("观看成功\n")
+        else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }  
+async function cloud(){
+ return new Promise((resolve) => {
+    let cloud_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-kxhy/game/cloud/used`,
+        headers: JSON.parse(kxhyheader),
+        body: "null"
+   	}
+   $.post(cloud_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log("加速成功\n")
+        else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
+async function cashlist(){
+ return new Promise((resolve) => {
+    let cashlist_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-kxhy/mall/sign/cash/list`,
+        headers: JSON.parse(adheader),
+       
+   	}
+   $.get(cashlist_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0){
+          $.log("今日打卡进度："+result.result.cashLimit.todayVideoNum+"/"+result.result.signVideo+"\n")
+          if(result.result.cashLimit.todayVideoNum < result.result.signVideo){
+         await lookvideo()
+         await cloud()
+}else{
+       $.log("今日打卡完成，不再云加速，需要加速请手动\n")
+}
+        }else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
+
+async function tasklist(){
+ return new Promise((resolve) => {
+    let tasklist_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-kxhy/task/list`,
+        headers: JSON.parse(kxhyheader),
+       
+   	}
+   $.get(tasklist_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0){
+          let statues = data.match(/"state":\d/g)
+          let statu0 = statues[0].replace(/"state":/,"")
+          let statu1 = statues[1].replace(/"state":/,"")
+          let statu2 = statues[2].replace(/"state":/,"")
+          let statu3 = statues[3].replace(/"state":/,"")
+          if(statu0 == 2 && statu1 == 2 && statu2 == 2 && statu3 == 2){
+             $.log("每日福利已完成\n")
+          }else{
+         let taskid = data.match(/taskId":\d+/g)
+          //$.log(taskid)
+          for(let i = 0; i < taskid.length; i++){
+          id = taskid[i].replace(/taskId":/,"")
+          await getReward()
+          await daily()
+}
+}
+        }else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
+async function getReward(){
+ return new Promise((resolve) => {
+    let getReward_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-kxhy/task/daily/getReward?taskId=${id}`,
+        headers: JSON.parse(kxhyheader),
+        
+   	}
+   $.post(getReward_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log(id+"任务完成\n")
+        else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
+async function daily(){
+ return new Promise((resolve) => {
+    let daily_url = {
+   		url: `https://bp-api.coohua.com/bubuduo-kxhy/task/finish/daily?taskId=${id}`,
+        headers: JSON.parse(kxhyheader),
+        
+   	}
+   $.post(daily_url,async(error, response, data) =>{
+    try{
+        const result = JSON.parse(data)
+        if(logs)$.log(data)
+        if(result.code == 0)
+          $.log(id+"领取成功\n")
+        else
+          $.log(result.message+"\n")
+        }catch(e) {
+          $.logErr(e, response);
+      } finally {
+        resolve();
+      } 
+    })
+   })
+  }
 //showmsg
 //boxjs设置tz=1，在12点<=20和23点>=40时间段通知，其余时间打印日志
 
