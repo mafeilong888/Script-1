@@ -89,7 +89,7 @@ $.log(`[${xnm}] 获取: 成功: ${xnmurl}`)
 
 async function cqg(){
  return new Promise((resolve) => {
-    fj = xnmurl.match(/api_token=(\S+)"/)[1]
+    //fj = xnmurl.match(/api_token=(\S+)"/)[1]
 
     let plant6_url = {
    		url: `https://qmlzc-api.lw0591.com/v1/fast_award?api_token=`+fj,
