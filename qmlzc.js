@@ -48,6 +48,7 @@ xnmheaderArr.push($.getdata('xnmheader'))
     xnmheaderArr.push($.getdata(`xnmheader${i}`))
 xnmurlArr.push($.getdata(`xnmurl${i}`))
  }
+     }
 !(async () => {
 if (!xnmheaderArr[0]) {
     $.msg($.name, '【提示】请先获取数据')
