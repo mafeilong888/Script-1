@@ -35,7 +35,7 @@ if (isGetCookie) {
    $.done()
 } 
 if ($.isNode()) {
-    xnmheaderArr.push('https://qmlzc-api.lw0591.com/v1/userinfo?api_token=Pgp9NGRmRYzMOY1ZVmF8Myepi2mWXs2e&hotversion=1.000&imei1=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&imei2=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&mac=02%3A00%3A00%3A00%3A00%3A00&param_channel=998&timestamp=1620354407897&user_id=12343337&sign=cf8e3c45345e09f2b6a6a45056eddc88')
+    xnmheaderArr.push('"https://qmlzc-api.lw0591.com/v1/userinfo?api_token=Pgp9NGRmRYzMOY1ZVmF8Myepi2mWXs2e&hotversion=1.000&imei1=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&imei2=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&mac=02%3A00%3A00%3A00%3A00%3A00&param_channel=998&timestamp=1620354407897&user_id=12343337&sign=cf8e3c45345e09f2b6a6a45056eddc88"')
    // llydhdArr.push('{"Accept-Encoding":"gzip, deflate","Cookie":"ar=true; newuseract=1; newzb_u1957=%7B%22uid_code%22%3A%22x053cr3e90x994bz7d35rf88ct90edc0dafe05b3pebeccbcrtc%22%2C%22login_token%22%3A%2253%5D%28%5D3435545675%5D%28%5D64%5D%28%5D62%3B6753%5D%28%5D53%22%7D","Connection":"keep-alive","Referer":"http://v1uxnzj.cn/user1/tasks?check=","Accept":"application/json","Host":"v1uxnzj.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x18000329) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
    
 
@@ -89,7 +89,7 @@ $.log(`[${xnm}] 获取: 成功: ${xnmurl}`)
 
 async function cqg(){
  return new Promise((resolve) => {
-    //fj = xnmurl.match(/api_token=(\S+)"/)[1]
+    fj = xnmurl.match(/api_token=(\S+)"/)[1]
 
     let plant6_url = {
    		url: `https://qmlzc-api.lw0591.com/v1/fast_award?api_token=`+fj,
