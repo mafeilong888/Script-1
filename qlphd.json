@@ -1,4 +1,5 @@
-{
+[
+  {
     "Accept-Encoding":"gzip, deflate, br",
     "Accept":"*/*",
     "Connection":"keep-alive",
@@ -8,4 +9,5 @@
     "Authorization":"{\"prdId\":\"710103\",\"version\":\"1.3.25.5\",\"sysVersion\":\"14.4\",\"timestamp\":\"1620026065\",\"currentChannel\":61,\"sdk_version\":\"1.3.25.5\",\"sta_device_id\":\"ae7a8a3b0d47424eb8e60d479df3c3a8\",\"deviceId\":\"ae7a8a3b0d47424eb8e60d479df3c3a8\",\"userId\":\"1389116117835763714\",\"platform\":\"ios\",\"signature\":\"67a87673af60359dcabbd766d79a4976\",\"activityChannel\":\"61\",\"versionCode\":89,\"appVersionCode\":199,\"phoneType\":\"iPhone12,1\",\"signatureI\":\"B+AQG9\/qVBGnc5fANd9XxVt3OfcqPbA49sx9q8A3qThtmVxu8RmBlrQKxBAdW\/tF\"}",
     "Accept-Language":"zh-Hans-CN;q=1",
     "Content-Length":"129"
-}
+  }
+]
