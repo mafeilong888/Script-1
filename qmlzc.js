@@ -38,19 +38,19 @@ if ($.isNode()) {
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
   }
 
-let isGetCookie = typeof $request !== 'undefined'
-if (isGetCookie) {
-   GetCookie();
-   $.done()
-} 
+// let isGetCookie = typeof $request !== 'undefined'
+// if (isGetCookie) {
+//    GetCookie();
+//    $.done()
+// } 
 
-xnmheaderArr.push($.getdata('xnmheader'))
-    let xnmcount = ($.getval('xnmcount') || '1');
-  for (let i = 2; i <= xnmcount; i++) {
-    xnmheaderArr.push($.getdata(`xnmheader${i}`))
-xnmurlArr.push($.getdata(`xnmurl${i}`))
-  }
-!(async () => {
+// xnmheaderArr.push($.getdata('xnmheader'))
+//     let xnmcount = ($.getval('xnmcount') || '1');
+//   for (let i = 2; i <= xnmcount; i++) {
+//     xnmheaderArr.push($.getdata(`xnmheader${i}`))
+// xnmurlArr.push($.getdata(`xnmurl${i}`))
+//   }
+// !(async () => {
 if (!xnmheaderArr[0]) {
     $.msg($.name, '【提示】请先获取数据')
     return;
