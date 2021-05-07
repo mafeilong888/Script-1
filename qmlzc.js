@@ -29,6 +29,11 @@ xnmheaderArr = []
 let xnmheader = $.getdata('xnmheader')
 let xnmurl = $.getdata('xnmurl')
 const logs =0;
+let isGetCookie = typeof $request !== 'undefined'
+if (isGetCookie) {
+   GetCookie();
+   $.done()
+} 
 if ($.isNode()) {
     xnmheaderArr.push('https://qmlzc-api.lw0591.com/v1/userinfo?api_token=Pgp9NGRmRYzMOY1ZVmF8Myepi2mWXs2e&hotversion=1.000&imei1=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&imei2=6D904FEA-DCAE-494D-9CE0-B157E5B760E5&mac=02%3A00%3A00%3A00%3A00%3A00&param_channel=998&timestamp=1620354407897&user_id=12343337&sign=cf8e3c45345e09f2b6a6a45056eddc88')
    // llydhdArr.push('{"Accept-Encoding":"gzip, deflate","Cookie":"ar=true; newuseract=1; newzb_u1957=%7B%22uid_code%22%3A%22x053cr3e90x994bz7d35rf88ct90edc0dafe05b3pebeccbcrtc%22%2C%22login_token%22%3A%2253%5D%28%5D3435545675%5D%28%5D64%5D%28%5D62%3B6753%5D%28%5D53%22%7D","Connection":"keep-alive","Referer":"http://v1uxnzj.cn/user1/tasks?check=","Accept":"application/json","Host":"v1uxnzj.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.3(0x18000329) NetType/WIFI Language/zh_CN","Accept-Language":"zh-cn","X-Requested-With":"XMLHttpRequest"}')
@@ -36,20 +41,13 @@ if ($.isNode()) {
 
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
-  }
-
-let isGetCookie = typeof $request !== 'undefined'
-if (isGetCookie) {
-   GetCookie();
-   $.done()
-} 
-
-// xnmheaderArr.push($.getdata('xnmheader'))
-//     let xnmcount = ($.getval('xnmcount') || '1');
-//   for (let i = 2; i <= xnmcount; i++) {
-//     xnmheaderArr.push($.getdata(`xnmheader${i}`))
-// xnmurlArr.push($.getdata(`xnmurl${i}`))
-//  }
+  } else {
+xnmheaderArr.push($.getdata('xnmheader'))
+    let xnmcount = ($.getval('xnmcount') || '1');
+  for (let i = 2; i <= xnmcount; i++) {
+    xnmheaderArr.push($.getdata(`xnmheader${i}`))
+xnmurlArr.push($.getdata(`xnmurl${i}`))
+ }
 !(async () => {
 if (!xnmheaderArr[0]) {
     $.msg($.name, '【提示】请先获取数据')
