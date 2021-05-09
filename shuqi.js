@@ -1,8 +1,8 @@
 /* ziye 
-github地址 https://github.com/6Svip120apk69
+github地址 https://github.com/ziye888
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
-boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/ziye.boxjs.json
+boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.json
 转载请备注个名字，谢谢
 
 ⚠️书旗小说     手机号账号数据共通， 部分任务可叠加，此脚本包含2个app的所有任务（无阅读挑战赛）共0.8-1元
@@ -20,139 +20,137 @@ boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThx
 3.12-5 去除无用任务，精简ck至26条
 3.14 修复极速版书城报错
 3.15 修复收益获取ck显示
+3.18 独立COOKIE增加boxjs复制会话模式
+3.193.19 修复ac报错
+4.6.11 单刷时长请设置SC为1，增加通知以及推送控制
+4.6.19 精确时长ck判定，10秒以上才获取
+5.5.21 修复循环获取ck，优化重写
+5.6.21 优化循环获取ck，增加账号数显示且自动修改
+5.7.16 适配新版本收益ck获取，新版本收益只需要body即可
+5.8.22 增加提现提醒，默认关闭，自行打开
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
 有多少ck就运行多少任务   shuqiuserurlVal 用户名url 👉 这个ck必须获取
 多账号换行
 
-第一步 添加 hostname =render.shuqireader.com,ocean.shuqireader.com,jcollection.shuqireader.com,activity-center-web.shuqireader.com,
+⚠️极速版视频 极速版阅读 极速版签到视频 极速版书城  大概率出现网络错误或者奖励下发失败，无解
 
-第二步 ⚠️添加header重写 获取header  再注释header重写   添加body重写  获取body
+第一步 添加 对应主机名
+
+第二步 ⚠️添加header重写 获取header 
 
     shuqiuserurlVal👉 用户名url    点击福利
+    shuqisprwurlVal👉  视频任务url  点击福利
+    shuqicjyurlVal👉  获取抽奖页url  点击福利转转转
+   
+   
+    shuqijsqdspyurlVal👉极速版签到视频页url  极速版点击福利 赚金币 每日签到  
+    shuqijssprwurlVal👉  极速版视频任务url   极速版点击福利 赚金币
+    shuqijsbookurlVal👉 极速版书城url        极速版点击福利 赚金币 浏览书城
+    shuqijsbookbodyVal👉 极速版书城bodyy     极速版点击福利 赚金币 浏览书城
+       
+       
+第三步 ⚠️注释header重写   添加body重写  获取body
+  
     shuqisyurlVal👉  收益url       点击我的
     shuqisybodyVal👉 收益body      点击我的
     shuqispbodyVal👉 视频body      点击福利 看视频
     shuqiscbodyVal👉 时长body      点进一本书， 看个30秒，时长有效期一天，提现再获取
-    shuqiydbodyVal👉 阅读body      点进一本书，右上角转一圈，如没有圈圈，建议放弃，或者用4.32版本
+    shuqiydbodyVal👉 阅读body      点进一本书，右上角转一圈，如没有圈圈，建议放弃，或者用4.31版本
     shuqiqdbodyVal👉 签到body      点击福利 每日签到并成功签到
     shuqirwbodyVal👉 任务body      点击福利 
     shuqifxbodyVal👉  分享body     点击福利 邀请书友，分享或者假分享
-    shuqisprwurlVal👉  视频任务url  点击福利
     shuqijlbodyVal👉  获取奖励body   点击福利
     shuqisqjlbodyVal👉 收取奖励body  点击福利 收取奖励
-    shuqicjyurlVal👉  获取抽奖页url  点击福利转转转
     shuqicjcsbodyVal👉抽奖次数body   点击福利转转转 点击看视频抽奖
     shuqicjbodyVal👉  获取抽奖body   点击福利转转转 点击看视频抽奖
     
+   
     shuqijsspbodyVal👉 极速版视频body   极速版点击福利 赚金币 看视频
     shuqijsydurlVal👉  极速版阅读url    极速版点进一本书 右上角转一圈，如没有圈圈，建议放弃，
     shuqijsydbodyVal👉 极速版阅读body   极速版点进一本书 右上角转一圈，如没有圈圈，建议放弃，
     shuqijsqdbodyVal👉 极速版签到body    极速版点击福利 赚金币 每日签到  成功签到
-    shuqijsqdspyurlVal👉极速版签到视频页url  极速版点击福利 赚金币 每日签到  
-    shuqijsqdspbodyVal👉极速版签到视频url    极速版点击福利 赚金币 每日签到 成功第二次签到 
+    shuqijsqdspbodyVal👉极速版签到视频body    极速版点击福利 赚金币 每日签到 成功第二次签到 
     shuqijsrwbodyVal👉 极速版任务body        极速版点击福利 赚金币
     shuqijsfxbodyVal👉  极速版分享body       极速版点击福利 赚金币 邀请书友，分享或者假分享
-    shuqijsbookurlVal👉 极速版书城url        极速版点击福利 赚金币 浏览书城
-    shuqijsbookbodyVal👉 极速版书城bodyy     极速版点击福利 赚金币 浏览书城
-    shuqijssprwurlVal👉  极速版视频任务url   极速版点击福利 赚金币
+    
+   
 	
 ⚠️主机名以及header重写👇     header重写 和 body重写不可同时启用
-hostname =render.shuqireader.com,ocean.shuqireader.com,jcollection.shuqireader.com,activity-center-web.shuqireader.com, 
 
 ############## 圈x 
-
+hostname =ocean.shuqireader.com,activity-center-web.shuqireader.com,
 #书旗小说获取header
+#用户名  视频任务 抽奖页面 极速版签到视频页   极速版视频任务 极速版书城
+https:\/\/.+\.shuqireader\.com\/* url script-request-header https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
-#用户名  视频任务 抽奖页面 极速版签到视频页   极速版视频任务
-https:\/\/ocean\.shuqireader\.com\/* url script-request-header https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-#极速版书城
-http:\/\/activity-center-web\.shuqireader\.com\/* url script-request-header https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-
+hostname =*.shuqireader.com,
 #书旗小说获取body
-#阅读 签到  分享 奖励 收取奖励  抽奖次数 抽奖 极速版视频 极速版签到视频 极速版阅读 极速版签到 极速版分享 极速版书城
-https:\/\/ocean\.shuqireader\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-#收益 任务 极速版任务
-https:\/\/render\.shuqireader\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-#时长
-https:\/\/jcollection\.shuqireader\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
+#阅读 签到  分享 奖励 收取奖励  抽奖次数 抽奖 视频 收益 任务 时长 极速版任务 极速版视频 极速版签到视频 极速版阅读 极速版签到 极速版分享 极速版书城
+https:\/\/.+\.shuqireader\.com\/* url script-request-body https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 ############## loon
-
+hostname =ocean.shuqireader.com,activity-center-web.shuqireader.com,
 #书旗小说获取header
+#用户名  视频任务 抽奖页面 极速版签到视频页   极速版视频任务 极速版书城
+http-request https:\/\/.+\.shuqireader\.com\/* url script-request-header script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js, requires-header=true, tag=书旗小说获取header
 
-#用户名  视频任务 抽奖页面 极速版签到视频页   极速版视频任务
-http-request https:\/\/ocean\.shuqireader\.com\/* url script-request-header script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js, requires-header=true, tag=书旗小说获取header
-#极速版书城
-http-request http:\/\/activity-center-web\.shuqireader\.com\/* url script-request-header script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js, requires-header=true, tag=书旗小说获取header
-
+hostname =*.shuqireader.com,
 #书旗小说获取body
-
-#阅读 签到  分享 奖励 收取奖励  抽奖次数 抽奖 极速版视频 极速版签到视频 极速版阅读 极速版签到 极速版分享 极速版书城
-http-request https:\/\/ocean\.shuqireader\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js,requires-body=1,max-size=0, tag=书旗小说获取body
-#收益 任务 极速版任务
-http-request https:\/\/render\.shuqireader\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js,requires-body=1,max-size=0, tag=书旗小说获取body
-#时长
-http-request https:\/\/jcollection\.shuqireader\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js,requires-body=1,max-size=0, tag=书旗小说获取body
+#阅读 签到  分享 奖励 收取奖励  抽奖次数 抽奖 视频 收益 任务 时长 极速版任务 极速版视频 极速版签到视频 极速版阅读 极速版签到 极速版分享 极速版书城
+http-request https:\/\/.+\.shuqireader\.com\/* url script-request-body https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js,requires-body=1,max-size=0, tag=书旗小说获取body
 
 ############## surge
-
+hostname =ocean.shuqireader.com,activity-center-web.shuqireader.com,
 #书旗小说获取header
+#用户名  视频任务 抽奖页面 极速版签到视频页   极速版视频任务 极速版书城
+书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
-#用户名  视频任务 抽奖页面 极速版签到视频页   极速版视频任务
-书旗小说获取header = type=https:\/\/ocean\.shuqireader\.com\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-#极速版书城
-书旗小说获取header = type=http:\/\/activity-center-web\.shuqireader\.com\/*,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-
+hostname =*.shuqireader.com,
 #书旗小说获取body
-
-#阅读 签到  分享 奖励 收取奖励  抽奖次数 抽奖 视频 极速版视频 极速版签到视频 极速版阅读 极速版签到  极速版分享 极速版书城
-书旗小说获取header = type=https:\/\/ocean\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-#收益 任务 极速版任务
-书旗小说获取header = type=https:\/\/render\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-#时长
-书旗小说获取header = type=https:\/\/jcollection\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/shuqi.js
-
+#阅读 签到  分享 奖励 收取奖励  抽奖次数 抽奖 视频 收益 任务 时长 极速版任务 极速版视频 极速版签到视频 极速版阅读 极速版签到 极速版分享 极速版书城
+书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 */
-GXRZ = '3.15 修复收益获取ck显示'
+GXRZ = '5.8.22 增加提现提醒，默认关闭，自行打开'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
 const COOKIE = $.isNode() ? require("./shuqiCOOKIE") : ``;
 const logs = 0; // 0为关闭日志，1为开启
-const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
-const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
-$.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, ddtime = '';
+notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
+notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
+Minutes = 10; // 通知 默认控制在0-10分内
+$.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, TXTX = 0, SC = 0, ddtime = '';
 CZ = 10
 Length = 0
-const shuqiuserurlArr = [];
-const shuqisyurlArr = [];
-const shuqisybodyArr = [];
-const shuqispbodyArr = [];
-const shuqiscbodyArr = [];
-const shuqiydbodyArr = [];
-const shuqiqdbodyArr = [];
-const shuqirwbodyArr = [];
-const shuqifxbodyArr = [];
-const shuqisprwurlArr = [];
-const shuqijlbodyArr = [];
-const shuqisqjlbodyArr = [];
-const shuqicjyurlArr = [];
-const shuqicjcsbodyArr = [];
-const shuqicjbodyArr = [];
-const shuqijsspbodyArr = [];
-const shuqijsydurlArr = [];
-const shuqijsydbodyArr = [];
-const shuqijsqdbodyArr = [];
-const shuqijsqdspyurlArr = [];
-const shuqijsqdspbodyArr = [];
-const shuqijsrwbodyArr = [];
-const shuqijsfxbodyArr = [];
-const shuqijsbookurlArr = [];
-const shuqijsbookbodyArr = [];
-const shuqijssprwurlArr = [];
+let shuqiuserurlArr = [];
+let shuqisyurlArr = [];
+let shuqisybodyArr = [];
+let shuqispbodyArr = [];
+let shuqiscbodyArr = [];
+let shuqiydbodyArr = [];
+let shuqiqdbodyArr = [];
+let shuqirwbodyArr = [];
+let shuqifxbodyArr = [];
+let shuqisprwurlArr = [];
+let shuqijlbodyArr = [];
+let shuqisqjlbodyArr = [];
+let shuqicjyurlArr = [];
+let shuqicjcsbodyArr = [];
+let shuqicjbodyArr = [];
+let shuqijsspbodyArr = [];
+let shuqijsydurlArr = [];
+let shuqijsydbodyArr = [];
+let shuqijsqdbodyArr = [];
+let shuqijsqdspyurlArr = [];
+let shuqijsqdspbodyArr = [];
+let shuqijsrwbodyArr = [];
+let shuqijsfxbodyArr = [];
+let shuqijsbookurlArr = [];
+let shuqijsbookbodyArr = [];
+let shuqijssprwurlArr = [];
 let shuqiuserurlVal = ``;
 let shuqisyurlVal = ``;
 let shuqisybodyVal = ``;
@@ -179,43 +177,55 @@ let shuqijsfxbodyVal = ``;
 let shuqijsbookurlVal = ``;
 let shuqijsbookbodyVal = ``;
 let shuqijssprwurlVal = ``;
-const middleshuqiuserURL = [];
-const middleshuqisyURL = [];
-const middleshuqisyBODY = [];
-const middleshuqispBODY = [];
-const middleshuqiscBODY = [];
-const middleshuqiydBODY = [];
-const middleshuqiqdBODY = [];
-const middleshuqirwBODY = [];
-const middleshuqifxBODY = [];
-const middleshuqisprwURL = [];
-const middleshuqijlBODY = [];
-const middleshuqisqjlBODY = [];
-const middleshuqicjyURL = [];
-const middleshuqicjcsBODY = [];
-const middleshuqicjBODY = [];
-const middleshuqijsspBODY = [];
-const middleshuqijsydURL = [];
-const middleshuqijsydBODY = [];
-const middleshuqijsqdBODY = [];
-const middleshuqijsqdspyURL = [];
-const middleshuqijsqdspBODY = [];
-const middleshuqijsrwBODY = [];
-const middleshuqijsfxBODY = [];
-const middleshuqijsbookURL = [];
-const middleshuqijsbookBODY = [];
-const middleshuqijssprwURL = [];
+let middleshuqiuserURL = [];
+let middleshuqisyURL = [];
+let middleshuqisyBODY = [];
+let middleshuqispBODY = [];
+let middleshuqiscBODY = [];
+let middleshuqiydBODY = [];
+let middleshuqiqdBODY = [];
+let middleshuqirwBODY = [];
+let middleshuqifxBODY = [];
+let middleshuqisprwURL = [];
+let middleshuqijlBODY = [];
+let middleshuqisqjlBODY = [];
+let middleshuqicjyURL = [];
+let middleshuqicjcsBODY = [];
+let middleshuqicjBODY = [];
+let middleshuqijsspBODY = [];
+let middleshuqijsydURL = [];
+let middleshuqijsydBODY = [];
+let middleshuqijsqdBODY = [];
+let middleshuqijsqdspyURL = [];
+let middleshuqijsqdspBODY = [];
+let middleshuqijsrwBODY = [];
+let middleshuqijsfxBODY = [];
+let middleshuqijsbookURL = [];
+let middleshuqijsbookBODY = [];
+let middleshuqijssprwURL = [];
+if ($.isNode() && COOKIE.datas && COOKIE.datas[0].val != '') {
+    console.log(
+        `============ cookie方式为：方式一 boxjs复制会话 =============\n`
+    );
+}
 if ($.isNode() && COOKIE.shuqiuserurl && COOKIE.shuqiuserurl != '') {
     console.log(
-        `============ cookie方式为：方式一 boxjs复制数据 =============\n`
+        `============ cookie方式为：方式二 boxjs复制数据 =============\n`
     );
 }
 if ($.isNode() && COOKIE.shuqiuserurlVal && COOKIE.shuqiuserurlVal != '') {
     console.log(
-        `============ cookie方式为：方式二 直接填写 =============\n`
+        `============ cookie方式为：方式三 直接填写 =============\n`
     );
 }
+
 if ($.isNode() && process.env.SQ_shuqiuserURL) {
+    TXTX = process.env.SQ_TXTX || "0";
+    SC = process.env.SQ_SC || "0";
+    notifyttt = process.env.SQ_notifyttt || "1";
+    notifyInterval = process.env.SQ_notifyInterval || "2";
+    Minutes = process.env.SQ_Minutes || "10";
+
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
     console.log(
         `============ cookies分隔符为：${JSON.stringify(
@@ -342,93 +352,99 @@ if ($.isNode() && process.env.SQ_shuqiuserURL) {
     } else {
         middleshuqicjBODY = process.env.SQ_shuqicjBODY.split();
     }
-    if (
-        process.env.SQ_shuqijsspBODY &&
-        process.env.SQ_shuqijsspBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsspBODY = process.env.SQ_shuqijsspBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsspBODY = process.env.SQ_shuqijsspBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijsydURL &&
-        process.env.SQ_shuqijsydURL.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsydURL = process.env.SQ_shuqijsydURL.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsydURL = process.env.SQ_shuqijsydURL.split();
-    }
-    if (
-        process.env.SQ_shuqijsydBODY &&
-        process.env.SQ_shuqijsydBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsydBODY = process.env.SQ_shuqijsydBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsydBODY = process.env.SQ_shuqijsydBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijsqdBODY &&
-        process.env.SQ_shuqijsqdBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsqdBODY = process.env.SQ_shuqijsqdBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsqdBODY = process.env.SQ_shuqijsqdBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijsqdspyURL &&
-        process.env.SQ_shuqijsqdspyURL.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsqdspyURL = process.env.SQ_shuqijsqdspyURL.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsqdspyURL = process.env.SQ_shuqijsqdspyURL.split();
-    }
-    if (
-        process.env.SQ_shuqijsqdspBODY &&
-        process.env.SQ_shuqijsqdspBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsqdspBODY = process.env.SQ_shuqijsqdspBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsqdspBODY = process.env.SQ_shuqijsqdspBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijsrwBODY &&
-        process.env.SQ_shuqijsrwBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsrwBODY = process.env.SQ_shuqijsrwBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsrwBODY = process.env.SQ_shuqijsrwBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijsfxBODY &&
-        process.env.SQ_shuqijsfxBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsfxBODY = process.env.SQ_shuqijsfxBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsfxBODY = process.env.SQ_shuqijsfxBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijsbookURL &&
-        process.env.SQ_shuqijsbookURL.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsbookURL = process.env.SQ_shuqijsbookURL.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsbookURL = process.env.SQ_shuqijsbookURL.split();
-    }
-    if (
-        process.env.SQ_shuqijsbookBODY &&
-        process.env.SQ_shuqijsbookBODY.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijsbookBODY = process.env.SQ_shuqijsbookBODY.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijsbookBODY = process.env.SQ_shuqijsbookBODY.split();
-    }
-    if (
-        process.env.SQ_shuqijssprwURL &&
-        process.env.SQ_shuqijssprwURL.indexOf(COOKIES_SPLIT) > -1
-    ) {
-        middleshuqijssprwURL = process.env.SQ_shuqijssprwURL.split(COOKIES_SPLIT);
-    } else {
-        middleshuqijssprwURL = process.env.SQ_shuqijssprwURL.split();
+
+    if (process.env.SQ_shuqijsspBODY) {
+
+
+        if (
+            process.env.SQ_shuqijsspBODY &&
+            process.env.SQ_shuqijsspBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsspBODY = process.env.SQ_shuqijsspBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsspBODY = process.env.SQ_shuqijsspBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijsydURL &&
+            process.env.SQ_shuqijsydURL.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsydURL = process.env.SQ_shuqijsydURL.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsydURL = process.env.SQ_shuqijsydURL.split();
+        }
+        if (
+            process.env.SQ_shuqijsydBODY &&
+            process.env.SQ_shuqijsydBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsydBODY = process.env.SQ_shuqijsydBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsydBODY = process.env.SQ_shuqijsydBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijsqdBODY &&
+            process.env.SQ_shuqijsqdBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsqdBODY = process.env.SQ_shuqijsqdBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsqdBODY = process.env.SQ_shuqijsqdBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijsqdspyURL &&
+            process.env.SQ_shuqijsqdspyURL.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsqdspyURL = process.env.SQ_shuqijsqdspyURL.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsqdspyURL = process.env.SQ_shuqijsqdspyURL.split();
+        }
+        if (
+            process.env.SQ_shuqijsqdspBODY &&
+            process.env.SQ_shuqijsqdspBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsqdspBODY = process.env.SQ_shuqijsqdspBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsqdspBODY = process.env.SQ_shuqijsqdspBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijsrwBODY &&
+            process.env.SQ_shuqijsrwBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsrwBODY = process.env.SQ_shuqijsrwBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsrwBODY = process.env.SQ_shuqijsrwBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijsfxBODY &&
+            process.env.SQ_shuqijsfxBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsfxBODY = process.env.SQ_shuqijsfxBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsfxBODY = process.env.SQ_shuqijsfxBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijsbookURL &&
+            process.env.SQ_shuqijsbookURL.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsbookURL = process.env.SQ_shuqijsbookURL.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsbookURL = process.env.SQ_shuqijsbookURL.split();
+        }
+        if (
+            process.env.SQ_shuqijsbookBODY &&
+            process.env.SQ_shuqijsbookBODY.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijsbookBODY = process.env.SQ_shuqijsbookBODY.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijsbookBODY = process.env.SQ_shuqijsbookBODY.split();
+        }
+        if (
+            process.env.SQ_shuqijssprwURL &&
+            process.env.SQ_shuqijssprwURL.indexOf(COOKIES_SPLIT) > -1
+        ) {
+            middleshuqijssprwURL = process.env.SQ_shuqijssprwURL.split(COOKIES_SPLIT);
+        } else {
+            middleshuqijssprwURL = process.env.SQ_shuqijssprwURL.split();
+        }
+
     }
 }
 if (COOKIE && COOKIE.shuqiuserurlVal) {
@@ -482,12 +498,23 @@ if (COOKIE && COOKIE.shuqiuserurlVal) {
     }
     Length = SQ_COOKIES.shuqiuserurlVal.length;
 }
+if (COOKIE.datas && COOKIE.datas[0].val != '') {
+
+    TXTX = (COOKIE.settings.find(item => item.id === `shuqiTXTX`)).val || '0';
+    notifyttt = (COOKIE.settings.find(item => item.id === `shuqinotifyttt`)).val || '1';
+    notifyInterval = (COOKIE.settings.find(item => item.id === `shuqinotifyInterval`)).val || '2';
+    Minutes = (COOKIE.settings.find(item => item.id === `shuqiMinutes`)).val || '10';
+    SC = (COOKIE.settings.find(item => item.id === `shuqiSC`)).val || '0';
+
+    shuqiCount = COOKIE.settings.find(item => item.id === `shuqiCount`);
+    Length = shuqiCount.val
+}
 if (COOKIE.shuqiuserurl) {
     cks = 26 //ck数量
     COOKIEstringify = JSON.stringify(COOKIE);
     Length = COOKIEstringify.match(/getBindinfo/g).length
 }
-if (!COOKIE) {
+if (!COOKIE.datas && !COOKIE.shuqiuserurlVal && !COOKIE.shuqiuserurl) {
     if ($.isNode()) {
         Object.keys(middleshuqiuserURL).forEach((item) => {
             if (middleshuqiuserURL[item]) {
@@ -650,6 +677,21 @@ if (!COOKIE) {
         if ("shuqiXH") {
             XH = $.getval("shuqiXH") || '0';
         }
+        if ("shuqinotifyttt") {
+            notifyttt = $.getval("shuqinotifyttt") || '1';
+        }
+        if ("shuqinotifyInterval") {
+            notifyInterval = $.getval("shuqinotifyInterval") || '2';
+        }
+        if ("shuqiMinutes") {
+            Minutes = $.getval("shuqiMinutes") || '10';
+        }
+        if ("shuqiSC") {
+            SC = $.getval("shuqiSC") || '0';
+        }
+        if ("shuqiTXTX") {
+            TXTX = $.getval("shuqiTXTX") || '0';
+        }
         let shuqiCount = ($.getval('shuqiCount') || '1') - 0;
         for (let i = 2; i <= shuqiCount; i++) {
             if ($.getdata(`shuqiuserurl${i}`)) {
@@ -687,24 +729,61 @@ if (!COOKIE) {
     } else Length = shuqiuserurlArr.length
 }
 
+
+function RedCookie() {
+
+    if (XH == 1 && $request && $request.url.indexOf("config") >= 0) {
+        op = 1
+        while (true) {
+            op++;
+            if ($.getdata(`shuqiuserurl${op}`) == '') {
+                $.setdata(`${op-1}`, `shuqiSuffix`);
+
+                $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : '';
+
+                $.log(
+                    `[${$.name + $.idx}] 当前书旗账号数量为${op-1}✅: 成功🎉`
+                );
+                $.msg($.name + $.idx, `当前书旗账号数量为${op-1}: 成功🎉`, ``);
+                break;
+            }
+        }
+    }
+}
+
 function GetCookie() {
+
+
+
     //获取极速版书城
     if ($request && $request.url.indexOf("activity-center-web") >= 0 && $request.url.indexOf("reward") >= 0) {
         const shuqijsbookurlVal = $request.url;
+        userid = shuqijsbookurlVal.split('user_id=')[1].split('&')[0]
         if (shuqijsbookurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsbookurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsbookurlVal, "shuqijsbookurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版书城shuqijsbookurlVal✅: 成功,shuqijsbookurlVal: ${shuqijsbookurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版书城shuqijsbookurlVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsbookurlVal, "shuqijsbookurl" + $.idx);
                         $.log(
@@ -727,6 +806,7 @@ function GetCookie() {
     //获取极速版视频任务
     if ($request && $request.url.indexOf("getAdInfo") >= 0 && $request.url.indexOf("resourceId=719") >= 0 && $request.url.indexOf("appVer=1") >= 0) {
         const shuqijssprwurlVal = $request.url;
+        userid = shuqijssprwurlVal.split('user_id=')[1].split('&')[0]
         if (shuqijssprwurlVal) {
             if (XH == 1) {
                 cookie()
@@ -734,13 +814,24 @@ function GetCookie() {
                 function cookie() {
                     bodys = $.getdata('shuqijssprwurl' + $.idx);
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijssprwurlVal, "shuqijssprwurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版视频任务shuqijssprwurlVal✅: 成功,shuqijssprwurlVal: ${shuqijssprwurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版视频任务shuqijssprwurlVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijssprwurlVal, "shuqijssprwurl" + $.idx);
                         $.log(
@@ -763,20 +854,32 @@ function GetCookie() {
     //获取抽奖页面
     if ($request && $request.url.indexOf("lottery") >= 0 && $request.url.indexOf("info") >= 0) {
         const shuqicjyurlVal = $request.url;
+        userid = shuqicjyurlVal.split('userId=')[1].split('&')[0]
         if (shuqicjyurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqicjyurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqicjyurlVal, "shuqicjyurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取抽奖页面shuqicjyurlVal✅: 成功,shuqicjyurlVal: ${shuqicjyurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取抽奖页面shuqicjyurlVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqicjyurlVal, "shuqicjyurl" + $.idx);
                         $.log(
@@ -799,20 +902,32 @@ function GetCookie() {
     //获取极速版签到视频页
     if ($request && $request.url.indexOf("adserver") >= 0 && $request.url.indexOf("getAdInfo") >= 0 && $request.url.indexOf("resourceId=717") >= 0) {
         const shuqijsqdspyurlVal = $request.url;
+        userid = shuqijsqdspyurlVal.split('user_id=')[1].split('&')[0]
         if (shuqijsqdspyurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsqdspyurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsqdspyurlVal, "shuqijsqdspyurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版签到视频页shuqijsqdspyurlVal✅: 成功,shuqijsqdspyurlVal: ${shuqijsqdspyurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版签到视频页shuqijsqdspyurlVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsqdspyurlVal, "shuqijsqdspyurl" + $.idx);
                         $.log(
@@ -835,20 +950,32 @@ function GetCookie() {
     //获取视频任务
     if ($request && $request.url.indexOf("adserver") >= 0 && $request.url.indexOf("getAdInfo") >= 0 && $request.url.indexOf("resourceId=626") >= 0) {
         const shuqisprwurlVal = $request.url;
+        userid = shuqisprwurlVal.split('user_id=')[1].split('&')[0]
         if (shuqisprwurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqisprwurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqisprwurlVal, "shuqisprwurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取视频任务shuqisprwurlVal✅: 成功,shuqisprwurlVal: ${shuqisprwurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取视频任务shuqisprwurlVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqisprwurlVal, "shuqisprwurl" + $.idx);
                         $.log(
@@ -871,20 +998,32 @@ function GetCookie() {
     //获取用户名
     if ($request && $request.url.indexOf("getBindinfo") >= 0) {
         const shuqiuserurlVal = $request.url;
+        userid = shuqiuserurlVal.split('userId=')[1].split('&')[0]
         if (shuqiuserurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqiuserurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqiuserurlVal, "shuqiuserurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取用户名shuqiuserurlVal✅: 成功,shuqiuserurlVal: ${shuqiuserurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取用户名shuqiuserurlVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqiuserurlVal, "shuqiuserurl" + $.idx);
                         $.log(
@@ -908,20 +1047,37 @@ function GetCookie() {
     if ($request && $request.url.indexOf("load") >= 0 && $request.url.indexOf("resource") >= 0 && $request.url.indexOf("skinColor=") >= 0 && $request.url.indexOf("appVer=4") >= 0 && $request.body.indexOf("isNewUser") >= 0 && $request.body.indexOf("ShuqiVipEntry") >= 0 && $request.body.indexOf("ShuqiTab") < 0 && $request.body.indexOf("caid=") < 0 && $request.body.indexOf("ShuqiShelfCard") < 0 && $request.body.indexOf("ShuqiIOSUpdateInfo") < 0) {
         const shuqisyurlVal = $request.url
         const shuqisybodyVal = $request.body
+        userid = shuqisyurlVal.split('user_id=')[1].split('&')[0]
         if (shuqisyurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqisyurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqisyurlVal, "shuqisyurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取收益shuqisyurlVal✅: 成功,shuqisyurlVal: ${shuqisyurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取收益shuqisyurlVal: 成功🎉`, ``);
+                            $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqisyurlVal, "shuqisyurl" + $.idx);
                         $.log(
@@ -951,24 +1107,85 @@ function GetCookie() {
             };
         }
     }
-	
-	    //获取极速版书城
+
+    //获取收益
+    if ($request && $request.url.indexOf("load") >= 0 && $request.url.indexOf("resource") >= 0 && $request.body.indexOf("skinColor=") >= 0 && $request.body.indexOf("appVer=4") >= 0 && $request.body.indexOf("isNewUser") >= 0 && $request.body.indexOf("ShuqiVipEntry") >= 0 && $request.body.indexOf("ShuqiTab") < 0 && $request.body.indexOf("caid=") < 0 && $request.body.indexOf("ShuqiShelfCard") < 0 && $request.body.indexOf("ShuqiIOSUpdateInfo") < 0) {
+        const shuqisybodyVal = $request.body
+        userid = shuqisybodyVal.split('user_id=')[1].split('&')[0]
+        if (shuqisybodyVal) {
+            if (XH == 1) {
+                cookie()
+
+                function cookie() {
+                    bodys = $.getdata('shuqisybody' + $.idx);
+
+                    if (bodys) {
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
+                        } else {
+                            $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
+                    } else {
+                        $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                        $.log(
+                            `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                        );
+                        $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                        $.done();
+                    };
+                }
+            } else {
+                $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                $.log(
+                    `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                );
+                $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                $.done();
+            };
+        }
+    }
+
+    //获取极速版书城
     if ($request && $request.url.indexOf("convert") >= 0 && $request.body.indexOf("actTaskId=344") >= 0 && $request.body.indexOf("appVer=1") >= 0) {
         const shuqijsbookbodyVal = $request.body;
+        userid = shuqijsbookbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsbookbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsbookbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsbookbodyVal, "shuqijsbookbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版书城shuqijsbookbodyVal✅: 成功,shuqijsbookbodyVal: ${shuqijsbookbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版书城shuqijsbookbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsbookbodyVal, "shuqijsbookbody" + $.idx);
                         $.log(
@@ -991,20 +1208,32 @@ function GetCookie() {
     //获取视频
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=525") >= 0) {
         const shuqispbodyVal = $request.body;
+        userid = shuqispbodyVal.split('userId=')[1].split('&')[0]
         if (shuqispbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqispbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqispbodyVal, "shuqispbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取视频shuqispbodyVal✅: 成功,shuqispbodyVal: ${shuqispbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取视频shuqispbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqispbodyVal, "shuqispbody" + $.idx);
                         $.log(
@@ -1025,37 +1254,51 @@ function GetCookie() {
         }
     }
     //获取时长
-    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 && $request.body.indexOf("_public=skinId") >= 0) {
+    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 ) {
         const shuqiscbodyVal = $request.body;
-        if (shuqiscbodyVal) {
+        sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
+        userid = shuqiscbodyVal.split('user_id=')[1]
+
+        if (shuqiscbodyVal && sqsc >= 10) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqiscbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqiscbodyVal, "shuqiscbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取${sqsc}秒时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取${sqsc}秒时长shuqiscbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqiscbodyVal, "shuqiscbody" + $.idx);
                         $.log(
-                            `[${$.name + $.idx}] 获取时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
+                            `[${$.name + $.idx}] 获取${sqsc}秒时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
                         );
-                        $.msg($.name + $.idx, `获取时长shuqiscbodyVal: 成功🎉`, ``);
+                        $.msg($.name + $.idx, `获取${sqsc}秒时长shuqiscbodyVal: 成功🎉`, ``);
                         $.done();
                     };
                 }
             } else {
                 $.setdata(shuqiscbodyVal, "shuqiscbody" + $.idx);
                 $.log(
-                    `[${$.name + $.idx}] 获取时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
+                    `[${$.name + $.idx}] 获取${sqsc}秒时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
                 );
-                $.msg($.name + $.idx, `获取时长shuqiscbodyVal: 成功🎉`, ``);
+                $.msg($.name + $.idx, `获取${sqsc}秒时长shuqiscbodyVal: 成功🎉`, ``);
                 $.done();
             };
         }
@@ -1063,20 +1306,32 @@ function GetCookie() {
     //获取阅读
     if ($request && $request.url.indexOf("pendant") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=707") >= 0) {
         const shuqiydbodyVal = $request.body;
+        userid = shuqiydbodyVal.split('userId=')[1].split('&')[0]
         if (shuqiydbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqiydbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqiydbodyVal, "shuqiydbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取阅读shuqiydbodyVal✅: 成功,shuqiydbodyVal: ${shuqiydbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取阅读shuqiydbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqiydbodyVal, "shuqiydbody" + $.idx);
                         $.log(
@@ -1099,20 +1354,32 @@ function GetCookie() {
     //获取签到
     if ($request && $request.url.indexOf("signInAction") >= 0 && $request.body.indexOf("position=501") >= 0 && $request.body.indexOf("signInType=1") >= 0) {
         const shuqiqdbodyVal = $request.body;
+        userid = shuqiqdbodyVal.split('userId=')[1].split('&')[0]
         if (shuqiqdbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqiqdbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqiqdbodyVal, "shuqiqdbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取签到shuqiqdbodyVal✅: 成功,shuqiqdbodyVal: ${shuqiqdbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取签到shuqiqdbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqiqdbodyVal, "shuqiqdbody" + $.idx);
                         $.log(
@@ -1135,20 +1402,32 @@ function GetCookie() {
     //获取任务
     if ($request && $request.url.indexOf("resource") >= 0 && $request.body.indexOf("resources") >= 0 && $request.body.indexOf("params=") >= 0 && $request.body.indexOf("appVer=4") >= 0 && $request.body.indexOf("skinVersionPrefix=") >= 0 && $request.body.indexOf("isNewUser=") < 0 && $request.body.indexOf("reqEncryptType=") < 0) {
         const shuqirwbodyVal = $request.body;
+        userid = shuqirwbodyVal.split('userId=')[1].split('&')[0]
         if (shuqirwbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqirwbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqirwbodyVal, "shuqirwbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取任务shuqirwbodyVal✅: 成功,shuqirwbodyVal: ${shuqirwbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取任务shuqirwbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqirwbodyVal, "shuqirwbody" + $.idx);
                         $.log(
@@ -1169,22 +1448,34 @@ function GetCookie() {
         }
     }
     //获取分享
-    if ($request && $request.url.indexOf("activity") >= 0 && $request.url.indexOf("reward") >= 0 && $request.body.indexOf("actTaskId=304") >= 0) {
+    if ($request && $request.url.indexOf("activity") >= 0 && $request.body.indexOf("appVer=4") >= 0 && $request.body.indexOf("actTaskId=357") >= 0) {
         const shuqifxbodyVal = $request.body;
+        userid = shuqifxbodyVal.split('userId=')[1].split('&')[0]
         if (shuqifxbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqifxbody' + $.idx);
-                    if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+
+                    if (bodysd) {
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqifxbodyVal, "shuqifxbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取分享shuqifxbodyVal✅: 成功,shuqifxbodyVal: ${shuqifxbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取分享shuqifxbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqifxbodyVal, "shuqifxbody" + $.idx);
                         $.log(
@@ -1207,20 +1498,32 @@ function GetCookie() {
     //获取奖励
     if ($request && $request.url.indexOf("bubble") >= 0 && $request.url.indexOf("info") >= 0 && $request.body.indexOf("requestSrc=h5") >= 0) {
         const shuqijlbodyVal = $request.body;
+        userid = shuqijlbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijlbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijlbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijlbodyVal, "shuqijlbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取奖励shuqijlbodyVal✅: 成功,shuqijlbodyVal: ${shuqijlbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取奖励shuqijlbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijlbodyVal, "shuqijlbody" + $.idx);
                         $.log(
@@ -1243,20 +1546,32 @@ function GetCookie() {
     //获取收取奖励
     if ($request && $request.url.indexOf("manual") >= 0 && $request.url.indexOf("receive") >= 0 && $request.body.indexOf("appVer=4") >= 0) {
         const shuqisqjlbodyVal = $request.body;
+        userid = shuqisqjlbodyVal.split('userId=')[1].split('&')[0]
         if (shuqisqjlbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqisqjlbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqisqjlbodyVal, "shuqisqjlbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取收取奖励shuqisqjlbodyVal✅: 成功,shuqisqjlbodyVal: ${shuqisqjlbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取收取奖励shuqisqjlbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqisqjlbodyVal, "shuqisqjlbody" + $.idx);
                         $.log(
@@ -1279,20 +1594,32 @@ function GetCookie() {
     //获取抽奖次数
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("resourceId=703") >= 0) {
         const shuqicjcsbodyVal = $request.body;
+        userid = shuqicjcsbodyVal.split('userId=')[1].split('&')[0]
         if (shuqicjcsbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqicjcsbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqicjcsbodyVal, "shuqicjcsbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取抽奖次数shuqicjcsbodyVal✅: 成功,shuqicjcsbodyVal: ${shuqicjcsbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取抽奖次数shuqicjcsbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqicjcsbodyVal, "shuqicjcsbody" + $.idx);
                         $.log(
@@ -1315,20 +1642,32 @@ function GetCookie() {
     //获取抽奖
     if ($request && $request.url.indexOf("lottery") >= 0 && $request.url.indexOf("draw") >= 0 && $request.body.indexOf("activityId=311") >= 0) {
         const shuqicjbodyVal = $request.body;
+        userid = shuqicjbodyVal.split('userId=')[1].split('&')[0]
         if (shuqicjbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqicjbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqicjbodyVal, "shuqicjbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取抽奖shuqicjbodyVal✅: 成功,shuqicjbodyVal: ${shuqicjbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取抽奖shuqicjbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqicjbodyVal, "shuqicjbody" + $.idx);
                         $.log(
@@ -1351,20 +1690,32 @@ function GetCookie() {
     //获取极速版视频
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("resourceId=719") >= 0) {
         const shuqijsspbodyVal = $request.body;
+        userid = shuqijsspbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsspbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsspbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsspbodyVal, "shuqijsspbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版视频shuqijsspbodyVal✅: 成功,shuqijsspbodyVal: ${shuqijsspbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版视频shuqijsspbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsspbodyVal, "shuqijsspbody" + $.idx);
                         $.log(
@@ -1387,20 +1738,32 @@ function GetCookie() {
     //获取极速版签到视频
     if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=894") >= 0) {
         const shuqijsqdspbodyVal = $request.body;
+        userid = shuqijsqdspbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsqdspbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsqdspbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsqdspbodyVal, "shuqijsqdspbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版签到视频shuqijsqdspbodyVal✅: 成功,shuqijsqdspbodyVal: ${shuqijsqdspbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版签到视频shuqijsqdspbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsqdspbodyVal, "shuqijsqdspbody" + $.idx);
                         $.log(
@@ -1424,20 +1787,37 @@ function GetCookie() {
     if ($request && $request.url.indexOf("activity") >= 0 && $request.url.indexOf("pendant") >= 0 && $request.url.indexOf("lottery") >= 0) {
         const shuqijsydurlVal = $request.url;
         const shuqijsydbodyVal = $request.body;
+        userid = shuqijsydurlVal.split('user_id=')[1].split('&')[0]
         if (shuqijsydurlVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsydurl' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsydurlVal, "shuqijsydurl" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版阅读shuqijsydurlVal✅: 成功,shuqijsydurlVal: ${shuqijsydurlVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版阅读shuqijsydurlVal: 成功🎉`, ``);
+                            $.setdata(shuqijsydbodyVal, "shuqijsydbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版阅读shuqijsydbodyVal✅: 成功,shuqijsydbodyVal: ${shuqijsydbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版阅读shuqijsydbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsydurlVal, "shuqijsydurl" + $.idx);
                         $.log(
@@ -1470,20 +1850,32 @@ function GetCookie() {
     //获取极速版签到
     if ($request && $request.url.indexOf("signInAction") >= 0 && $request.body.indexOf("position=601") >= 0 && $request.body.indexOf("signInType=1") >= 0) {
         const shuqijsqdbodyVal = $request.body;
+        userid = shuqijsqdbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsqdbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsqdbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsqdbodyVal, "shuqijsqdbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版签到shuqijsqdbodyVal✅: 成功,shuqijsqdbodyVal: ${shuqijsqdbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版签到shuqijsqdbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsqdbodyVal, "shuqijsqdbody" + $.idx);
                         $.log(
@@ -1506,6 +1898,7 @@ function GetCookie() {
     //获取极速版任务
     if ($request && $request.url.indexOf("resource") >= 0 && $request.body.indexOf("resources") >= 0 && $request.body.indexOf("params=") >= 0 && $request.body.indexOf("appVer=1") >= 0 && $request.body.indexOf("skinVersionPrefix=") < 0 && $request.body.indexOf("isNewUser=") < 0 && $request.body.indexOf("reqEncryptType=") < 0) {
         const shuqijsrwbodyVal = $request.body;
+        userid = shuqijsrwbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsrwbodyVal) {
             if (XH == 1) {
                 cookie()
@@ -1513,13 +1906,24 @@ function GetCookie() {
                 function cookie() {
                     bodys = $.getdata('shuqijsrwbody' + $.idx);
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsrwbodyVal, "shuqijsrwbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版任务shuqijsrwbodyVal✅: 成功,shuqijsrwbodyVal: ${shuqijsrwbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版任务shuqijsrwbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsrwbodyVal, "shuqijsrwbody" + $.idx);
                         $.log(
@@ -1542,20 +1946,32 @@ function GetCookie() {
     //获取极速版分享
     if ($request && $request.body.indexOf("actTaskId=327") >= 0 && $request.body.indexOf("appVer=1") >= 0) {
         const shuqijsfxbodyVal = $request.body;
+        userid = shuqijsfxbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsfxbodyVal) {
             if (XH == 1) {
                 cookie()
 
                 function cookie() {
                     bodys = $.getdata('shuqijsfxbody' + $.idx);
+
                     if (bodys) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
+                        userids = bodys.split('userId=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
                         } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
+                            $.setdata(shuqijsfxbodyVal, "shuqijsfxbody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取极速版分享shuqijsfxbodyVal✅: 成功,shuqijsfxbodyVal: ${shuqijsfxbodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取极速版分享shuqijsfxbodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
                     } else {
                         $.setdata(shuqijsfxbodyVal, "shuqijsfxbody" + $.idx);
                         $.log(
@@ -1679,8 +2095,15 @@ function decodeUnicode(str) {
     str = str.replace(/\\/g, "%");
     return unescape(str);
 }
+//随机延迟
+function RT(X, Y) {
+    do rt = Math.floor(Math.random() * Y);
+    while (rt < X)
+    return rt;
+}
 let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
+    RedCookie()
     GetCookie()
     $.done();
 } else {
@@ -1707,6 +2130,72 @@ async function all() {
         return;
     }
     for (let i = 0; i < Length; i++) {
+
+        if (COOKIE.datas && COOKIE.datas[0].val != '') {
+
+
+            if (i == 0) {
+                op = ``
+            } else {
+                op = i + 1
+            }
+
+            shuqiuserurl = COOKIE.datas.find(item => item.key === `shuqiuserurl${op}`);
+            shuqisyurl = COOKIE.datas.find(item => item.key === `shuqisyurl${op}`);
+            shuqisybody = COOKIE.datas.find(item => item.key === `shuqisybody${op}`);
+            shuqispbody = COOKIE.datas.find(item => item.key === `shuqispbody${op}`);
+            shuqiscbody = COOKIE.datas.find(item => item.key === `shuqiscbody${op}`);
+            shuqiydbody = COOKIE.datas.find(item => item.key === `shuqiydbody${op}`);
+            shuqiqdbody = COOKIE.datas.find(item => item.key === `shuqiqdbody${op}`);
+            shuqirwbody = COOKIE.datas.find(item => item.key === `shuqirwbody${op}`);
+            shuqifxbody = COOKIE.datas.find(item => item.key === `shuqifxbody${op}`);
+            shuqisprwurl = COOKIE.datas.find(item => item.key === `shuqisprwurl${op}`);
+            shuqijlbody = COOKIE.datas.find(item => item.key === `shuqijlbody${op}`);
+            shuqisqjlbody = COOKIE.datas.find(item => item.key === `shuqisqjlbody${op}`);
+            shuqicjyurl = COOKIE.datas.find(item => item.key === `shuqicjyurl${op}`);
+            shuqicjcsbody = COOKIE.datas.find(item => item.key === `shuqicjcsbody${op}`);
+            shuqicjbody = COOKIE.datas.find(item => item.key === `shuqicjbody${op}`);
+            shuqijsspbody = COOKIE.datas.find(item => item.key === `shuqijsspbody${op}`);
+            shuqijsydurl = COOKIE.datas.find(item => item.key === `shuqijsydurl${op}`);
+            shuqijsydbody = COOKIE.datas.find(item => item.key === `shuqijsydbody${op}`);
+            shuqijsqdbody = COOKIE.datas.find(item => item.key === `shuqijsqdbody${op}`);
+            shuqijsqdspyurl = COOKIE.datas.find(item => item.key === `shuqijsqdspyurl${op}`);
+            shuqijsqdspbody = COOKIE.datas.find(item => item.key === `shuqijsqdspbody${op}`);
+            shuqijsrwbody = COOKIE.datas.find(item => item.key === `shuqijsrwbody${op}`);
+            shuqijsfxbody = COOKIE.datas.find(item => item.key === `shuqijsfxbody${op}`);
+            shuqijsbookurl = COOKIE.datas.find(item => item.key === `shuqijsbookurl${op}`);
+            shuqijsbookbody = COOKIE.datas.find(item => item.key === `shuqijsbookbody${op}`);
+            shuqijssprwurl = COOKIE.datas.find(item => item.key === `shuqijssprwurl${op}`);
+
+
+            shuqiuserurlVal = shuqiuserurl.val;
+            shuqisyurlVal = shuqisyurl.val;
+            shuqisybodyVal = shuqisybody.val;
+            shuqispbodyVal = shuqispbody.val;
+            shuqiscbodyVal = shuqiscbody.val;
+            shuqiydbodyVal = shuqiydbody.val;
+            shuqiqdbodyVal = shuqiqdbody.val;
+            shuqirwbodyVal = shuqirwbody.val;
+            shuqifxbodyVal = shuqifxbody.val;
+            shuqisprwurlVal = shuqisprwurl.val;
+            shuqijlbodyVal = shuqijlbody.val;
+            shuqisqjlbodyVal = shuqisqjlbody.val;
+            shuqicjyurlVal = shuqicjyurl.val;
+            shuqicjcsbodyVal = shuqicjcsbody.val;
+            shuqicjbodyVal = shuqicjbody.val;
+            shuqijsspbodyVal = shuqijsspbody.val;
+            shuqijsydurlVal = shuqijsydurl.val;
+            shuqijsydbodyVal = shuqijsydbody.val;
+            shuqijsqdbodyVal = shuqijsqdbody.val;
+            shuqijsqdspyurlVal = shuqijsqdspyurl.val;
+            shuqijsqdspbodyVal = shuqijsqdspbody.val;
+            shuqijsrwbodyVal = shuqijsrwbody.val;
+            shuqijsfxbodyVal = shuqijsfxbody.val;
+            shuqijsbookurlVal = shuqijsbookurl.val;
+            shuqijsbookbodyVal = shuqijsbookbody.val;
+            shuqijssprwurlVal = shuqijssprwurl.val;
+
+        }
         if (COOKIE && COOKIE.shuqiuserurlVal) {
             shuqiuserurlVal = SQ_COOKIES.shuqiuserurlVal[i];
             shuqisyurlVal = SQ_COOKIES.shuqisyurlVal[i];
@@ -1769,7 +2258,7 @@ async function all() {
             shuqijsbookbodyVal = COOKIE[Object.keys(COOKIE)[iv + 25]];
             shuqijssprwurlVal = COOKIE[Object.keys(COOKIE)[iv + 26]];
         }
-        if (!COOKIE) {
+        if (!COOKIE.datas && !COOKIE.shuqiuserurlVal && !COOKIE.shuqiuserurl) {
             shuqiuserurlVal = shuqiuserurlArr[i];
             shuqisyurlVal = shuqisyurlArr[i];
             shuqisybodyVal = shuqisybodyArr[i];
@@ -1798,6 +2287,8 @@ async function all() {
             shuqijssprwurlVal = shuqijssprwurlArr[i];
         }
         O = (`${$.name + (i + 1)}🔔`);
+
+
         if (shuqiuserurlVal && shuqiuserurlVal != '') {
             await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
             let cookie_is_live = await user(); //用户名
@@ -1808,28 +2299,49 @@ async function all() {
         //await $.wait(1000)
         if (shuqisyurlVal && shuqisybodyVal && shuqisyurlVal != '' && shuqisybodyVal != '') {
             await coin() //用户收益
+        } else if (shuqisybodyVal && shuqisybodyVal != '') {
+            await coins() //用户收益
         }
+
+        if (TXTX > 0 && nowTimes.getHours() >= 8 && $.coin && DQYE >= TXTX) {
+
+            console.log(O, `\n========== ${$.user.data.nickname} ==========\n当前余额为${DQYE}元，速度提现，否则清0`)
+            $.msg(O, `========== 【${$.user.data.nickname}】 ==========\n当前余额为${DQYE}元，速度提现，否则清0`);
+
+
+            if ($.isNode()) {
+                notify.sendNotify(O, `========== 【${$.user.data.nickname}】 ==========\n当前余额为${DQYE}元，速度提现，否则清0`);
+
+            }
+
+        }
+
+
         await readlist(); //阅读时长
-        if (shuqirwbodyVal && shuqirwbodyVal != '') {
-            await resource() //任务列表
-        }
-        if (shuqisprwurlVal && shuqisprwurlVal != '') {
-            await videolist(); //视频任务
-        }
-        if (shuqicjyurlVal && shuqicjyurlVal != '') {
-            await lotteryinfo(); //抽奖页面
-        }
-        if (shuqijsrwbodyVal && shuqijsrwbodyVal != '') {
-            await jsresource() //极速版任务列表
-        }
-        if (shuqijssprwurlVal && shuqijssprwurlVal != '') {
-            await jsvideolist() //极速版视频任务
-        }
-        if (shuqijsqdspyurlVal && shuqijsqdspyurlVal != '') {
-            await jsqdvideolist(); //极速版签到视频任务
-        }
-        if (shuqijlbodyVal && shuqijlbodyVal != '') {
-            await bubble(); //奖励页面
+
+        if (SC == 0) {
+            if (shuqirwbodyVal && shuqirwbodyVal != '') {
+                await resource() //任务列表
+            }
+            if (shuqisprwurlVal && shuqisprwurlVal != '') {
+                await videolist(); //视频任务
+            }
+            if (shuqicjyurlVal && shuqicjyurlVal != '') {
+                await lotteryinfo(); //抽奖页面
+            }
+            if (shuqijsrwbodyVal && shuqijsrwbodyVal != '') {
+                await jsresource() //极速版任务列表
+            }
+            if (shuqijssprwurlVal && shuqijssprwurlVal != '') {
+                await jsvideolist() //极速版视频任务
+            }
+            if (shuqijsqdspyurlVal && shuqijsqdspyurlVal != '') {
+                await jsqdvideolist(); //极速版签到视频任务
+            }
+            if (shuqijlbodyVal && shuqijlbodyVal != '') {
+                await bubble(); //奖励页面
+            }
+
         }
         console.log(`${GXRZ}\n`);
         $.message += `${GXRZ}\n`
@@ -1838,6 +2350,8 @@ async function all() {
 //通知
 function msgShow() {
     return new Promise(async resolve => {
+
+
         if (notifyInterval != 1) {
             console.log($.name + '\n' + $.message);
         }
@@ -1938,8 +2452,38 @@ function coin(timeout = 0) {
                     if (logs) $.log(`${O}, 用户收益🚩: ${decodeUnicode(data)}`);
                     $.coin = JSON.parse(data);
                     if ($.coin.status == 200) {
+                        DQYE = $.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney
                         console.log(`用户收益：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
                         $.message += `【用户收益】：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
+                    }
+                } catch (e) {
+                    $.logErr(e, resp);
+                } finally {
+                    resolve()
+                }
+            })
+        }, timeout)
+    })
+}
+//用户收益
+function coins(timeout = 0) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let url = {
+                url: `https://ocean.shuqireader.com/api/render/load/resource`,
+                headers: {
+                    'Content-Type': `application/x-www-form-urlencoded`,
+                    'Host': `ocean.shuqireader.com`,
+                },
+                body: shuqisybodyVal,
+            }
+            $.post(url, async (err, resp, data) => {
+                try {
+                    if (logs) $.log(`${O}, 用户收益🚩: ${decodeUnicode(data)}`);
+                    $.coins = JSON.parse(data);
+                    if ($.coins.status == 200) {
+                        console.log(`用户收益：今日${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
+                        $.message += `【用户收益】：今日${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
                     }
                 } catch (e) {
                     $.logErr(e, resp);
@@ -2257,12 +2801,22 @@ function readlist(timeout = 0) {
                         if (shuqiscbodyVal && shuqiscbodyVal != '') {
                             timestamp = shuqiscbodyVal.split('timestamp=')[1].split('&user_id')[0] * 1000
                             sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
-                            if (timestamp >= daytime() && $.readlist.data.readTime < 180) {
+                            if (timestamp >= daytime() && $.readlist.data.readTime < 10) {
+                                DD = RT(1000, 10000)
+                                console.log(`随机延迟${DD/1000}秒`)
+                                await $.wait(DD)
                                 await upload() //上传时长
-                                await $.wait(10000)
+                                DD = RT(1000, 10000)
+                                console.log(`随机延迟${DD/1000}秒`)
+                                await $.wait(DD)
                                 await upload() //上传时长
-                                await $.wait(10000)
+                                DD = RT(1000, 10000)
+                                console.log(`随机延迟${DD/1000}秒`)
+                                await $.wait(DD)
                                 await upload() //上传时长
+                            } else if (timestamp >= daytime()) {
+                                console.log(`上传时长：今日时长已达到10分钟\n`);
+                                $.message += `【上传时长】：今日时长已达到10分钟\n`;
                             } else {
                                 console.log(`上传时长：请获取今日时长CK\n`);
                                 $.message += `【上传时长】：请获取今日时长CK\n`;
@@ -2432,7 +2986,7 @@ function jsreads(timeout = 0) {
                 if ($.jsreads.status == 200) {
                     console.log(`极速版阅读奖励：获得20次奖励,今日已得${$.jsreads.data.todayBizCoinAmount}\n`);
                     $.message += `【极速版阅读奖励】：获得20次奖励,今日已得${$.jsreads.data.todayBizCoinAmount}金币\n`;
-                }else{
+                } else {
                     console.log(`极速版阅读奖励：${$.jsreads.message}\n`);
                     $.message += `【极速版阅读奖励】：${$.jsreads.message}\n`;
                 }
