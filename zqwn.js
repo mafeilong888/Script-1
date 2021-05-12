@@ -51,8 +51,8 @@ let zqwnbody = $.getdata('zqwnbody')
 let zqwnkey = '',id = '',uid='',tid='',name=''
 if ($.isNode()) {
    zqwnurlArr.push('http://wn.xingguozuliao.com/login/login2/hydata.html')
-   zqwnhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"wn.xingguozuliao.com","User-Agent":"0.0.19 rv:0.0.1 (iPhone; iOS 14.4; zh_CN)","Content-Length":"100","Accept-Language":"zh-cn"}')
-  zqwnbodyArr.push('oaid=2C052D31-46A9-400F-95C5-D0C4020BF96A&uid=4398&yhtk=2C052D31-46A9-400F-95C5-D0C4020BF96A&apple=1')
+   zqwnhdArr.push('{"Accept":"*/*","Accept-Encoding":"gzip, deflate","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded; charset=utf-8","Host":"wn.xingguozuliao.com","User-Agent":"0.0.38 rv:0.0.1 (iPhone; iOS 14.4; zh_CN)","Content-Length":"102","Accept-Language":"zh-cn"}')
+  zqwnbodyArr.push('oaid=95DEE746-5976-40A0-869C-1ED4CC4E9AB2&uid=311304&yhtk=95DEE746-5976-40A0-869C-1ED4CC4E9AB2&apple=1')
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  }
